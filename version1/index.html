@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>壹基因检测报告</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/paiban.js"></script>
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" type="text/css" href="css/itie8.css" />
+	   	 	<script src="https://nie.res.netease.com/comm/html5/html5shiv.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+	    	<div style="position:absoulute;left:0;top:0;width:100%;height:50px;background:rgb(255,255,233);color:rgb(30,84,148);border-bottom:1px solid rgb(230,230,198);text-align:center;line-height:50px;font-size:12px;">您使用的浏览器版本过低，可能会影响到您的打印效果，请升级到IE8以上或者更换其他浏览器</div>
+	    <![endif]-->
+	    <!--固定背景页 start-->
+		<div id="fixelem"></div>
+		<!--固定背景页 end-->
+		<!--引导页star-->
+		<div class="page1_p1 matuo page_color2" contenteditable='true'>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div>
+				<p><span class="page_color1">宝贝密码</span>检测报告</p>
+				<p>检测报告</p>
+			</div>
+			<p>指导营养补充，呵护宝宝健康</p>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+		</div>
+		<div class="page_p2 matuo" contenteditable='true'>
+			<p class="fs22 lh14"></p>
+			<p class="fs22 lh14"></p>
+			<p class="fs22 lh14"></p>
+			<p class="fs22 lh14"></p>
+			<div class="colorblock bgcolor1 fl"></div>
+			<div class="colorblock2 bgcolor2 fl"></div>
+			<p class="fs22 lh14 fl" style="padding-left: 6pt;color: #00B4E1;">受检者信息</p>
+			<p class="clear"></p>
+			<p class="fs22 lh14"></p>
+			<p class="fs22 lh14"></p>
+		</div>
+		<div class="matuo tc" contenteditable='true'>
+			<ul class="page2_infor" >
+				<li class="clear">
+					<div class="radius_tl table_tdl bbnone">姓名</div>
+					<div class="radius_tr table_tdr bbnone">小明</div>
+				</li>
+				<li class="clear">
+					<div class="table_tdl bbnone">性别</div>
+					<div class="table_tdr bbnone">男</div>
+				</li>
+				<li class="clear">
+					<div class="table_tdl bbnone">手机号码</div>
+					<div class="table_tdr bbnone">15258888888</div>
+				</li>
+				<li class="clear">
+					<div class="table_tdl bbnone">检测项目</div>
+					<div class="table_tdr bbnone">男性健康套餐</div>
+				</li>
+				<li style="border-bottom: none;" class="clear">
+					<div class="radius_bl table_tdl">样本编号</div>
+					<div class="radius_br table_tdr">102365844656844</div>
+				</li>
+			</ul>
+		</div>
+		<div class="matuo" contenteditable='true'>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime">2016-10-14</p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+			<p class="datatime"></p>
+		</div>
+		<div class="matuo catalog" contenteditable='true'>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="c_title1">致客户</div>
+			<div class="blanknormal"></div>
+			<div class="c_title2">您的基因和疾病风险概况</div>
+			<div class="blanknormal"></div>
+			<div class="c_title3">检测位点信息说明</div>
+			<div class="blanknormal"></div>
+			<div class="c_title4">详细检测结果</div>
+			<ul class="detail">
+				<li class="clear">
+					<div class="fl">第一部分</div><span class="fl">心血管疾病</span>
+					<div class="c_dot fl"></div><span class="pagenumber">5</span></li>
+				<li class="clear">
+					<div class="fl">第一部分</div><span class="fl">心血管疾病</span>
+					<div class="c_dot fl"></div><span class="pagenumber">5</span></li>
+				<li class="clear">
+					<div class="fl">第一部分</div><span class="fl">心血管疾病</span>
+					<div class="c_dot fl"></div><span class="pagenumber">5</span></li>
+				<li class="clear">
+					<div class="fl">第一部分</div><span class="fl">心血管疾病</span>
+					<div class="c_dot fl"></div><span class="pagenumber">5</span></li>
+				<li class="clear">
+					<div class="fl">第一部分</div><span class="fl">心血管疾病</span>
+					<div class="c_dot fl"></div><span class="pagenumber">5</span></li>
+				<li class="clear">
+					<div class="fl">第一部分</div><span class="fl">心血管疾病</span>
+					<div class="c_dot fl"></div><span class="pagenumber">5</span></li>
+			</ul>
+			<div class="c_title1 cage_line">报告说明</div>
+			<div class="blanknormal"></div>
+			<div class="c_title2 cage_line">公司简介</div>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+		</div>
+		<div class="matuo pr" contenteditable='true'>
+			<div class="blanknormal"></div>
+			<div class="blanknormal"></div>
+			<div class="to_customer fl">
+				<div class="to_text">致客户</div>
+				<div class="to_text2">To customer</div>
+			</div>
+			<div class="to_content fl">
+				<p class="toleft fs12">尊敬的小明先生：</p>
+				<p class="fs12">您好！</p>
+				<p> 非常感谢您选择壹基因为您提供的基因检测服务。基因信息与每一个人的健康息息相关，我们通过对您基因进行精准检测，根据检测结果进行了科学专业的解读，并提供了疾病预防和确诊相关信息。
+					<p>根据基因信息，一般每个人将得到以下三种不同遗传风险中的一种：</p>
+					<p>高遗传风险，您携带较多或重要的疾病易感基因致病突变，患病风险高，需要您采取相应的措施，避免疾病的产生。</p>
+					<p>正常遗传风险，您没有或者携带了少数风险基因型，但不会影响你的健康。</p>
+					<p>低遗传风险，您携带了个别或者多个抑制疾病发生的易感基因突变，患病风险低，保持健康生活即可。</p>
+					<p> 现代医学认为几乎所有慢性疾病都是由于内因（基因）和外因（生活、环境等因素）共同作用决定的。由于不同个体的基因之间存在一定差异，所以了解人体内疾病易感基因的情况，可以帮助预测出疾病发生的风险，从而做到早预防早诊断早治疗，实现“上医治未病”的社会目标。</p>
+					<p>本报告是通过对受检者提供的生物样本（一般为口腔黏膜细胞）进行基因检测，依据国际有关疾病易感基因的公开研究成果和数据，参考国际权威23 and me，对检测结果进行分析，计算出受检者患某些疾病的风险指数。</p>
+					<p> 本报告内容还包括依据患病风险给出相应的饮食、生活、常规体检等一般性建议。本报告旨在帮助受检者科学合理地针对个人遗传特点来加强自身的健康管理，以达到预防疾病、提高生活品质的目的。</p>
+					<p> 杭州和壹健康管理有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+					<div class="blanksmall"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="fouceus pa">
+				<div class="fouceustxt">关注我们</div>
+				<div class="line"></div>
+				<div class="foucecontent">了解最新壹基因健康资讯、行业信息、产品信息、健康知识及相关活动等信息，请及时关注“壹基因商城”微信公众号。</div>
+				<div class="weixin"></div>
+			</div>
+		</div>
+		<!--引导页 end-->
+		<!--疾病页 start-->
+		<div class="contentedge" contenteditable='true'>
+			<div class="pagetitle">您的基因和疾病风险概况</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="tc helthtit">您的基因健康指数</div>
+			<div class="blanksmall"></div>
+			<div class="helthstar">
+            <!--格式必须在一行 start-->
+				<div class="glodstar"></div><div class="glodstar"></div><div class="glodstar"></div><div class="glodstar"></div><div class="glodstar"></div><div class="helthscore">19.8</div><div class="clear"></div>
+			<!--格式必须在一行 end -->
+			</div>
+			<div class="blanksmall"></div>
+			<div class="tc precent">打败了19%的用户</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			
+			<div class="disease_title"><div class="textblank"></div><span>您需要注意的项目</span></div><!--格式必须在一行-->
+			<div class="blanksmall"></div>
+			<div class="good_tag">
+				<!--格式必须在一行 start-->
+				<div class="tag">高血压风险高</div><div class="tag">钙吸收能力差</div><div class="tag">痛风风险高</div><div class="tag">高血压风险高</div><div class="tag">高血压风险高</div><div class="tag">钙吸收能力差</div><div class="tag">高血压风险高</div><div class="tag">高血压风险高</div>
+				<!--格式必须在一行 start-->
+			</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="disease_title"><div class="textblank"></div><span>您优于常人的项目</span></div>
+			<div class="blanksmall"></div>
+			<div class="good_tag">
+				<div class="tag">高血压风险高</div><div class="tag">钙吸收能力差</div><div class="tag">高血压风险高</div><div class="tag">高血压风险高</div><div class="tag">高血压风险高</div><div class="tag">钙吸收能力差</div><div class="tag">高血压风险高</div><div class="tag">痛风风险高</div>
+			</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="reminder">
+				<h3>温馨提示</h3>
+				<p> 基因检测意义在于提前预知疾病的发生风险，便于及早发现、预防、为临床确诊提供参考依据。对于风险低的检测结果，并不代表发病率为0，后天因素也是影响疾病发生的重要方面。鉴于您的基因检测结果，您可能需要对个别项目进行健康咨询并进行相应的身体检查，之后也需要定期体检，避免或延缓疾病的发生。</p>
+			</div>
+		</div>
+		<!--检测项目 start-->
+		<div class="contentedge" contenteditable='true'>
+			<div class="blanksmall"></div>
+			<div class="pagetitle">您的基因和疾病风险概况</div>
+			<div class="pageline"></div>
+			<div class="second_level_title">您的疾病风险评估汇总</div>
+			<div class="blanksmall"></div>
+			<table class="fenxian tc songti" cellpadding="0" cellspacing="0" border="1" bordercolor="#000000">
+				<thead>
+					<th>检测项目</th>
+					<th>风险指数</th>
+					<th colspan="2">风险等级</th>
+				</thead>
+				<tr>
+					<td>心肌梗死</td>
+					<td>0.97</td>
+					<td><div></div></td>
+					<td>较高</td>
+				</tr>
+				<tr>
+					<td>房颤</td>
+					<td>0.40</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>高血压</td>
+					<td>1.00</td>
+					<td><div></div></td>
+					<td>正常</td>
+				</tr>
+				<tr>
+					<td>高血脂症</td>
+					<td>1.06</td>
+					<td><div></div></td>
+					<td>较低</td>
+				</tr>
+				<tr>
+					<td>冠心病</td>
+					<td>1.00</td>
+					<td><div></div></td>
+					<td>正常</td>
+				</tr>
+				<tr>
+					<td>静脉栓塞</td>
+					<td>0.92</td>
+					<td><div></div></td>
+					<td>正常</td>
+				</tr>
+				<tr>
+					<td>结直肠癌</td>
+					<td>0.92</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>胃癌</td>
+					<td>0.95</td>
+					<td><div></div></td>
+					<td>正常</td>
+				</tr>
+				<tr>
+					<td>肺癌</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>较高</td>
+				</tr>
+				<tr>
+					<td>白内障</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>老年痴呆</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>老年黄斑变性</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>帕金森综合征</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>正常</td>
+				</tr>
+				<tr>
+					<td>痛风</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>II型糖尿病</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>抑郁症</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>低</td>
+				</tr>
+				<tr>
+					<td>强迫症</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>较高</td>
+				</tr>
+				<tr>
+					<td>类风湿性关节炎</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>高</td>
+				</tr>
+				<tr>
+					<td>系统性红斑狼疮</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>较低</td>
+				</tr>
+				<tr>
+					<td>系统性红斑狼疮</td>
+					<td>1.20</td>
+					<td><div></div></td>
+					<td>较低</td>
+				</tr>
+			</table>
+			<div class="blanksmall"></div>
+			<div class="explain"><div class="textblank"></div><span>风险等级说明：</span><img src="img/danger.png"/></div>
+			<div class="explain"><div class="textblank"></div><span>风险指数说明：</span><span class="explain_text">自主研发风险指数体系，参照行业标杆23 and me的计算方法。</span></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+		</div>
+		<!--检测项目 end-->
+		<!--其他项目 start-->
+		<div class="contentedge" contenteditable='true'>
+			<div class="pagetitle">您的基因和疾病风险概况</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">您的其他项目评估汇总</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="matuo tc ">
+				<table class="page_infor" contenteditable='true' cellpadding="0" cellspacing="0">
+					<tr>
+						<td>检测项目</td>
+						<td>检测项目</td>
+						<td>评价</td>
+					</tr>
+					<tr>
+						<td rowspan="4">个性特征</td>
+						<td>烟瘾倾向</td>
+						<td>普通</td>
+					</tr>
+					<tr>
+						<td class="btnone rowtd">烟瘾倾向</td>
+						<td>普通</td>
+					</tr>
+					<tr>
+						<td class="btnone rowtd">烟瘾倾向</td>
+						<td>普通</td>
+					</tr>
+					<tr>
+						<td class="btnone rowtd">烟瘾倾向</td>
+						<td>普通</td>
+					</tr>
+					<tr>
+						<td>营养吸收</td>
+						<td>钙吸收能力</td>
+						<td>较弱</td>
+					</tr>
+					<tr>
+						<td>天赋潜能</td>
+						<td>运动天赋</td>
+						<td>普通</td>
+					</tr>
+					<tr>
+						<td>遗传病</td>
+						<td>白化病</td>
+						<td>检出</td>
+					</tr>
+				</table>
+			</div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		<div class="blanksmall"></div>
+		</div>	
+		<!--其他项目 end-->
+		<!--检测位点 start-->
+		<div class="contentedge" contenteditable='true'>
+			<div class="pagetitle">您的基因和疾病风险概况</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<table border="0" cellspacing="0" cellpadding="0" class="page_weidian">
+				<tr><th>基因</th><th>检测位点</th><th>基因</th><th>重要性</th><th>评价</th><th>影响</th></tr>
+				<tr><td>ABC1</td><td>ABC1</td><td>ABC1</td><td>ABC1</td><td>ABC1</td><td>ABC1</td></tr>
+			</table>
+			<div class="blanksmall"></div>
+			<div class="weidian2">注意：本报告只显示部分检测位点，想要了解全部位点信息，请登录壹基因商城或壹基因APP查看完整版报告</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">表格注解</div>
+			<div class="blanksmall"></div>
+			<div class="zhujie">
+				<p>根据六大国际权威数据库(Clinvar、OMIM、HGMD、GWAS catalog、Uniprot、SNPedia)、相关国际权威期刊、国内相关领域专家实验室研究综合挑选出的疾病易感基因，主要针对中国或者东亚人口。</p>
+				<p>参照美国医学遗传学与基因组学学会(ACMG)标准，综合考虑相对风险值、人群数据、研究程度等条件严格挑选出的疾病高相关度变异位点。</p>
+				<p>  一般人在基因组上一个位点的基因型有三种，如ABCA1基因 rs2230806位点基因型有三种CC、CT、TT，其中CC为纯合突变基因型，CT为杂合突变基因型，TT为正常基因型。您的基因位点属于正常基因型。</p>
+				<p>重要性表示该基因位点对于疾病发生的贡献度，是综合考虑相对风险值、研究人群数据、研究深入程度等条件评定得到的指数。</p>
+				<p>该基因型对疾病发生的影响，分为三种状态：抑制疾病发生(笑脸)、对疾病发生无影响(正常)、促进疾病发生(哭脸)，例如ABCA1基因 rs2230806位点CT基因型对应为笑脸，即表明该基因型抑制冠心病的发生，降低冠心病患病风险。您的基因型对疾病发生无影响。</p>
+				<p>该位点基因型对本项目的影响。例如冠心病基因ABCA1 rs2230806 CC基因型患病风险高，CT基因型患病风险较高，TT为正常基因型，您的基因型为正常基因型。</p>
+			</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<img src="img/weidian.png"/>
+		</div>
+		<div class="contentedge" contenteditable='true'>
+			<div class="pagetitle">心血管类疾病—心肌梗死</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">心肌梗死简介</div>
+			<div class="blanksmall"></div>
+			<div class="divindent">
+				<img src="img/xjgs.jpg" alt=""  class="fr" style="width: 65mm;padding-left: 4mm;"/>
+				<p>心肌梗死又名心肌梗塞，是指急性、持续性缺血、缺氧（冠状动脉功能不全）所引起的心肌坏死；指在冠状动脉病变的基础上，冠状动脉的血液中断，使相应的心肌出现严重而持久地急性缺血，最终导致心肌的缺血性坏死；发生急性心肌梗塞的病人，在临床上常有持久的胸骨后剧烈疼痛、发热、白细胞计数增高、血清心肌酶升高以及心电图反映心肌急性损伤、缺血和坏死的一系列特征性演变，并可出现心律失常、休克和心力衰竭，属冠心病的严重类型，可并发心律失常、休克或心力衰竭等合并症，常可危及生命。</p>
+			</div>
+			<div class="blanksmall"></div>
+			<div class="linebr"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">基因检测结果</div>
+			<div class="blanksmall"></div>
+			<div class="tc">您的心肌梗死风险正常</div>
+			<div class="blanksmall"></div>
+			<div>
+				<canvas id="c1" width="260" height="180" style="width: 220px; margin: 0 auto;display: block;">请使用ie9以上版本，或者其他浏览器查看柱状图</canvas>
+			</div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">健康建议</div>
+			<div class="blanksmall"></div>
+			<div class="zhujie">
+				<p>您的心肌梗死先天患病风险正常，不代表心肌梗死患病概率为零，在保持目前良好习惯的同时，也应注意事项：</p>
+				<p>注意饮食和运动，限制脂肪的摄入量，少吃奶油、肥肉，多吃一些糙米、蔬菜和水果可降低心肌梗塞的发生率；</p>
+				<p>放松精神，保持身心愉悦，愉快生活，对任何事情要能泰然处之；</p>
+				<p>不要在饱餐或饥饿的情况下洗澡，水温最好与体温相当，洗澡时间不宜过长；</p>
+				<p>气候变化时要当心，在严寒或强冷空气影响下，冠状动脉可发生痉挛而诱发急性心肌梗死。所以每遇气候恶劣时，冠心病患者要注意保暖或适当防护；</p>
+				<p>  要懂得和识别心肌梗死的先兆症状并给予及时处理：既往无心绞痛的患者突然发生心绞痛，或原有心绞痛的患者发作突然明显加重，冠心病患者或老年人突然出现心律失常、心力衰竭、休克或晕厥等情况。</p>
+			</div>
+			<div class="blanksmall"></div>
+		</div>
+		<!--检测位点 end-->
+		<div class="contentedge" contenteditable='true'>
+			<div class="pagetitle">心血管类疾病—心肌梗死</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">心肌梗死致病因素</div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">心肌梗死早期症状</div>
+			<div class="blanksmall"></div>
+			<div class="zhujie">
+				<p>突然发作剧烈而持久的胸骨后或心前区压榨性疼痛休息和含服硝酸甘油不能缓解，常伴有烦躁不安、出汗、恐惧或濒死感。</p>
+				<p>注意饮食和运动，限制脂肪的摄入量，少吃奶油、肥肉，多吃一些糙米、蔬菜和水果可降低心肌梗塞的发生率；</p>
+				<p>放松精神，保持身心愉悦，愉快生活，对任何事情要能泰然处之；</p>
+				<p>不要在饱餐或饥饿的情况下洗澡，水温最好与体温相当，洗澡时间不宜过长；</p>
+				<p>气候变化时要当心，在严寒或强冷空气影响下，冠状动脉可发生痉挛而诱发急性心肌梗死。所以每遇气候恶劣时，冠心病患者要注意保暖或适当防护；</p>
+				<p>  要懂得和识别心肌梗死的先兆症状并给予及时处理：既往无心绞痛的患者突然发生心绞痛，或原有心绞痛的患者发作突然明显加重，冠心病患者或老年人突然出现心律失常、心力衰竭、休克或晕厥等情况。</p>
+			</div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">心肌梗死确诊措施</div>
+			<div class="blanksmall"></div>
+			<div class="divindent">
+				<h1>心绞痛</h1>
+				<p>心绞痛的疼痛性质与心肌梗塞相同，但发作较频繁，每次发作历时短，一般不超过15分钟，发作前常有诱发因素，不伴有发热、白细胞增加、红细胞沉降率增快或血清心肌酶增高，心电图无变化或有ST段暂时性压低或抬高，很少发生心律失常、休克和心力衰竭，含有硝酸甘油片疗效好等，可资鉴别。</p>
+				<h1>心绞痛</h1>
+				<p>心绞痛的疼痛性质与心肌梗塞相同，但发作较频繁，每次发作历时短，一般不超过15分钟，发作前常有诱发因素，不伴有发热、白细胞增加、红细胞沉降率增快或血清心肌酶增高，心电图无变化或有ST段暂时性压低或抬高，很少发生心律失常、休克和心力衰竭，含有硝酸甘油片疗效好等，可资鉴别。</p>
+				<h1>心绞痛</h1>
+				<p>心绞痛的疼痛性质与心肌梗塞相同，但发作较频繁，每次发作历时短，一般不超过15分钟，发作前常有诱发因素，不伴有发热、白细胞增加、红细胞沉降率增快或血清心肌酶增高，心电图无变化或有ST段暂时性压低或抬高，很少发生心律失常、休克和心力衰竭，含有硝酸甘油片疗效好等，可资鉴别。</p>
+				<h1>心绞痛</h1>
+				<p>心绞痛的疼痛性质与心肌梗塞相同，但发作较频繁，每次发作历时短，一般不超过15分钟，发作前常有诱发因素，不伴有发热、白细胞增加、红细胞沉降率增快或血清心肌酶增高，心电图无变化或有ST段暂时性压低或抬高，很少发生心律失常、休克和心力衰竭，含有硝酸甘油片疗效好等，可资鉴别。</p>
+			</div>
+			<div class="pagetitle">心血管类疾病—心肌梗死</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">心肌梗死易感基因检测位点（部分）</div>
+			<div class="blanksmall"></div>
+			<p>壹基因精选近年亚洲/中国人群心肌梗死检测中，关联性最大的基因如PCSK9、GATA2、等，对其多个位点进行基因检测，综合分析。对心肌梗死患病风险进行科学严谨预测，让您了解自身的患病风险。</p>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">心肌梗死易感基因检测位点（部分）
+			
+			</div>
+			<div class="blanksmall"></div>
+		</div>
+		<div class="contentedge" contenteditable='true'>
+			<table class="page_infor3" contenteditable='true' cellpadding="0" cellspacing="0">
+				<tr>
+					<th>基因</th>
+					<th>检测位点</th>
+					<th>基因型</th>
+					<th>重要性</th>
+					<th>评价</th>
+					<th>影响</th>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+				<tr>
+					<td>PCSK9</td>
+					<td>rs11206510</td>
+					<td>TT</td>
+					<td>四星</td>
+					<td class="level_face"></td>
+					<td>患病风险正常</td>
+				</tr>
+			</table>
+			<div class="blanksmall"></div>
+			<div class="linebr"></div>
+			<div class="second_level_title">参考文献（部分）</div>
+			<div class="refrence">
+				<p>1. Lu X, Wang L, Chen S, et al. Genome-wide association study in Han Chinese identifies four new susceptibility loci for coronary artery disease[J]. Nature Genetics, 2012, 44(8):890-4.</p>
+				<p>2. Mozaffarian D, Benjamin E J, Go A S, et al. Heart Disease and Stroke Statistics—2015 Update[J]. Circulation, 2015.</p>
+				<p> 3. Reilly M P, Li M, He J. Identifi cation of ADAMTS7 as a novel locus for coronary atherosclerosis and association of ABO with myocardial infarction in the presence of coronary atherosclerosis:two genome-wide association studies[J]. Lancet, 2011, 377(9763):: 383_392.</p>
+				<p> 4. Hirokawa M, Morita H, Tajima T, et al. A genome-wide association study identifies PLCL2 and AP3D1-DOT1L-SF3A2 as new susceptibility loci for myocardial infarction in Japanese[J]. European Journal of Human Genetics, 2015, 23(3):374-80.</p>
+				<p>5. Maga_a J J, Cisneros B. Identification of a sudden cardiac death susceptibility locus at 2q24.2 through genome-wide association in European ancestry individuals.[J]. Plos Genetics, 2011, 7(6):e1002158-e1002158.</p>
+			</div>
+		</div>
+		<div class="page_back1" contenteditable='true'>
+			<div class="pagetitle">报告说明</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="clear pageback">
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+				<div class="circlediv fl">
+					<div class="circle bc1">
+						<div>用户需知</div>
+					</div>
+				</div>
+				<div class="fr b_content">
+					<div>
+						<p>检测位点的筛选基于国际权威数据库及权威学术杂志的文献报道</p>
+						<p>数据库将随着检测人数的增加和科学研究的深入定期升级优化</p>
+						<p>检测结果可作为疾病预防、健康管理的指导信息，不能用于临床诊断</p>
+						<p>基因是疾病发生和个性体征的重要影响因素，但生存环境和生活方式也会产生一定影响。</p>
+					</div>
+				</div>
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+			</div>
+			<div class="clear pageback">
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+				<div class="circlediv fl">
+					<div class="circle bc3">
+						<div>基因检测<br/>与精准预防</div>
+					</div>
+				</div>
+				<div class="fr b_content">
+					<div>
+						<p>基因检测是个人健康个体化管理的主要方式，虽然不能改变您的风险基因，但是通过基因检测，能对疾病进行精准预防：您通过基因检测可以了解您的患病风险；然后咨询医生并通过体检来掌握您目前的健康状况；根据体检结果，制定科学合理的生活方式并马上开始行动；如此往复，掌握您的健康。此外，家人是您的生活重心，关心重点，选择合适的检测项目，为您家人的健康护航。</p>
+					</div>
+				</div>
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+			</div>
+			<div class="clear pageback">
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+				<div class="circlediv fl">
+					<div class="circle bc4">
+						<div>专业化<br/>报告解读</div>
+					</div>
+				</div>
+				<div class="fr b_content">
+					<div>
+						壹基因提供专业化的报告解读服务，客户可通过微信商城或APP预约公司专业人员进行报告解读，针对检测结果排疑解惑。
+					</div>
+				</div>
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+			</div>
+			<div class="clear pageback">
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+				<div class="circlediv fl">
+					<div class="circle bc2">
+						<div>持续的<br/>更新升级</div>
+					</div>
+				</div>
+				<div class="fr b_content">
+					<div>
+						数据模型和评估体系将随着检测人数的增加和科学研究的深入定期升级优化，带来更精确的检测结果，使之符合中国人群的需求。
+					</div>
+				</div>
+				<div class="blanksmall"></div>
+				<div class="blanksmall"></div>
+			</div>
+		</div>
+		<div class="page_back2" contenteditable='true'>
+			<div class="blanksmall"></div>
+			<div class="pagetitle">公司简介</div>
+			<div class="pageline"></div>
+			<div class="blanksmall"></div>
+			<div class="fl b_intro"><strong>杭州和壹基因科技有限公司</strong>（简称“壹基因”），是一家专注于利用基因大数据进行生命科学研究和健康管理的公司。2014年5月18日成立于杭州市滨江区（高新技术开发区），是区生命健康新产业领域重点扶持的企业，国家高新技术企业和“5050计划”引进企业。研发团队以具有博士、硕士学历的医学、生物学、信息技术等高级人才为主，将最先进的基因技术和研究成果进行应用转化。壹基因以“让基因科技为每一个人的健康服务”为使命，以高通量基因测序技术和大数据计算分析技术为主要手段，为大众精准医疗、基因健康管理和生命科学研究提供专业领先的整体解决方案。</div>
+			<div class="clear"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="blanksmall"></div>
+			<div class="second_level_title">硬件平台展示</div>
+			<div>
+				<div>
+					<img src="" alt="" />
+				</div>
+			</div>
+			<div class="second_level_title">公司证书</div><div class="second_level_title">获得软著及专利证书</div>
+		</div>
+		<div class="page_back3" contenteditable='true'>
+			<div class="bp_content">
+				<img src="img/weixin.jpg" style="width: 26mm;" class="fl"/>
+				<div class="fl" style="display: table;height: 26mm;">
+					<div style="display: table-cell;vertical-align: middle;">
+						<p>电话：0571-87171255</p>
+						<p>网址：www.1gene.com.cn</p>
+						<p>邮箱：helthcare@1gene.com.cn</p>
+						<p>地址：杭州市滨江区聚财路88号远方科技中心15楼(310051)</p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+</script>

@@ -1,0 +1,1400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>壹基因检测报告</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<style type="text/css">
+		@charset "utf-8";
+		/*CSS Doument*/
+		/*通用样式文字大小默认12pt*/
+		
+		* {
+			position: relative;
+		}
+		
+		html {
+			font-family: "微软雅黑", 'calibri';
+			line-height: 1;
+			text-align: left;
+			white-space: normal;
+			word-break: break-all;
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		body {
+			font-size: 12pt;
+			background-color: #C0C2CC;
+			line-height: 1;
+		}
+		
+		.blanksmall {
+			height: 6mm;
+			line-height: 6mm;
+			color: inherit;
+			clear: both;
+		}
+		
+		.blanknormal {
+			height: 14mm;
+			line-height: 14mm;
+			color: inherit;
+			clear: both;
+		}
+		
+		.blanklarge {
+			height: 20mm;
+			line-height: 20mm;
+			color: inherit;
+			clear: both;
+		}
+		
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			line-height: 100%;
+			margin: 6px 0;
+			padding: 0;
+		}
+		
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+		
+		.tc {
+			text-align: center;
+		}
+		
+		.fl {
+			float: left;
+		}
+		
+		.fr {
+			float: right;
+		}
+		
+		.clear:after {
+			content: "";
+			height: 0px;
+			visibility: hidden;
+			display: block;
+			clear: both;
+		}
+		
+		.celldiv {
+			line-height: 100%;
+		}
+		
+		.title {
+			border-bottom: 1px solid #ccc;
+			padding-bottom: 14px;
+			width: 94%;
+			margin: 0 auto;
+		}
+		
+		.fb {
+			font-weight: bold;
+		}
+		
+		.ti {
+			text-indent: 2em;
+		}
+		
+		.fs22 {
+			font-size: 22pt;
+		}
+		
+		.fs12 {
+			font-size: 12pt!important;
+		}
+		
+		.lh1 {
+			line-height: 100%;
+		}
+		
+		.lh14 {
+			line-height: 14mm;
+			height: 14mm;
+		}
+		
+		.lh22 {
+			line-height: 22pt;
+		}
+		
+		.lh26 {
+			line-height: 26pt;
+		}
+		
+		.lh2 {
+			line-height: 200%;
+		}
+		
+		.pd510 {
+			padding: 5px 10px;
+		}
+		
+		.ls0 {
+			letter-spacing: 0;
+		}
+		
+		.pr {
+			position: relative;
+			_position: relative;
+		}
+		
+		.pa {
+			position: absolute;
+			_position: absolute;
+		}
+		
+		.fb {
+			font-weight: bold;
+		}
+		
+		.syhtcn {
+			font-family: '思源黑体 CN';
+		}
+		
+		p {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		.radius_bl {
+			border-bottom-left-radius: 10px;
+			-moz-border-bottom-left-radius: 10px;
+			-webkit-border-bottom-left-radius: 10px;
+		}
+		
+		.radius_br {
+			border-bottom-right-radius: 10px;
+			-moz-border-bottom-right-radius: 5px;
+			-webkit-bottom-right-border-bottom: 10px;
+		}
+		
+		.radius_tr {
+			border-top-right-radius: 10px;
+			-moz-border-top-right-radius: 10px;
+			-webkit-border-top-right-radius: 10px;
+		}
+		
+		.radius_tl {
+			border-top-left-radius: 10px;
+			-moz-border-top-left-radius: 10px;
+			-webkit-border-top-left-radius: 10px;
+		}
+		
+		.bbnone {
+			border-bottom: none!important;
+		}
+		
+		.btnone {
+			border-top: none!important;
+		}
+		/*前言4页*/
+		
+		.editor {
+			margin: 0 auto;
+			width: 210mm;
+			height: 297mm;
+			z-index: -10;
+			padding: 6mm 3mm;
+			overflow: hidden;
+			zoom: 1;
+			text-align: left;
+			background-color: white;
+			white-space: normal;
+			word-break: break-all;
+			word-wrap: break-word;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			/* Firefox */
+			-webkit-box-sizing: border-box;
+			z-index: 99;
+		}
+		
+		.content {
+			width: 204mm;
+			border: dotted 2px #cccccc;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			/* Firefox */
+			-webkit-box-sizing: border-box;
+		}
+		
+		.matuo {
+			width: 200mm;
+			white-space: normal;
+			word-break: break-all;
+			word-wrap: break-word;
+			margin: 0 auto;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			/* Firefox */
+			-webkit-box-sizing: border-box;
+		}
+		
+		.danger1 {
+			background-color: #5287C6;
+		}
+		
+		.danger2 {
+			background-color: #B6C9DF;
+		}
+		
+		.danger3 {
+			background-color: #BED098;
+		}
+		
+		.danger4 {
+			background-color: #EEEA39;
+		}
+		
+		.danger5 {
+			background-color: #E7161A;
+		}
+		
+		.pagenumber {
+			padding-top: 30.6mm;
+			background-color: #EAF6FD;
+			height: 100%;
+			background: url(../img/page_logo.png) no-repeat 172mm 4.7mm;
+		}
+		
+		.page1 {
+			background: url(../img/page1.png) no-repeat top center;
+			background-size: 100% 100%;
+			background-color: #fff;
+		}
+		
+		.page1_p1 {
+			font-size: 31pt;
+			padding: 3mm 0 0 27mm;
+			padding-bottom: 139mm;
+		}
+		
+		.page1_p1 p {
+			height: 14mm;
+			line-height: 14mm;
+		}
+		
+		.page_color1 {
+			color: #00B4E1;
+		}
+		
+		.page_color2 {
+			color: #005F3C;
+		}
+		
+		.page2 {
+			background: url(../img/page2.png) no-repeat top center;
+			background-size: 100% 100%;
+			background-color: #fff;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			/* Firefox */
+			-webkit-box-sizing: border-box;
+		}
+		
+		.colorblock {
+			width: 24.7mm;
+			height: 14mm;
+		}
+		
+		.colorblock2 {
+			width: 12.5mm;
+			height: 14mm
+		}
+		
+		.bgcolor1 {
+			background-color: #00B4E1
+		}
+		
+		.bgcolor2 {
+			background-color: #C4D343
+		}
+		
+		.page2_infor {
+			margin: 0 auto;
+			font-size: 18pt;
+			color: #717171;
+			overflow: hidden;
+			display: inline-block;
+		}
+		
+		.page2_infor .table_tdl {
+			width: 50mm;
+			height: 22mm;
+			line-height: 22mm;
+			float: left;
+			border: 1px solid #339999;
+			border-right: none;
+			background-color: #C8E7EC;
+			color: #39AAA9;
+			text-align: center;
+		}
+		
+		.page2_infor .table_tdr {
+			width: 64mm;
+			height: 22mm;
+			line-height: 22mm;
+			float: left;
+			border: 1px solid #339999;
+			background-color: #ECF7F9;
+			text-align: left;
+			padding-left: 14mm;
+			padding-right: 14mm;
+		}
+		
+		.datatime {
+			text-align: center;
+			font-size: 18pt;
+			font-family: '思源黑体 CN';
+			color: #00B4E1;
+			height: 18pt;
+		}
+		
+		.page3 {
+			background: url(../img/cataloge.jpg) no-repeat top right;
+			height: 100%;
+			background-size: 97% auto;
+		}
+		
+		.catalog div,
+		.catalog span {
+			line-height: 12.4mm;
+			height: 12.4mm;
+		}
+		
+		.c_title1 {
+			background: url(../img/catalog_1.png) no-repeat 4.75mm center;
+			width: 77mm;
+			font-size: 14pt;
+			color: #fff;
+			padding-left: 20mm;
+			background-size: auto 100%;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			color: #F5F5F5;
+		}
+		
+		.c_title2 {
+			background: url(../img/catalog_2.png) no-repeat 4.75mm center;
+			width: 77mm;
+			font-size: 14pt;
+			color: #fff;
+			padding-left: 20mm;
+			background-size: auto 100%;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			color: #F5F5F5;
+		}
+		
+		.c_title3 {
+			background: url(../img/catalog_3.png) no-repeat 4.75mm center;
+			width: 77mm;
+			font-size: 14pt;
+			color: #fff;
+			padding-left: 20mm;
+			background-size: auto 100%;
+			font-family: "微软雅黑";
+			font-weight: bold;
+			color: #F5F5F5;
+		}
+		
+		.catalog .c_title4 {
+			background: url(../img/catalog_4.png) no-repeat 4.75mm center;
+			margin-bottom: 2mm;
+			background-size: auto 100%;
+			font-size: 14pt;
+			color: #fff;
+			padding-left: 19mm;
+			background-size: auto 100%;
+			font-family: "微软雅黑";
+			font-weight: bold;
+		}
+		
+		.detail {
+			margin-bottom: 3mm;
+			width: 100%;
+		}
+		
+		.detail li {
+			height: 9.6mm;
+			line-height: 9.6mm;
+			font-size: 12pt;
+			color: #000;
+			font-weight: normal;
+			background: url(../img/ul_li.png) no-repeat 17mm center;
+			background-size: 2mm 2mm;
+			font-family: "微软雅黑";
+			color: #33BACC;
+			padding-left: 22mm;
+		}
+		
+		.detail li span {
+			padding-left: 10.5mm;
+			width: 45mm;
+			height: 9.6mm;
+			line-height: 9.6mm;
+		}
+		
+		.detail li div {
+			height: 9.6mm;
+			line-height: 9.6mm;
+		}
+		
+		.catalog .c_dot {
+			background: url(../img/dot.png) no-repeat 1mm center;
+			width: 90mm;
+			background-size: 100% auto;
+			padding-left: 0;
+		}
+		
+		.catalog .page {
+			font-size: 13pt;
+			font-family: "微软雅黑";
+			padding: 0 1mm;
+			color: #666;
+			display: block;
+			float: left;
+			width: 10mm;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+		
+		.page4 {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			/* Firefox */
+			-webkit-box-sizing: border-box;
+			background: url(../img/page4.png) no-repeat top center;
+			background-size: 100% 100%;
+			height: 100%;
+		}
+		
+		.to_customer p {
+			font-family: '思源黑体 CN';
+			color: #595757;
+			width: 47.8mm;
+			text-align: right;
+			line-height: 8.6mm;
+		}
+		
+		.to_customer {
+			top: 22mm;
+			left: 1mm;
+			width: 47mm;
+			text-align: right;
+			margin-top: 1mm;
+			color: #595757;
+		}
+		
+		.to_text {
+			font-size: 23pt;
+			font-weight: bold;
+			line-height: 14mm;
+		}
+		
+		.to_text2 {
+			font-size: 19.4pt;
+		}
+		
+		.to_content {
+			width: 135mm;
+			padding-left: 14mm;
+			padding-top: 9mm;
+		}
+		
+		.to_content p {
+			color: #595757;
+			line-height: 7.2mm;
+			font-size: 10pt;
+			height: auto;
+			text-indent: 2em;
+			width: 135mm;
+			letter-spacing: 0
+		}
+		
+		.to_content .toleft {
+			text-indent: 0;
+		}
+		
+		.fouceus {
+			width: 40mm;
+			text-align: center;
+			margin: 0mm 0 0 4mm;
+			top: 200mm;
+			color: #f5f5f5;
+		}
+		
+		.fouceus .line {
+			height: 4mm;
+			border-top: 1px dotted #ececec;
+		}
+		
+		.fouceus .foucecontent {
+			font-size: 8pt;
+			line-height: 4.4mm;
+			margin-bottom: 4mm;
+		}
+		
+		.fouceustxt {
+			font-size: 16pt;
+			line-height: 14mm;
+		}
+		
+		.weixin {
+			margin: 0 auto;
+			background: url(../img/weixin.jpg) no-repeat center center;
+			width: 36mm;
+			height: 36mm;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+			float: left;
+		}
+		
+		.weixin img {
+			height: 100%;
+		}
+		/*疾病页开始*/
+		
+		.page {
+			background: url(../img/pagebg.png) no-repeat top right;
+		}
+		
+		.contentedge {
+			color: #4C4948;
+			width: 188mm;
+			white-space: normal;
+			word-break: break-all;
+			word-wrap: break-word;
+			margin: 0 auto;
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			/* Firefox */
+			-webkit-box-sizing: border-box;
+		}
+		
+		.contentedge table {
+			border-collapse: separate;
+			margin: 0 auto;
+		}
+		
+		.contentedge table th,
+		.contentedge table td {
+			overflow: hidden;
+			padding: 14px 12px;
+			text-align: center;
+		}
+		
+		.contentedge table td {
+			font-size: 9pt;
+		}
+		
+		.contentedge table th {
+			font-size: 10pt;
+		}
+		
+		.pagetitle {
+			font-family: '思源黑体 CN';
+			font-size: 19.8pt;
+			color: #38B3B2;
+			line-height: 18mm;
+			margin-top: 11mm;
+			width: 188mm;
+			margin: 0 auto;
+		}
+		
+		.pageline {
+			height: 2mm;
+			background-color: #3AB4B1;
+			width: 188mm;
+			margin: 0 auto;
+		}
+		
+		.helthtit {
+			color: #707070;
+			font-family: '思源黑体 CN';
+			font-size: 18pt;
+		}
+		
+		.helthstar {
+			vertical-align: middle;
+			width: 60mm;
+			margin: 0 auto;
+			margin-bottom: 8mm;
+			margin: 0 auto;
+			text-align: center;
+			letter-spacing: 0;
+			text-align: center;
+		}
+		
+		.glodstar {
+			vertical-align: middle;
+			display: inline-block;
+			width: 6mm;
+			height: 6mm;
+			background: url(../img/start.png) no-repeat center center;
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+			margin: 1mm;
+		}
+		
+		.greystar {}
+		
+		.helthscore {
+			line-height: 6.6mm;
+			vertical-align: middle;
+			display: inline-block;
+			width: 10mm;
+			height: 6mm;
+			margin: 1mm 0mm 1mm 1mm;
+			color: #595757;
+			font-size: 12pt;
+		}
+		
+		.precent {
+			font-size: 18pt;
+			background: url(../img/pageprecent.png) no-repeat center top;
+			width: 86mm;
+			height: 12.8mm;
+			margin: 0 auto;
+			line-height: 12.6mm;
+			color: #FFFFFF;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+		}
+		
+		.disease_title {
+			height: 8mm;
+			border-bottom: 1px solid #38B3B2;
+		}
+		
+		.textblank {
+			width: 4mm;
+			height: 4mm;
+			background-color: #38B3B2;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 1mm 0;
+		}
+		
+		.good_tag,
+		.badtag {
+			min-height: 30mm;
+			min-height: 30mm;
+			/*高度最小值设置为*/
+			height: auto !important;
+			/*兼容FF,IE7也支持 !important标签*/
+			height: 30mm;
+			/*兼容ie6*/
+			overflow: visible;
+		}
+		
+		.disease_title span {
+			display: inline-block;
+			padding-left: 1mm;
+			vertical-align: middle;
+			height: 6mm;
+			line-height: 6mm;
+			font-size: 13pt;
+			color: #38B3B2;
+		}
+		
+		.tag {
+			height: 6mm;
+			font-size: 12pt;
+			display: inline-block;
+			line-height: 6mm;
+			border-radius: 1mm;
+			color: #38B3B2;
+			margin: 2mm;
+		}
+		
+		.good_tag .tag {
+			color: #38B3B2;
+			padding: 0 2mm;
+			border: 1px solid #39AAA9;
+			background-color: #ECF7F9;
+		}
+		
+		.reminder {
+			height: 50mm;
+			background-color: #006DCC;
+		}
+		
+		.reminder h3 {
+			font-size: 17pt;
+		}
+		
+		.reminder p {
+			color: #F7F8F8;
+			font-size: 10pt;
+			line-height: 6mm;
+		}
+		
+		.second_level_title {
+			font-size: 17pt;
+			background: url(../img/second.png) no-repeat left center;
+			padding-left: 6mm;
+			line-height: 10mm;
+			color: #39AAA9;
+			-webkit-background-size: 5mm auto;
+			background-size: 5mm auto;
+		}
+		
+		.fenxian {
+			background-color: #EFF8FD;
+			color: #39AAA9;
+			line-height: 8mm;
+		}
+		
+		.fenxian tr td:first-child+td+td+td {
+			width: 30mm;
+		}
+		
+		.fenxian tr td,
+		.fenxian tr th {
+			border-bottom: 1px solid #39AAA9;
+			padding: 0 6mm;
+			margin: 0;
+			vertical-align: middle;
+			font-size: 12pt;
+		}
+		
+		.fenxian th {
+			font-size: 14pt;
+			line-height: 13mm;
+			background-color: #C9E7EC;
+			border-top: 1px solid #39AAA9;
+		}
+		
+		.fenxian td div {
+			width: 30mm;
+			height: 5mm;
+			margin: 2mm 2mm;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		
+		.explain {
+			color: #3AB4B1;
+		}
+		
+		.explain_text {
+			color: #4C4948;
+			font-size: 9pt;
+			letter-spacing: 0;
+		}
+		
+		.page_infor {
+			margin: 0 auto;
+			color: #39AAA9;
+			line-height: 8mm;
+		}
+		
+		.page_infor tr td {
+			font-size: 12pt;
+			background-color: #F6F7F7;
+			color: #39AAA9;
+			text-align: center;
+			overflow: hidden;
+			vertical-align: middle;
+			min-width: 120px;
+		}
+		
+		.page_infor td:first-child {
+			background-color: #CCE8EC;
+		}
+		
+		.page_infor tr td.rowtd {
+			border-left: none!important;
+			background-color: #F6F7F7;
+			color: #39AAA9;
+			text-align: center;
+			overflow: hidden;
+			vertical-align: middle;
+			min-width: 120px;
+		}
+		
+		.page_weidian {
+			margin: 0 auto;
+			font-weight: normal;
+			color: #545454;
+			text-align: center;
+			width: 90%
+		}
+		
+		.page_weidian tr th {
+			background-color: #C9E7EC;
+			font-size: 12pt;
+		}
+		
+		.page_weidian tr td {
+			background-color: #ECF6F8;
+			font-size: 11pt;
+		}
+		
+		.zhujie {
+			margin: 0 auto;
+			width: 98%;
+		}
+		
+		.zhujie p {
+			background: url(../img/pstar.png) no-repeat 0.2mm 0.2mm;
+			-webkit-background-size: 4mm auto;
+			background-size: 4mm auto;
+			text-indent: 2em;
+			margin-bottom: 1mm;
+		}
+		
+		.weidian2 {
+			height: 18mm;
+			width: 90%;
+			background: url(../img/weidian2.png) no-repeat top left;
+			-webkit-background-size: 100% auto;
+			background-size: 100% auto;
+			margin: 0 auto;
+			font-size: 9pt;
+			color: #4C4948;
+			font-weight: bold;
+			letter-spacing: 0;
+			line-height: 12mm;
+			text-align: center;
+		}
+		
+		.contentedge p {
+			font-size: 9pt;
+			color: #4C4948;
+			line-height: 5mm;
+			text-indent: 2em;
+			letter-spacing: 0;
+		}
+		
+		.linebr {
+			height: 2mm;
+			border-bottom: 1px solid #D0E9EB;
+			clear: both;
+		}
+		
+		.divindent {
+			width: 98%;
+			margin: 0 auto;
+		}
+		
+		.divindent h1 {
+			line-height: 4mm;
+			height: 4mm;
+			padding-left: 5mm;
+			font-size: 10pt;
+			font-weight: normal;
+			color: #39AAA9;
+			background: url(../img/pstar.png) no-repeat 0.2mm 0.2mm;
+			-webkit-background-size: 4mm auto;
+			background-size: 4mm auto;
+		}
+		
+		.divindent p {
+			text-indent: 0;
+			margin-bottom: 4mm;
+		}
+		
+		.page_infor3 tr th,
+		page_infor3 tr td {
+			font-size: 10pt;
+			min-width: 60px;
+		}
+		
+		.page_infor3 tr th {
+			background-color: #C8E7EC;
+		}
+		
+		.refrence {
+			border: 1px solid #39AAA9;
+			padding: 8px;
+		}
+		/*结尾页*/
+		
+		.page_back1 {
+			background: url(../img/page_back1.png) no-repeat center center;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+			width: 204mm;
+			margin: 0 auto;
+			height: 285mm
+		}
+		
+		.page_back2 {
+			background: url(../img/page_back2.png) no-repeat bottom center;
+			-webkit-background-size: 100% auto;
+			background-size: 100% auto;
+			width: 204mm;
+			margin: 0 auto;
+			height: 285mm
+		}
+		
+		.page_back3 {
+			background: url(../img/page_back3.png) no-repeat center center;
+			-webkit-background-size: 100%;
+			background-size: 100%;
+			width: 204mm;
+			margin: 0 auto;
+			height: 285mm
+		}
+		
+		.pageback {
+			font-size: 9pt;
+			padding: 0 6mm;
+			vertical-align: middle;
+			margin: 0 auto;
+			border-top: 1px solid #D0E9EB;
+		}
+		
+		.circle {
+			font-size: 12pt;
+			color: #262626;
+			font-weight: bold;
+			display: table-cell;
+			width: 30mm;
+			height: 30mm;
+			border-radius: 50%;
+			text-align: center;
+			vertical-align: middle;
+		}
+		
+		.bc1 {
+			border: 2mm solid #C4D343;
+		}
+		
+		.bc2 {
+			border: 2mm solid #00B4E1;
+		}
+		
+		.bc3 {
+			border: 2mm solid #38B3B2;
+		}
+		
+		.bc4 {
+			border: 2mm solid #F39800;
+		}
+		
+		.circle div {
+			margin: auto;
+			width: 100%;
+			color: #231815;
+			vertical-align: middle;
+			line-height: 6mm;
+		}
+		
+		.b_content {
+			height: 34mm;
+			width: 114mm;
+			margin: auto;
+			display: table;
+			vertical-align: middle;
+		}
+		
+		.b_content p {
+			background: url(../img/bstar.jpg) no-repeat 20px 1mm;
+			-webkit-background-size: 4mm auto;
+			background-size: 4mm auto;
+			text-indent: 0;
+			padding-left: 36px;
+			line-height: 6mm;
+		}
+		
+		.b_content div {
+			margin: auto;
+			display: table-cell;
+			vertical-align: middle;
+			line-height: 6mm;
+		}
+		
+		.b_intro {
+			color: #fff;
+			width: 52mm;
+			padding: 0 5mm;
+			font-size: 9pt;
+			line-height: 5mm;
+		}
+		
+		.bp_content {
+			width: 80%;
+			margin: 0 auto;
+		}
+		/*打印样式*/
+		
+		@media print {
+			.noprint {
+				display: none
+			}
+			.content {
+				border: none;
+				overflow: hidden
+			}
+			.canedit {
+				visibility: hidden;
+			}
+		}
+	</style>
+
+	<body>
+		<div class="editor" contenteditable="true">
+			<div class="content">
+				<div class="canedit"></div>
+				<div class="canedit"></div>
+				<h1 class="title tc xiaoyi wryh fb">个人基因检测报告</h1>
+				<div style="height: 250px;display: block;overflow: hidden;">
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+				</div>
+				<table class="fenmian sanhao fb songti">
+					<tr>
+						<td>姓名：</td>
+						<td>刘同明</td>
+					</tr>
+					<tr>
+						<td>性别：</td>
+						<td>男</td>
+					</tr>
+					<tr>
+						<td>手机号：</td>
+						<td>18611068721&nbsp;检</td>
+					</tr>
+					<tr>
+						<td>测项目：</td>
+						<td>老人长寿套餐样本</td>
+					</tr>
+					<tr>
+						<td>编号：</td>
+						<td>100251375722155</td>
+					</tr>
+				</table>
+				<div style="height: 310px;display: block;">
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+					<div class="canedit"></div>
+				</div>
+				<div class="sanhao tc lh1">杭州和壹基因科技有限公司</div>
+				<div class="sanhao tc calibri lh2">2016-10-20</div>
+			</div>
+		</div>
+		<div class="editor" contenteditable="true">
+			<div class="content">
+				<h1 class="wryh sanhao fb tc">致客户</h1>
+				<div class="canedit"></div>
+				<p id="toto">尊敬的田正先生：</p>
+				<p class="ti lh22">您好！</p>
+				<p class="ti lh22">非常感谢您选择壹基因为您提供的基因检测服务。基因信息与每一个人的健康息息相关，我们通过对您基因进行精准检测，根据检测结果进行了科学专业的解读，并提供了疾病预防和确诊相关信息。</p>
+				<p class="ti lh22">根据基因信息，一般每个人将得到以下三种不同遗传风险中的一种：</p>
+				<p class="ti lh22">高遗传风险，您携带较多或重要的疾病易感基因致病突变，患病风险高，需要您采取相应的措施，避免疾病的产生。</p>
+				<p class="ti lh22">正常遗传风险，您没有或者携带了少数风险基因型，但不会影响你的健康。</p>
+				<p class="ti lh22">低遗传风险，您携带了个别或者多个抑制疾病发生的易感基因突变，患病风险低，保持健康生活即可。</p>
+				<p class="ti lh22">现代医学认为几乎所有慢性疾病都是由于内因（基因）和外因（生活、环境等因素）共同作用决定的。由于不同个体的基因之间存在一定差异，所以了解人体内疾病易感基因的情况，可以帮助预测出疾病发生的风险，从而做到早预防早诊断早治疗，实现“上医治未病”的社会目标。</p>
+				<p class="ti lh22">本报告是通过对受检者提供的生物样本（一般为口腔黏膜细胞）进行基因检测，依据国际有关疾病易感基因的公开研究成果和数据，参考国际权威23 and me，对检测结果进行分析，计算出受检者患某些疾病的风险指数。</p>
+				<p class="ti lh22">本报告内容还包括依据患病风险给出相应的饮食、生活、常规体检等一般性建议。本报告旨在帮助受检者科学合理地针对个人遗传特点来加强自身的健康管理，以达到预防疾病、提高生活品质的目的。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+				<p class="ti lh22">本报告内容还包括依据患病风险给出相应的饮食、生活、常规体检等一般性建议。本报告旨在帮助受检者科学合理地针对个人遗传特点来加强自身的健康管理，以达到预防疾病、提高生活品质的目的。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+				<p class="ti lh22">本报告内容还包括依据患病风险给出相应的饮食、生活、常规体检等一般性建议。本报告旨在帮助受检者科学合理地针对个人遗传特点来加强自身的健康管理，以达到预防疾病、提高生活品质的目的。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+				<p class="ti lh22">本报告内容还包括依据患病风险给出相应的饮食、生活、常规体检等一般性建议。本报告旨在帮助受检者科学合理地针对个人遗传特点来加强自身的健康管理，以达到预防疾病、提高生活品质的目的。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+				<p class="ti lh22">本报告内容还包括依据患病风险给出相应的饮食、生活、常规体检等一般性建议。本报告旨在帮助受检者科学合理地针对个人遗传特点来加强自身的健康管理，以达到预防疾病、提高生活品质的目的。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+				<p class="ti lh22">杭州和壹基因科技有限公司向您郑重承诺：不向任何无关方透露本报告中涉及的个人隐私信息，并承担因此而产生的有关法律责任。</p>
+
+				<div class="canedit"></div>
+				<p class="tc lh26">关注我们</p>
+				<p class="ti lh22">了解最新壹基因健康资讯、行业信息、产品信息、健康知识及相关活动等信息，请及时关注“壹基因商城”、“壹基因爱健康”微信公众号。</p>
+				<div class="clear">
+					<div class="weixin">
+						<img src="img/weixin.jpg" />
+						<div class="wuhao">壹基因爱健康</div>
+					</div>
+					<div class="weixin">
+						<img src="img/weixin.jpg" />
+						<div class="wuhao">壹基因商城</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="editor" contenteditable="true">
+			<div class="content" contenteditable="true">
+				<h1 class="songti sihao fb">您的基因和疾病风险概况</h1>
+				<p class="ti">本次检测共有25项，其中心血管疾病6项，肿瘤类疾病3项，老年类疾病4项，代谢类疾病2项，精神类疾病2项，自身免疫类疾病2项，营养代谢类4项，个性特质类1项。</p>
+				<p class="ti">检测结果显示，您需要特别注意的项目为肺癌、强迫症的患病风险较高，钙吸收利用能力较弱，维生素B12吸收利用能力弱；优于常人的项目为房颤和II型糖尿病风险低。</p>
+				<p class="ti">基因检测意义在于提前预知疾病的发生风险，便于及早发现、预防、为临床确诊提供参考依据。对于风险低的检测结果，并不代表发病率为0，后天因素也是影响疾病发生的重要方面。鉴于您的基因检测结果，您可能需要对个别项目进行健康咨询并进行相应的身体检查，之后也需要定期体检，避免或延缓疾病的发生。</p>
+				<div class="canedit"></div>
+				<p class="ti">了解最新壹基因健康资讯、行业信息、产品信息、健康知识及相关活动等信息，请及时关注“壹基因商城”、“壹基因爱健康”微信公众号。</p>
+				<div class="canedit"></div>
+				<h1 class="songti sihao fb">您的疾病风险评估汇总</h1>
+				<table class="fenxian tc songti" cellpadding="0" cellspacing="0">
+					<thead>
+						<th>检测项目</th>
+						<th>风险指数</th>
+						<th colspan="2">风险等级</th>
+					</thead>
+					<tr>
+						<td>心肌梗死</td>
+						<td>0.97</td>
+						<td></td>
+						<td>较高</td>
+					</tr>
+					<tr>
+						<td>房颤</td>
+						<td>0.40</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>高血压</td>
+						<td>1.00</td>
+						<td></td>
+						<td>正常</td>
+					</tr>
+					<tr>
+						<td>高血脂症</td>
+						<td>1.06</td>
+						<td></td>
+						<td>较低</td>
+					</tr>
+					<tr>
+						<td>冠心病</td>
+						<td>1.00</td>
+						<td></td>
+						<td>正常</td>
+					</tr>
+					<tr>
+						<td>静脉栓塞</td>
+						<td>0.92</td>
+						<td></td>
+						<td>正常</td>
+					</tr>
+					<tr>
+						<td>结直肠癌</td>
+						<td>0.92</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>胃癌</td>
+						<td>0.95</td>
+						<td></td>
+						<td>正常</td>
+					</tr>
+					<tr>
+						<td>肺癌</td>
+						<td>1.20</td>
+						<td></td>
+						<td>较高</td>
+					</tr>
+					<tr>
+						<td>白内障</td>
+						<td>1.20</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>老年痴呆</td>
+						<td>1.20</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>老年黄斑变性</td>
+						<td>1.20</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>帕金森综合征</td>
+						<td>1.20</td>
+						<td></td>
+						<td>正常</td>
+					</tr>
+					<tr>
+						<td>痛风</td>
+						<td>1.20</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>II型糖尿病</td>
+						<td>1.20</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>抑郁症</td>
+						<td>1.20</td>
+						<td></td>
+						<td>低</td>
+					</tr>
+					<tr>
+						<td>强迫症</td>
+						<td>1.20</td>
+						<td></td>
+						<td>较高</td>
+					</tr>
+					<tr>
+						<td>类风湿性关节炎</td>
+						<td>1.20</td>
+						<td></td>
+						<td>高</td>
+					</tr>
+					<tr>
+						<td>系统性红斑狼疮</td>
+						<td>1.20</td>
+						<td></td>
+						<td>较低</td>
+					</tr>
+				</table>
+				<div class="canedit"></div>
+				<div class="clear">
+					<div style="line-height: 54px;" class="fl">风险等级说明：</div>
+					<div class="fl"><img src="img/danger.png" alt="" /></div>
+				</div>
+				<div>风险指数说明：自主研发风险指数体系，参照行业标杆23 and me的计算方法。</div>
+			</div>
+		</div>
+		<div class="editor" contenteditable="true">
+			<div class="content">
+				<div class="canedit"></div>
+				<h1 class="songti sihao fb">您的个性特质评估汇总</h1>
+				<table class="fenxian tc songti" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>检测项目</td>
+						<td>评价</td>
+					</tr>
+					<tr>
+						<td>抗空气污染能力</td>
+						<td>抗空气污染能力正常</td>
+					</tr>
+				</table>
+
+				<div class="canedit"></div>
+				<h1 class="songti sihao fb">您的营养吸收评估汇总</h1>
+				<table class="fenxian tc songti" cellpadding="0" cellspacing="0">
+					<tr>
+						<td>检测项目</td>
+						<td>评价</td>
+					</tr>
+					<tr>
+						<td>维生素B12吸收利用能力</td>
+						<td>维生素B12吸收利用能力弱</td>
+					</tr>
+					<tr>
+						<td>维生素D吸收利用能力</td>
+						<td>维生素D吸收利用能力正常</td>
+					</tr>
+					<tr>
+						<td>钙吸收利用能力</td>
+						<td>钙吸收利用能力较弱</td>
+					</tr>
+					<tr>
+						<td>铁吸收利用能力</td>
+						<td>铁吸收利用能力正常</td>
+					</tr>
+				</table>
+				<div class="canedit"></div>
+				<div class="canedit"></div>
+				<h1 class="link xiaosan fb">一、心血管类疾病—心肌梗死</h1>
+				<h2 class="songti sihao fb tit">心肌梗死简介</h2>
+				<div class="clear pd510">
+					<p class="fl ti lh22 wuhao ls0">
+						<img src="img/xjgs.jpg" class="fr" width="230" /> 心肌梗死又名心肌梗塞，是指急性、持续性缺血、缺氧（冠状动脉功能不全）所引起的心肌坏死；指在冠状动脉病变的基础上，冠状动脉的血液中断，使相应的心肌出现严重而持久地急性缺血，最终导致心肌的缺血性坏死；发生急性心肌梗塞的病人，在临床上常有持久的胸骨后剧烈疼痛、发热、白细胞计数增高、血清心肌酶升高以及心电图反映心肌急性损伤、缺血和坏死的一系列特征性演变，并可出现心律失常、休克和心力衰竭，属冠心病的严重类型，可并发心律失常、休克或心力衰竭等合并症，常可危及生命。
+					</p>
+				</div>
+				<h2 class="songti sihao fb tit">心肌梗死致病因素</h2>
+				<p class="ti lh22 wuhao ls0 pd510">过劳、激动、暴饮暴食、大量饮酒和吸烟等不良习惯可通过诱发冠状动脉痉挛及心肌耗氧量增加而诱发急性心肌梗死。</p>
+				<h2 class="songti sihao fb tit">基因检测结果</h2>
+				<h3 class="songti xiaosi tc">您的心肌梗死风险正常</h3>
+				<div class="canedit"></div>
+				<canvas id="c1" width="500" height="300" class="matuo" style="width: 260;">请使用ie9以上版本，或者其他浏览器查看柱状图</canvas>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript" src="js/paiban.js"></script>
+<script>
+	//console.log($(".editor").eq(0).find(".content").children().eq(0))
+	$(".editor").each(function(i) {
+		var inner_h = $(this).find(".content").height();
+		if(inner_h / 3.78 <= 285) {
+			$(this).find(".content").css({
+				'height': '100%'
+			})
+		} else {
+			var outer_top = [];
+			out_elem = $(this).find(".content").children();
+			//console.log(i)
+			out_elem.each(function(j) {
+				//console.log(j)
+				out_elem_h = $(this).height();
+				out_elem_t = $(this).offset().top - $(this).parent().offset().top;
+				//console.log(out_elem_t)
+				if((out_elem_h + out_elem_t) >= 285 * 3.78) {
+					outer_top.push(j);
+
+				}
+			})
+			var neweditor = $("<div class='editor'><div class='content'></div></div>");
+			console.log(i)
+			$(this).after(neweditor);
+			neweditor.find('.content').css({
+				'height': '100%'
+			})
+			console.log(outer_top)
+			for(var k = outer_top.length - 1; k >= 0; k--) {
+				var ki = parseInt(outer_top[k]);
+				console.log(ki);
+				var more_elem = $(this).find(".content").children().eq(ki);
+				console.log(more_elem)
+				more_elem.remove();
+
+				neweditor.find('.content').prepend(more_elem);
+			}
+			$(this).find(".content").css({
+				"height": "100%"
+			})
+		}
+	})
+</script>
