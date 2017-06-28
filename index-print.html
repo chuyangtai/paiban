@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>壹基因检测报告</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/children.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://cdn.bootcss.com/remodal/1.1.0/remodal.min.js"></script>
+		<script src="http://cdn.bootcss.com/echarts/3.2.3/echarts.min.js"></script>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script type="text/javascript" src="js/remodal.js"></script>
+		<script type="text/javascript" src="js/paiban.js"></script>
+		<!--[if lt IE 8]>
+	    	<div style="position:absoulute;left:0;top:0;width:100%;height:50px;background:rgb(255,255,233);color:rgb(30,84,148);border-bottom:1px solid rgb(230,230,198);text-align:center;line-height:50px;font-size:12px;">您使用的浏览器版本过低，可能会影响到您的打印效果，请升级到IE8以上或者更换其他浏览器</div>
+	    	<![endif]-->
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" type="text/css" href="css/itie8.css" />
+	   	 	<script src="https://nie.res.netease.com/comm/html5/html5shiv.js"></script>
+	    <![endif]-->
+	</head>
+	<!--
+		作者：1944169531@qq.com
+		时间：2017-03-16
+		描述：电子章需要手动写
+		T套餐的结果页面由于循环问题，将标题写在模板里，天赋包用H的模板
+		T+H由于一个条码对应两个套餐，因此比较复杂，增加一些代码量和逻辑
+		rs_码转og_码
+	-->
+
+	<body>
+		<div id="vuemain" v-cloak>
+			<!--固定背景页 start-->
+			<div id="fixelem">
+			</div>
+			<!--固定背景页 end-->
+			<!--首页页star/h+t套餐先出T-->
+			<div class="page" :class="{'page1':package_id==1,'page1_t':package_id==2||package_id==4,'page1_adult':package_id==3}">
+				<div class="page1_p1 matuo page_color1" contenteditable='true'>
+					<div class="tit">
+						<div class="tit_line">
+							<p class="fs26 marb6" v-if='package_id==1'>宝贝密码H+</p>
+							<p class="fs26 marb6" v-if='package_id==2||package_id==4'>宝贝密码T+</p>
+							<p class="fs36" v-if="package_id!=3">检测报告</p>
+						</div>
+						<p class="fs11 martop4" v-if='package_id==1'>指导营养补充，呵护宝宝健康</p>
+						<p class="fs11 martop4" v-if='package_id==2||package_id==4'>发掘天赋潜能，培养优势成长</p>
+					</div>
+					<div class="fs10 pa" :class="{'page1_txt':package_id==1,'page1_txt_t':package_id==2||package_id==4}" v-if="package_id!=3">让基因科技为每个人的健康服务</div>
+				</div>
+			</div>
+			<!--间隔页-->
+			<div class="spacepage"></div>
+			<div class="spacepage"></div>
+			<div class="spacepage"></div>
+			<div class="page" :class="{'page2':package_id==1,'page2_t':package_id==2||package_id==3||package_id==4}">
+				<div class="page_p2 matuo" contenteditable='true'>
+					<h2 v-if="package_id==3" class="fs22 lh14 ls0 col1_t" style="padding-left: 10mm;">尊敬的 <span class="name_t">{{name}}</span> <span v-if="sex=='女'">女士</span><span v-if="sex=='男'">先生</span>：</h2>
+					<h2 v-else class="fs22 lh14 ls0" style="padding-left: 10mm;" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">尊敬的家长：</h2>
+					<p class="lh6"></p>
+					<div class="welcome_txt">
+						<p class="ti0">您好！</p>
+						<p class="lh6"></p>
+						<p v-if="package_id==3">衷心感谢您对我们的信任，选择壹基因成人健康基因检测服务！</p>
+						<p v-else>衷心感谢您对我们的信任，选择壹基因宝贝密码儿童基因检测服务！</p>
+						<p class="lh6"></p>
+						<p v-if="package_id==3">当您收到这份报告书的时候，我们已经根据您的需求，秉持科学、专业、严谨和保密的态度为您完成了本次基因检测，并根据您的个人特有基因检测结果进行了全面深入的分析。</p>
+						<p v-else>当您收到这份报告书的时候，我们已经根据您的需求，秉持科学、专业、严谨和保密的态度为您的孩子完成了本次基因检测，并根据您孩子的个人特有基因检测结果进行了全面深入的分析。</p>
+						<p class="lh6"></p>
+						<p v-if='package_id==1'>孩子的健康受到先天遗传和后天环境以及家庭养护等多方面的影响 , 基因检测的最大意义在于了解孩子先天的遗传风险，可以通过改变后天环境、调整养护方式，助力孩子健康成长。</p>
+						<p v-if='package_id==2||package_id==4'>爱迪生说过：天才是 1% 的天赋加上 99% 的汗水，但那 1％的天赋，甚至比 99％的汗水都要重要。研究发现，人的成功 32%-62% 是由基因决定的，成功 = 基因 + 环境+ 个人努力，教育孩子是一个长期的过程，孩子的最佳天赋开发期是 0~12 岁，只有尽早发现孩子的天赋潜能并及时开发，才能让孩子在特长培养方面事半功倍。</p>
+						<p v-if='package_id==3'>现代医学研究表明，所有疾病（除外伤）的发生均与基因有关，而易感基因与疾病的发生有着非常密切的关系，患病是基因（内因）与外部环境（外因）共同作用的结果。我们只有了解自身的基因奥秘、预测出疾病的发生风险，才能更好的利用现代医学手段，做到早预防、早诊断、早治疗，实现“上医治未病”的目的。</p>
+						<p class="lh6"></p>
+						<p v-if='package_id==1'>宝贝密码 H+ 儿童健康套餐通过检测儿童常见疾病、遗传病、不良倾向、维生素、矿物元素和其他营养素六大类共计 39 个项目的相关基因，从根本上解开您孩子的先天遗传密码，进而可以帮助您了解孩子的健康风险和营养吸收能力，综合评估孩子的身体健康状况 ,指导重点预防高风险疾病 , 尽早采取针对性的干预措施 , 同时科学指导孩子对各种成长所需营养物质的合理补充 , 帮助孩子茁壮成长。</p>
+						<p v-if='package_id==2'>宝贝密码 T+ 儿童天赋基因检测套餐通过检测孩子天赋、情商、智商和性格四个方面的先天遗传信息，从源头上解开您孩子天生所带的基因密码，可以帮助我们更科学、更早的了解孩子先天的优势及不足，进而在培养和教育孩子的道路上做到有的放矢、因材施教，帮助孩子早日成才。</p>
+						<p v-if='package_id==3'>本报告是通过对受检者提供的生物样本（一般为口腔黏膜细胞）进行基因检测，依据国际有关疾病易感基因的公开研究成果和数据，参考国际权威23andme，对检测结果进行分析，计算出受检者患某些疾病的风险指数。医学专家顾问团队依据患病风险等级给出针对性的饮食、运动、常规体检等方面的健康建议，旨在帮助受检者根据个人基因信息，科学合理地加强自身健康管理，预防疾病的发生。</p>
+						<p class="lh6" v-if='package_id!=4'></p>
+						<p>希望本次检测能为您带来舒适满意的体验，针对本次检测，如果您有任何疑问需要解答，敬请拨打我们的健康热线400-163-5588。我们恭候您的来电，并保证给予及时、专业、贴心的回复。</p>
+						<p class="lh6"></p>
+						<p v-if="package_id==3">壹基因衷心祝愿您身体健康、享受品质生活！ </p>
+						<p v-else>壹基因衷心祝愿您的孩子健康成长、早日成才！ </p>
+					</div>
+				</div>
+			</div>
+			<!--引导页 end-->
+			<!--间隔页-->
+			<div class="spacepage"></div>
+			<!--受检人信息start-->
+			<div class="page" :class="{'page3':package_id==1,'page3_t':package_id==2||package_id==3||package_id==4}">
+				<div class="page_p3 matuo">
+					<h1 class="lh34 fs22" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==3||package_id==4}">受检者个人基本信息</h1>
+					<p class="fs14" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==3||package_id==4}">Personal information</p>
+					<div class="blank10"></div>
+					<div class="lh31">
+						<table class="fs10">
+							<tr>
+								<td width="80">姓 名： </td>
+								<td v-text="name"></td>
+							</tr>
+							<tr>
+								<td>性 别：</td>
+								<td v-text="sex"></td>
+							</tr>
+							<tr v-if="age!=0">
+								<td>年 龄： </td>
+								<td v-text="age"></td>
+							</tr>
+							<tr>
+								<td>样本编号： </td>
+								<td v-text="sample_number"></td>
+							</tr>
+							<tr>
+								<td>收样日期：</td>
+								<td v-text="sample_date"></td>
+							</tr>
+							<tr>
+								<td>报告日期： </td>
+								<td v-text="report_date"></td>
+							</tr>
+							<tr>
+								<td>检测项目：</td>
+								<td v-if='package_id==1||package_id==2||package_id==4'> {{package_name}} </td>
+								<td v-if='package_id==3'> {{package_name}} </td>
+							</tr>
+						</table>
+					</div>
+					<p class="fs22 lh14"></p>
+					<p class="lh6"></p>
+					<p class="lh6"></p>
+
+					<div class="datatime fs10 lh31 tr">
+						<p v-if="package_id!=3">签名 / 壹基因健康电子章</p>
+						<p>{{report_date}}</p>
+					</div>
+				</div>
+			</div>
+			<!--受检人信息end-->
+			<!--间隔页-->
+			<div class="spacepage"></div>
+			<!--T目录start-->
+			<div class="catalog matuo fs12 spacepage catalog_t" v-if="package_id==2||package_id==4" contenteditable="true">
+				<div class="catalog_img_t color1 col1_t">目录</div>
+				<div class="fl cata_fl">
+					<h2 class="lh32" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">检测结果概况</h2>
+					<table>
+						<tr>
+							<td>综合评价</td>
+							<td>001</td>
+						</tr>
+						<tr>
+							<td>结果概览</td>
+							<td>002</td>
+						</tr>
+					</table>
+					<h2 class="lh32" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">详细检测结果</h2>
+					<div v-for='c in catalog_flItmes'>
+						<!--取四类-->
+						<h3 class="lh20 col1_t">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table cata_t">{{item.name}}</td>
+								<td>007</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="fr cata_fr lh31" v-cloak>
+					<div v-for='c in catalog_frItmes'>
+						<h3 class="lh20 col1_t">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table cata_t">{{item.name}}</td>
+								<td>021</td>
+							</tr>
+						</table>
+					</div>
+					<h3 class="lh20 col1_t">结束语</h3>
+				</div>
+				<!--T目录end-->
+				<div class="clear"></div>
+			</div>
+			<!--T目录end-->
+			<!--H目录-->
+			<div class="catalog matuo fs12 spacepage catalog_h" v-if="package_id==1" contenteditable="true">
+				<div class="catalog_img color1">目录</div>
+				<div class="fl cata_fl">
+					<h2 class="lh32" :class="{'color1':package_id==1,'col1_t':package_id==2}">检测结果概况</h2>
+					<table>
+						<tr>
+							<td>综合评价</td>
+							<td>001</td>
+						</tr>
+						<tr>
+							<td>结果概览</td>
+							<td>002</td>
+						</tr>
+					</table>
+					<h2 class="lh32" :class="{'color1':package_id==1,'col1_t':package_id==2}">详细检测结果</h2>
+					<div v-for='c in catalog_flItmes'>
+						<h3 class="lh20 color1">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table cata_h">{{item.name}}</td>
+								<td>012</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="fr cata_fr lh31" v-cloak>
+					<div v-for='c in catalog_frItmes'>
+						<h3 class="lh20 color1">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table cata_h">{{item.name}}</td>
+								<td>012</td>
+							</tr>
+						</table>
+					</div>
+					<h3 class="lh20 color1">结束语</h3>
+				</div>
+				<!--H目录end-->
+				<div class="clear"></div>
+			</div>
+			<!--成人目录-->
+			<div class="catalog_adult matuo fs12 spacepage" v-if="package_id==3" contenteditable="true">
+				<div class="catalog_img_t col1_t">目录</div>
+				<div class="fl cata_fl">
+					<h2 class="lh30 col1_t">检测结果概况</h2>
+					<table>
+						<tr>
+							<td>综合评价</td>
+							<td>001</td>
+						</tr>
+						<tr>
+							<td>结果概览</td>
+							<td>002</td>
+						</tr>
+					</table>
+					<h2 class="lh30 col1_t">详细检测结果</h2>
+					<div v-for='c in datas'>
+						<h3 class="lh20 col1_t" v-if="c.items.length>0">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table">{{item.name}}</td>
+								<td>012</td>
+							</tr>
+						</table>
+					</div>
+					<h3 class="lh20 col1_t">结束语</h3>
+				</div>
+				<div class="fr cata_fr" v-cloak>
+
+				</div>
+				<div class="clear"></div>
+			</div>
+
+			<!--间隔页-->
+			<div class="spacepage"></div>
+			<!--封面页start-->
+			<div class="page" :class="{'cover1':package_id==1,'cover1_t':package_id==2||package_id==4,'cover1_a':package_id==3}" contenteditable="true">
+				<div class="cover matuo">
+					<div class="cover_txt fs50 spacepage">检测结果概况</div>
+				</div>
+			</div>
+			<div class="page" :class="{'cover2':package_id==1,'cover2_t':package_id==2||package_id==3||package_id==4,'cover2_a':package_id==3}">
+				<div class="spacepage"></div>
+			</div>
+			<!--封面页end-->
+			<!--T内容页start-->
+			<!--T综合评价-->
+			<div v-if="package_id==2||package_id==4">
+				<div class="page t_model">
+					<div class="result2 matuo" v-cloak>
+						<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+						<div class="tlt_txt">检测结果概况</div>
+						<div>
+							<h1 class="lh38 item_name" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">综合评价</h1></div>
+						<div class="lh20" v-if="package_id==2">
+							<p>本次检测包括 <span class="fs14 col1_t">天赋、智商、情商、性格</span> 四大维度
+								<p>检测了 <span class="fs14" :class="{'color1':package_id==1,'col1_t':package_id==2}">{{gene_number}}</span> 个基因位点</p>
+								<p>共计 <span class="fs14" :class="{'color1':package_id==1,'col1_t':package_id==2}">{{item_number}}</span> 项检测项目</p>
+						</div>
+						<!--T+H-->
+						<div class="lh20" v-if="package_id==4">
+							<p>本次检测包括 <span class="fs14 col1_t">天赋、智商、情商、性格</span>四大维度
+								<p>检测了 <span class="fs14 col1_t">{{gene_number_t}}</span> 个基因位点</p>
+								<p>共计 <span class="fs14 col1_t">{{item_number_t}}</span> 项检测项目</p>
+						</div>
+						<div class="blank20"></div>
+						<p class="fs14 col1_t">您的孩子具有以下个性特征：</p>
+						<div class="model" v-if="package_id==2">
+							<!--字从少到多右中，左中，中，其他随意-->
+							<div class="pa center_tag">{{good_items[0]}}</div>
+							<div class="pa lt_tag">{{good_items[1]}}</div>
+							<div class="pa rb_tag">{{good_items[2]}}</div>
+							<div class="pa rt_tag">{{good_items[3]}}</div>
+							<div class="pa rc_tag">{{good_items[4]}}</div>
+							<div class="pa lc_tag">{{good_items[5]}}</div>
+						</div>
+						<!--T+H-->
+						<div class="model" v-if="package_id==4">
+							<!--字从少到多右中，左中，中，其他随意-->
+							<div class="pa center_tag">{{good_items_t[0]}}</div>
+							<div class="pa lt_tag">{{good_items_t[1]}}</div>
+							<div class="pa rb_tag">{{good_items_t[2]}}</div>
+							<div class="pa rt_tag">{{good_items_t[3]}}</div>
+							<div class="pa rc_tag">{{good_items_t[4]}}</div>
+							<div class="pa lc_tag">{{good_items_t[5]}}</div>
+						</div>
+						<div class="lh20 fs10 notice">
+							<h3 :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==3||package_id==4}">用户须知</h3>
+							<p>1.检测位点的筛选基于国际权威数据库及权威学术杂志的文献报道；</p>
+							<p>2.鉴于基因与表型关联的复杂性及科研水平局限性，本次检测无法覆盖与检测项目相关的所有位点；</p>
+							<p>3.数据库将随着检测人数的增加和科学研究的深入定期升级优化；</p>
+							<p v-if="package_id==1">4.检测结果可作为疾病预防和健康管理的参考信息，不能作为临床诊断依据；</p>
+							<p v-if="package_id==2||package_id==4">4.检测结果可作为天赋开发和成才培养的参考信息，不能作为医学诊断依据；</p>
+							<p v-if="package_id==1">5.基因是疾病发生和营养吸收的重要影响因素，但后天环境和生活方式也会产生一定影响。</p>
+							<p v-if="package_id==2||package_id==4">5.基因是影响孩子天赋开发和成才的先天因素，但教育、环境、个人努力等后天因素往往具有更重要作用。</p>
+						</div>
+						<div class="pagenumber">001</div>
+					</div>
+				</div>
+				<!--T结果概览-总雷达图，T/天赋包-->
+				<div class="result2 matuo" v-if="package_type=='child_t'||package_type=='telent_package'||package_type=='child_th'" v-cloak>
+					<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div>
+						<h1 class="lh40 item_name" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">结果概览</h1></div>
+					<div class="lh26" v-if="package_type=='child_h'">
+						<p>本次检测包括 <span class="fs14" :class="{'color1':package_id==1,'col1_t':package_id==2}" v-for="(c,index) in datas"><span v-if="index<typenum-1">{{c.classname}}、</span><span v-else>{{c.classname}}</span></span>共计<span class="col1_t">{{typenum}}</span>大类</p>
+					</div>
+					<div class="lh26" v-if="package_type=='child_t'||package_type=='child_th'">
+						<p>天赋检测包括 <span class="fs14 col1_t">运动天赋、交际天赋、语言天赋、绘画天赋、音乐舞蹈天赋</span> 共计 <span class="fs14 col1_t">5 </span>大类，<span class="fs14 col1_t">26 </span>项</p>
+					</div>
+					<div class="blank30"></div>
+					<div class="blank30"></div>
+					<div class="card section section-talent mato">
+						<div id="section-content" class="section-content">
+							<div class="radarall" id="radarall"></div>
+							<div id="clickitem">
+								<a>
+									<div class="legend legend2">
+										<div class="bg-sprite imgbox"></div><br>运动天赋
+									</div>
+								</a>
+								<a>
+									<div class="legend legend3">
+										<div class="bg-sprite imgbox"></div><br>交际天赋
+									</div>
+								</a>
+								<a>
+									<div class="legend legend4">
+										<div class="bg-sprite imgbox"></div><br>语言天赋
+									</div>
+								</a>
+								<a>
+									<div class="legend legend5">
+										<div class="bg-sprite imgbox"></div><br>绘画天赋
+									</div>
+								</a>
+								<a>
+									<div class="legend legend6">
+										<div class="bg-sprite imgbox"></div><br>音乐舞蹈<br>天赋
+									</div>
+								</a>
+							</div>
+						</div>
+						<div style="padding: 10px 0 24px 0;" class="radar_p"><img src="images/rader_p.png"></div>
+					</div>
+					<div class="pagenumber"></div>
+				</div>
+				<!--T大类雷达图,一页一页排布，h全套4页，天赋包2页,level/0,2正向/2是正常/3,4是反向-->
+				<div class="result matuo" v-cloak v-if="package_type=='child_t'||package_type=='telent_package'||package_type=='child_th'">
+					<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div v-for="(c,index) in datas" v-if="c.classid==7||c.classid==8" :class="{'result_fr_t':c.classid%2==0,'result_fl_t':c.classid%2!=0}">
+						<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+						<div class="card section scalel">
+							<div class="slide ">
+								<div class="secondary-item-introduce">
+								</div>
+								<div class="radar2" :id="'radar'+index"></div>
+								<div class="radar_p" style="padding: 10px 0 24px 0;">
+									<img src="images/rader_p.png" />
+								</div>
+								<h4 class="line-bottom">项目名称及结果</h4>
+								<div class="section-content">
+									<a v-for="(item,index) in c.items">
+										<div class="list-with-segmented">
+											<div class="name" v-cloak>{{item.name}}</div>
+											<div class="tag-group" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">{{item.label}}</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber"></div>
+				</div>
+				<div class="result matuo" v-cloak v-if="package_type=='child_t'||package_type=='telent_package'||package_type=='child_th'">
+					<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div v-for="(c,index) in datas" v-if="c.classid==9||c.classid==10" :class="{'result_fr_t':c.classid%2==0,'result_fl_t':c.classid%2!=0}">
+						<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+						<div class="card section scalel">
+							<div class="slide ">
+								<div class="secondary-item-introduce">
+								</div>
+								<div class="radar2" :id="'radar'+index"></div>
+								<div class="radar_p" style="padding: 10px 0 24px 0;">
+									<img src="images/rader_p.png" />
+								</div>
+								<h4 class="line-bottom">项目名称及结果</h4>
+								<div class="section-content">
+									<a v-for="(item,index) in c.items">
+										<div class="list-with-segmented">
+											<div class="name" v-cloak>{{item.name}}</div>
+											<div class="tag-group" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">{{item.label}}</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber"></div>
+				</div>
+				<div class="result matuo" v-cloak v-if="package_type=='child_t'||package_type=='telent_package'||package_type=='child_th'">
+					<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div v-for="(c,index) in datas" v-if="c.classid==11||c.classid==12" :class="{'result_fr_t':c.classid%2==0,'result_fl_t':c.classid%2!=0}">
+						<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+						<div class="card section scalel">
+							<div class="slide ">
+								<div class="secondary-item-introduce">
+								</div>
+								<div class="radar2" :id="'radar'+index"></div>
+								<div class="radar_p" style="padding: 10px 0 24px 0;">
+									<img src="images/rader_p.png" />
+								</div>
+								<h4 class="line-bottom">项目名称及结果</h4>
+								<div class="section-content">
+									<a v-for="(item,index) in c.items">
+										<div class="list-with-segmented">
+											<div class="name" v-cloak>{{item.name}}</div>
+											<div class="tag-group" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">{{item.label}}</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber"></div>
+				</div>
+				<div class="result matuo" v-cloak v-if="package_type=='child_t'||package_type=='child_th'">
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div v-for="(c,index) in datas">
+						<div v-if="c.classid==13" class="result_fl_t">
+							<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+							<div class="card section scalel">
+								<div class="slide ">
+									<div class="secondary-item-introduce">
+									</div>
+									<div class="radar2" :id="'radar'+index"></div>
+									<div class="radar_p" style="padding: 10px 0 24px 0;">
+										<img src="images/rader_p.png" />
+									</div>
+									<h4 class="line-bottom">项目名称及结果</h4>
+									<div class="section-content">
+										<a v-for="(item,index) in c.items">
+											<div class="list-with-segmented">
+												<div class="name" v-cloak>{{item.name}}</div>
+												<div class="tag-group" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">{{item.label}}</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div v-if="c.classid==14" class="result_fr_t">
+							<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+							<div class="card section section-character scalel">
+								<div class="section-content">
+									<!--性格类分五档显示-->
+									<a v-for="item in c.items">
+										<div class="list-with-fivemarking">
+											<div class="name namefl fl" v-cloak>{{item.opposite[0]}}</div>
+											<div class="pointline fl">
+												<div class="pr" style="width: 166px;height: 42px;left: 16px">
+													<div class="pa pointarrow" :style="{left:+(4-item.level)*20+'%'}"></div>
+												</div>
+											</div>
+											<div class="name nameri fr">{{item.opposite[1]}}</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber"></div>
+				</div>
+				<!--T大类雷达图2,成才包2页重新排-->
+				<div class="result matuo" v-cloak v-if="package_type=='develop_package'">
+					<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div v-for="(c,index) in datas" v-if="c.classid==12||c.classid==13" class="result_fl_t">
+						<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+						<div class="card section scalel">
+							<div class="slide ">
+								<div class="secondary-item-introduce">
+								</div>
+								<div class="radar2" :id="'radar'+index"></div>
+								<div class="radar_p" style="padding: 10px 0 24px 0;">
+									<img src="images/rader_p.png" />
+								</div>
+								<h4 class="line-bottom">项目名称及结果</h4>
+								<div class="section-content">
+									<a v-for="(item,index) in c.items">
+										<div class="list-with-segmented">
+											<div class="name" v-cloak>{{item.name}}</div>
+											<div class="tag-group" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">{{item.label}}</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber"></div>
+				</div>
+				<!--性格/T和成才包-->
+				<div class="result matuo" v-cloak v-if="package_type=='develop_package'">
+					<div :class="{'tlt_border':package_id==1,'tlt_border_t':package_id==2||package_id==4}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div v-for="(c,index) in datas">
+						<div v-if="c.classid==14" class="result_fr_t">
+							<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+							<div class="card section section-character scalel">
+								<div class="section-content">
+									<!--性格类分五档显示-->
+									<a v-for="item in c.items">
+										<div class="list-with-fivemarking">
+											<div class="name namefl fl" v-cloak>{{item.opposite[0]}}</div>
+											<div class="pointline fl">
+												<div class="pr" style="width: 166px;height: 42px;left: 16px">
+													<div class="pa pointarrow" :style="{left:+(4-item.level)*20+'%'}"></div>
+												</div>
+											</div>
+											<div class="name nameri fr">{{item.opposite[1]}}</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<!--儿童常见不良倾向(level=0倾向低/1/2正常/3/4倾向高)-->
+						<div v-if='c.classid==3' :class="{'result_fl_t':c.classid%2==0,'result_fr_t':c.classid%2!=0}" v-cloak>
+							<h2 class="tc lh30 result_txt_t col1_t">{{c.classname}}（共 {{c.items.length}} 项）</h2>
+							<div class="boxholder card scalel" v-cloak>
+								<div class="slide complex-disease">
+									<a v-for="item in c.items">
+										<div class="list-with-segmented">
+											<div class="name" v-cloak>{{item.name}}</div>
+											<div class="tag-group" :class="{'low':item.level==0,'low':item.level==1,'middle':item.level==2,'high':item.level==3,'high':item.level==4}">
+												<div class="item_tag"> {{item.label}} </div>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="page cover1_t">
+					<div class="result matuo">
+						<div class="cover_txt fs50">详细检测结果</div>
+					</div>
+				</div>
+				<div class="page cover2_t">
+					<div class="result matuo">
+					</div>
+				</div>
+				<!--t详情单项结果-->
+				<div v-for='c in datas' class="matuo" v-cloak v-if="c.classid>6&&c.classid<=14">
+					<div class="result graph_model">
+						<div class="tlt_border_t"></div>
+						<div class="tlt_txt">检测结果概况</div>
+						<h1 class="col1_t">{{c.classname}}</h1>
+						<div v-for='(item,index) in c.items' :class="{'fl':index%2==0,'fr':index%2!=0}">
+							<p class="col1_t fs14 lh30 item_name">{{item.name}}</p>
+							<!--检测结果多位点/性格类用单位点-->
+							<div class="card section section-assessment" v-if="(item.genes.normal.length+item.genes.risk.length)>1&&c.classid!=14">
+								<div class="assess-three-child">
+									<div class="mark-box" v-cloak>
+										<div style="width: 88px;" class="mark-container" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">
+											<div class="mark-text" style="width: 80px;">{{item.label}}</div>
+										</div>
+									</div>
+									<div class="seeme">看看您的孩子在人群中的位置</div>
+									<div class="zhengtaifengbu" id="zhengtaifengbu">
+										<div class="fs10 colaaa tc average">
+											平均水平
+											<div class="fr" style="width:30px;overflow: hidden;height: 14px;">优秀</div>
+										</div>
+										<canvas :id="'myChart'+c.classid+index" width="1000" height="440"></canvas>
+										<div class="zuobiao pr">
+											<div class="pa ztarrow" :style="{left:+(item.myrisk*230)+1+'px'}">
+												<div class="fs9 tc">您孩子的位置</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--检测结果单位点-->
+							<div class="card section section-assessment" v-else>
+								<div class="section-content pr">
+									<div class="assess-three-child">
+										<div class="mark-box">
+											<div style="width: 88px;" class="mark-container" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">
+												<div class="mark-text" style="width: 80px;">{{item.label}}</div>
+											</div>
+										</div>
+									</div>
+									<div class="seeme">看看有多少人和您的孩子一样</div>
+									<div v-text="item.name" class="pa level_name"></div>
+									<div class="canvansc">
+										<canvas :id="'c'+c.classid+index"></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="clear"></div>
+						<div class="pagenumber"></div>
+					</div>
+					<div class="result table_model" v-cloak>
+						<div class="tlt_border_t"></div>
+						<div class="tlt_txt">检测结果概况</div>
+						<div class="clear"></div>
+						<div class="table_all">
+							<p class="col1_t fs14 lh30">检测位点信息</p>
+							<table class="gene">
+								<tr>
+									<th>能力</th>
+									<th width="140">位点</th>
+									<th width="90">基因型</th>
+									<th>基因型解释</th>
+								</tr>
+								<tr v-for='item in c.items'>
+									<td>{{item.name}}</td>
+									<td colspan="3">
+										<table border="" cellspacing="" cellpadding="">
+											<tr v-for='gene in item.genes.risk'>
+												<td width="140">{{gene.rs_id}}</td>
+												<td width="90">{{gene.gene_type}}</td>
+												<td>{{gene.label}}</td>
+											</tr>
+											<tr v-for='gene in item.genes.normal'>
+												<td width="140">{{gene.rs_id}}</td>
+												<td width="90">{{gene.gene_type}}</td>
+												<td>{{gene.label}}</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<div class="pagenumber"></div>
+					</div>
+				</div>
+			</div>
+			<!--T内容页end-->
+			<!--增加T+H的结尾页和封面-->
+			<div class="spacepage back_blank" v-if="package_id==4"></div>
+			<!--T+H/t-->
+			<div class="back_page1_t" v-if="package_id==4">
+				<div class="matuo page_back">
+					<h1 :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==3||package_id==4}">结束语</h1>
+					<p class="lh6"></p>
+					<div>
+						<p>再次感谢您选用壹基因提供的基因检测服务。</p>
+						<p class="lh6"></p>
+						<p>法国基因学家安德烈•拉莫斯有句名言：基因指出了一个方向，但并不是不可改变的终点。基因与环境的共同作用才造就出一个结果。因此一个人的成功是由先天因素加上后天环境和教育共同塑造的。通过宝贝密码 T+ 儿童天赋基因检测套餐，明确孩子的天赋优势所在，可以帮助我们因势利导对孩子进行兴趣引导和特长培养，做到事半功倍；对于天赋不是特别优秀的项目，通过后天的努力和针对性的锻炼，同样可以弥补不足，做出成绩。</p>
+						<p class="lh6"></p>
+						<p>孩子的培养分为教和育两个方面，宝贝密码 T+ 儿童天赋套餐专注孩子的“教”，此外，壹基因也为科学“育”儿专门设计了宝贝密码 H+ 健康套餐，从先天遗传的角度评估儿童常见健康风险，检测孩子对常见营养物质的吸收能力，进而科学指导疾病预防营养补充，为孩子健康成长保驾护航。</p>
+						<p class="lh6"></p>
+						<p>如果您对我们的检测服务和体验有任何意见或建议，敬请拨打我们的健康热线400-163-5588，或者登陆壹基因公众号进行在线咨询。欢迎通过壹基因公众号参加"基因故事有奖征集活动"，分享您的基因检测体验，更多惊喜等着您。</p>
+					</div>
+				</div>
+			</div>
+			<!--间隔页-->
+			<div class="spacepage" v-if="package_id==4"></div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<div class="matuo page_back2 clear spacepage" v-if="package_id==4">
+				<img src="img/logo.png" width="150" />
+				<div class="contact">
+					<img src="img/qr.jpg" class="fl" width="120" />
+					<div class="contact_p">
+						<p class="fs12 lh20 col4">杭州和壹健康管理有限公司</p>
+						<p>电话：400-163-5588</p>
+						<p>网址：www.1gene.com.cn</p>
+						<p>邮箱：health@1gene.com.cn</p>
+						<p>地址：杭州市滨江区聚才路 88 号远方科技中心 15 楼（310051）</p>
+					</div>
+				</div>
+			</div>
+			<!--T+H/h-->
+			<div class="page page1" v-if="package_id==4">
+				<div class="page1_p1 matuo page_color1" contenteditable='true'>
+					<div class="tit">
+						<div class="tit_line">
+							<p class="fs25 marb6">宝贝密码H+</p>
+							<p class="fs36">检测报告</p>
+						</div>
+						<p class="fs11 martop4">指导营养补充，呵护宝宝健康</p>
+					</div>
+					<div class="fs10 pa page1_txt">让基因科技为每个人的健康服务</div>
+				</div>
+			</div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<div class="page page2" v-if="package_id==4">
+				<div class="page_p2 matuo" contenteditable='true'>
+					<!--<h2 class="fs22 lh14 ls0" style="padding-left: 10mm;" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">尊敬的 <span :class="{'name':package_id==1,'name_t':package_id==2||package_id==4}">{{name}}</span> <span v-if="sex=='女'">女士</span>  <span v-if="sex=='男'">先生</span>：</h2>-->
+					<h2 class="fs22 lh14 ls0" style="padding-left: 10mm;" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2}">尊敬的家长：</h2>
+					<p class="lh6"></p>
+					<div class="welcome_txt">
+						<p class="ti0">您好！</p>
+						<p class="lh6"></p>
+						<p>衷心感谢您对我们的信任，选择壹基因宝贝密码儿童基因检测服务！</p>
+						<p class="lh6"></p>
+						<p>当您收到这份报告书的时候，我们已经根据您的需求，秉持科学、专业、严谨和保密的态度为您的孩子完成了本次基因检测，并根据您孩子的个人特有基因检测结果进行了全面深入的分析。</p>
+						<p class="lh6"></p>
+						<p>孩子的健康受到先天遗传和后天环境以及家庭养护等多方面的影响 , 基因检测的最大意义在于了解孩子先天的遗传风险，可以通过改变后天环境、调整养护方式，助力孩子健康成长。</p>
+						<p class="lh6"></p>
+						<p>宝贝密码 H+ 儿童健康套餐通过检测儿童常见疾病、遗传病、不良倾向、维生素、矿物元素和其他营养素六大类共计 39 个项目的相关基因，从根本上解开您孩子的先天遗传密码，进而可以帮助您了解孩子的健康风险和营养吸收能力，综合评估孩子的身体健康状况 ,指导重点预防高风险疾病 , 尽早采取针对性的干预措施 , 同时科学指导孩子对各种成长所需营养物质的合理补充 , 帮助孩子茁壮成长。</p>
+						<p>希望本次检测能给您带来舒适满意的体验，针对本次检测，如果您有任何疑问需要解答，敬请联系我们的健康热线 400-163-5588。我们恭候您的来电，并保证给予及时、专业、贴心的回复。</p>
+						<p class="lh6"></p>
+						<p>壹基因衷心祝愿您的孩子健康成长、早日成才！ </p>
+					</div>
+				</div>
+			</div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<div class="page page3" v-if="package_id==4">
+				<div class="page_p3 matuo">
+					<h1 class="lh34 fs22 color1">受检者个人基本信息</h1>
+					<p class="fs14 color1">Personal information</p>
+					<div class="blank10"></div>
+					<div class="lh31">
+						<table class="fs10">
+							<tr>
+								<td width="80">姓 名： </td>
+								<td v-text="name"></td>
+							</tr>
+							<tr>
+								<td>性 别：</td>
+								<td v-text="sex"></td>
+							</tr>
+							<tr v-if="age!=0">
+								<td>年 龄： </td>
+								<td v-text="age"></td>
+							</tr>
+
+							<tr>
+								<td>样本编号： </td>
+								<td v-text="sample_number"></td>
+							</tr>
+							<tr>
+								<td>收样日期：</td>
+								<td v-text="sample_date"></td>
+							</tr>
+							<tr>
+								<td>报告日期： </td>
+								<td v-text="report_date"></td>
+							</tr>
+							<tr>
+								<td>检测项目：</td>
+								<td v-if='package_id==1||package_id==2||package_id==4'> {{package_name}} </td>
+								<td v-if='package_id==3'> {{package_name}} </td>
+							</tr>
+						</table>
+					</div>
+					<p class="fs22 lh14"></p>
+					<p class="lh6"></p>
+					<p class="lh6"></p>
+
+					<div class="datatime fs10 lh31 tr">
+						<p>签名 / 壹基因健康电子章</p>
+						<p>{{report_date}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<!--T+H增加H目录-->
+			<div class="catalog matuo fs12 spacepage catalog_h" v-if="package_id==4" contenteditable="true">
+				<div class="catalog_img color1">目录</div>
+				<div class="fl cata_fl">
+					<h2 class="lh32" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2}">检测结果概况</h2>
+					<table>
+						<tr>
+							<td class="cata_table">综合评价</td>
+							<td>001</td>
+						</tr>
+						<tr>
+							<td class="cata_table">结果概览</td>
+							<td>002</td>
+						</tr>
+					</table>
+					<h2 class="lh32" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2}">详细检测结果</h2>
+					<div v-for='c in catalog_fl_h'>
+						<h3 class="lh20 color1">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table cata_h">{{item.name}}</td>
+								<td>012</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="fr cata_fr lh31" v-cloak>
+					<div v-for='c in catalog_fr_h'>
+						<h3 class="lh20 color1">{{c.classname}}</h3>
+						<table>
+							<tr v-for='item in c.items'>
+								<td class="cata_table cata_h">{{item.name}}</td>
+								<td>012</td>
+							</tr>
+						</table>
+					</div>
+					<h3 class="lh20 color1">结束语</h3>
+				</div>
+				<!--H目录end-->
+				<div class="clear"></div>
+			</div>
+			<div class="spacepage" v-if="package_id==4"></div>
+			<!--封面页start-->
+			<div class="page" :class="{'cover1':package_id==1||package_id==4,'cover1_t':package_id==2,'cover1_a':package_id==3}" contenteditable="true" v-if="package_id==4">
+				<div class="cover matuo">
+					<div class="cover_txt fs50 spacepage">检测结果概况</div>
+				</div>
+			</div>
+			<div class="page" :class="{'cover2':package_id==1||package_id==4,'cover2_t':package_id==2,'cover2_a':package_id==3}" v-if="package_id==4">
+				<div class="spacepage" v-if="package_id==4"></div>
+			</div>
+			<!--H　内容页start-->
+			<div v-if="package_id==1||package_id==3||package_id==4">
+				<!--H套餐/成人  综合评价-->
+				<div class="result2 matuo" v-if="package_type=='child_h'||package_type=='adult'||package_type=='child_th'" v-cloak>
+					<div :class="{'tlt_border':package_id==1||package_id==4,'tlt_border_t':package_id==2||package_id==3}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<h1 class="lh38 item_name" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2||package_id==3}">综合评价</h1>
+					<div class="lh20">
+						<p v-if="package_id==3">本次检测包括 <span class="fs14 col1_t"><span v-for="(c,index) in datas" class="punctuation"><span v-if="c.items.length>0">{{c.classname}}、</span></span>
+							</span> {{typenum}}部分内容</p>
+						<p v-else> 本次检测包括 <span class="fs14 color1">疾病、营养吸收</span> 两部分内容</p>
+						<p v-if="package_id==4">检测了 <span class="fs14 color1">{{gene_number_h}}</span> 个基因位点</p>
+						<p v-if="package_id==1||package_id==2">检测了 <span class="fs14" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2}">{{gene_number}}</span> 个基因位点</p>
+						<p v-if="package_id==4">共计 <span class="fs14" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2||package_id==3}">{{item_number_h}}</span> 项检测项目</p>
+						<p v-else>共计 <span class="fs14" :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2||package_id==3}">{{item_number}}</span> 项检测项目</p>
+					</div>
+					<div class="tags">
+						<div class="good_tag" v-if="package_id==4">
+							<h1 class="color2">优于常人</h1>
+							<div v-if="good_items_h.length>0">
+								<div class="tag-container normal_color" v-for='good in good_items_h'>
+									<div class="mark-text">{{good}}</div>
+								</div>
+							</div>
+							<div v-else style="margin: 15px 0px 0px 5px;">
+								暂无优势项目
+							</div>
+						</div>
+						<div class="good_tag" v-else>
+							<h1 class="color2" v-if="package_id==3">优势标签</h1>
+							<h1 class="color2" v-else>优于常人</h1>
+							<div v-if="good_items.length>0">
+								<div class="tag-container normal_color" v-for='good in good_items'>
+									<div class="mark-text">{{good}}</div>
+								</div>
+							</div>
+							<div v-else style="margin: 15px 0px 0px 5px;">
+								暂无优势项目
+							</div>
+						</div>
+						<div class="bad_tag" v-if="package_id==4">
+							<h1 class="color1">需要注意</h1>
+							<div v-if="bad_items_h.length>0">
+								<div class="tag-container danger_color" v-for='bad in bad_items_h'>
+									<div class="mark-text">{{bad}}</div>
+								</div>
+							</div>
+							<div v-else style="margin: 15px 0px 0px 5px;">
+								暂无需要注意项目
+							</div>
+						</div>
+						<div class="bad_tag" v-else>
+							<h1 class="color1">需要注意</h1>
+							<div v-if="bad_items.length>0">
+								<div class="tag-container danger_color" v-for='bad in bad_items'>
+									<div class="mark-text">{{bad}}</div>
+								</div>
+							</div>
+							<div v-else style="margin: 15px 0px 0px 5px;">
+								暂无需要注意项目
+							</div>
+						</div>
+					</div>
+					<div class="lh20 fs10" v-if="package_id!=3">
+						<h2 :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2||package_id==3}">用户须知</h2>
+						<p>1.检测位点的筛选基于国际权威数据库及权威学术杂志的文献报道；</p>
+						<p>2.鉴于基因与表型关联的复杂性及科研水平局限性，本次检测无法覆盖与检测项目相关的所有位点；</p>
+						<p>3.数据库将随着检测人数的增加和科学研究的深入定期升级优化；</p>
+						<p>4.检测结果可作为疾病预防和健康管理的参考信息，不能作为临床诊断依据；</p>
+						<p>5.基因是疾病发生和营养吸收的重要影响因素，但后天环境和生活方式也会产生一定影响。</p>
+					</div>
+					<div class="lh20 fs10" v-else>
+						<div class="blank20"></div>
+						<h2 :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2||package_id==3}">用户须知</h2>
+						<p>1、检测位点的筛选基于国际权威数据库及权威学术杂志的文献报道；</p>
+						<p>2、数据库将随着检测人数的增加和科学研究的深入定期升级优化；</p>
+						<p>3、检测结果可作为疾病预防、健康管理的指导信息，不能用于临床诊断；</p>
+						<p>4、基因是疾病发生和个性体征的重要影响因素，但生存环境和生活方式也会产生一定影响。</p>
+					</div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+				<!--H结果概览,h全套共2页/疾病包共1页start-->
+				<div class="result2 matuo" v-if="package_type=='child_h'||package_type=='health_package'||package_type=='child_th'">
+					<div class='tlt_border'></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<h1 class="lh38 item_name color1">结果概览</h1>
+					<div class="fl result_fl">
+						<div v-for="c in datas">
+							<!--儿童疾病start(level=0低/1稍低/2正常/3稍高/4高)-->
+							<div v-if='c.classid==1'>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel">
+									<div class="slide complex-disease">
+										<div class="notice line-bottom">
+											<div class="item clear">
+												<div class="fl itemtitle">患病风险:</div>
+												<div class="fl"><span class="legend-block legend-5"></span>高</div>
+												<div class="fl"><span class="legend-block legend-4"></span>稍高</div>
+												<div class="fl"><span class="legend-block legend-3"></span>正常</div>
+												<div class="fl"><span class="legend-block legend-2"></span>稍低</div>
+												<div style="padding-right: 0px;" class="fl"><span class="legend-block legend-1"></span>低</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+										<div class="pr">
+											<div class="pa normaltext"></div>
+											<div class="pa noremalline"></div>
+											<a v-for="item in c.items">
+												<div class="illness-bar" v-cloak>
+													<div class="bar-title">{{item.name}}</div>
+													<div class="bar-wrapper">
+														<div class="progress">
+															<div class="pgbar" v-bind:style="{width:+item.multiple*100/2.5+'%'}" :class="{'level1':item.level==0,'level2':item.level==1,'level3':item.level==2,'level4':item.level==3,'level5':item.level==4}"></div>
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--儿童疾病end-->
+							<!--遗传疾病(level=0/1/2未检出/3携带/4检出/)-->
+							<div v-if='c.classid==2'>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide genetic-disease">
+										<div v-for="item in c.items">
+											<a>
+												<div class="list">
+													<div class="name" v-cloak>{{item.name}}</div>
+													<div class="result3" style="width: 54px;">
+														<span class="hasgene" v-if="item.level==3">携带</span>
+														<span class="yesgene" v-if="item.level==4">检出</span>
+														<span class="nogene" v-if="item.level==0||item.level==1||item.level==2">未检出</span>
+													</div>
+												</div>
+											</a>
+										</div>
+										<div class="fs10 inher_intro" style="line-height: 20px;">
+											<p>检&nbsp;&nbsp;&nbsp;出：检出致病突变且为致病基因型；</p>
+											<p>携&nbsp;&nbsp;&nbsp;带：携带致病突变但为非致病基因型；</p>
+											<p>未检出：未检出致病突变。</p>
+											<div class="blank10"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="fr result_fr">
+						<div v-for="c in datas" v-if="package_id==1||package_id==4">
+							<!--儿童常见不良倾向(level=0倾向低/1/2正常/3/4倾向高)-->
+							<div v-if='c.classid==3' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name" v-cloak>{{item.name}}</div>
+												<div class="tag-group" :class="{'l3':item.level==0||item.level==1||item.level==2,'l2':item.level==3,'l1':item.level==4}">
+													<div class="item_tag"> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<!--儿童营养吸收(level=0/1/2正常/3少量减少摄入/4适当减少摄入)-->
+							<div v-if='c.classid==4' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name">{{item.name}}</div>
+												<div class="tag-group_vita l2">
+													<div> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+				<div class="result2 matuo" v-if="package_type=='child_h'||package_type=='child_th'" v-cloak>
+					<div class='tlt_border'></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div class="blank30"></div>
+					<div class="result_fl">
+						<div v-for='c in datas'>
+							<!--- 矿物元素(level=0/1/2正常/3少量减少摄入/4适当减少摄入) --->
+							<div v-if='c.classid==5' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name">{{item.name}}</div>
+												<div class="tag-group_vita l2">
+													<div> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<!--- 其他营养素 (level=0/1/2正常/3少量减少摄入/4适当减少摄入)--->
+							<div v-if='c.classid==6' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name">{{item.name}}</div>
+												<div class="tag-group_vita l2">
+													<div> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="result_fr">
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+				<!--营养包结果概览，结果概——共1页-->
+				<div class="result2 matuo" v-if="package_type=='nutrition_package'" v-cloak>
+					<div class='tlt_border'></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<h1 class="lh38 item_name" :class="{'color1':package_id==1,'col1_t':package_id==2}">结果概览</h1>
+					<div class="lh20">
+						<p v-if="package_id==2||package_id==4">天赋包含 <span class="fs14" :class="{'color1':package_id==1,'col1_t':package_id==2||package_id==4}">运动天赋、交际天赋、语言天赋、绘画天赋、音乐舞蹈天赋</span> 四大维度</p>
+					</div>
+					<div class="fl result_fl">
+						<div v-for="c in datas">
+							<!--儿童营养吸收(level=0/1/2正常/3少量减少摄入/4适当减少摄入)-->
+							<div v-if='c.classid==4' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name">{{item.name}}</div>
+												<div class="tag-group_vita l2">
+													<div> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<!--- 矿物元素(level=0/1/2正常/3少量减少摄入/4适当减少摄入) --->
+							<div v-if='c.classid==5' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name">{{item.name}}</div>
+												<div class="tag-group_vita l2">
+													<div> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="fr result_fr">
+						<div v-for="c in datas">
+							<!--- 其他营养素 (level=0/1/2正常/3少量减少摄入/4适当减少摄入)--->
+							<div v-if='c.classid==6' v-cloak>
+								<p class="lh38 fs12"><span class="color1">{{c.classname}}</span>共{{c.items.length}}项</p>
+								<div class="boxholder card scalel" v-cloak>
+									<div class="slide complex-disease">
+										<a v-for="item in c.items">
+											<div class="list-with-segmented">
+												<div class="name">{{item.name}}</div>
+												<div class="tag-group_vita l2">
+													<div> {{item.label}} </div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+				<!--成人结果概览-->
+				<!--1-->
+				<div class="result2 matuo" v-if="showAdult(['15'])" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<h1 class="lh38 item_name col1_t">结果概览</h1>
+					<div>
+						<div v-for="(c,index) in datas" v-if="c.classid==15&&c.items.length>0" style="max-height: 510px;">
+							<div class="blank20"></div>
+							<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+							<div class="card section scalel2">
+								<div class="adult_scale clear">
+									<div class="scale_div">
+										<div class="fl"><span class="legend-block l5"></span>低</div>
+										<div class="fl"><span class="legend-block l4"></span>稍低</div>
+										<div class="fl"><span class="legend-block l3"></span>正常</div>
+										<div class="fl"><span class="legend-block l2"></span>稍高</div>
+										<div class="fl"><span class="legend-block l1"></span>高</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="item_list" v-if="c.items.length>0">
+									<a onclick="javascript(0);">
+										<ul class="list-head">
+											<li class="col1">名称</li>
+											<li class="col2">风险指数</li>
+											<li class="col3">风险等级</li>
+										</ul>
+									</a>
+									<a v-for="item in c.items">
+										<ul class="list">
+											<li class="col1">{{item.name}}</li>
+											<li class="col2" v-text="item.risk"></li>
+											<li class="col3">
+												<div v-if='item.level==4' class="tag_level l1"><span>高</span></div>
+												<div v-if='item.level==3' class="tag_level l2"><span>稍高</span></div>
+												<div v-if='item.level==2' class="tag_level l3"><span>正常</span></div>
+												<div v-if='item.level==1' class="tag_level l4"><span>稍低</span></div>
+												<div v-if='item.level==0' class="tag_level l5"><span>低</span></div>
+											</li>
+										</ul>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber">002</div>
+				</div>
+				<!--2-->
+				<div class="result2 matuo" v-if="showAdult(['16','17'])" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div>
+						<div v-for="(c,index) in datas" v-if="(c.classid==16&&c.items.length>0)||(c.classid==17&&c.items.length>0)" style="max-height: 510px;">
+							<div class="blank20"></div>
+							<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+							<div class="card section scalel2">
+								<div class="adult_scale clear">
+									<div class="scale_div">
+										<div class="fl"><span class="legend-block l5"></span>低</div>
+										<div class="fl"><span class="legend-block l4"></span>稍低</div>
+										<div class="fl"><span class="legend-block l3"></span>正常</div>
+										<div class="fl"><span class="legend-block l2"></span>稍高</div>
+										<div class="fl"><span class="legend-block l1"></span>高</div>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="item_list" v-if="c.items.length>0">
+									<a onclick="javascript(0);">
+										<ul class="list-head">
+											<li class="col1">名称</li>
+											<li class="col2">风险指数</li>
+											<li class="col3">风险等级</li>
+										</ul>
+									</a>
+									<a v-for="item in c.items">
+										<ul class="list">
+											<li class="col1">{{item.name}}</li>
+											<li class="col2" v-text="item.risk"></li>
+											<li class="col3">
+												<div v-if='item.level==4' class="tag_level l1"><span>高</span></div>
+												<div v-if='item.level==3' class="tag_level l2"><span>稍高</span></div>
+												<div v-if='item.level==2' class="tag_level l3"><span>正常</span></div>
+												<div v-if='item.level==1' class="tag_level l4"><span>稍低</span></div>
+												<div v-if='item.level==0' class="tag_level l5"><span>低</span></div>
+											</li>
+										</ul>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber">002</div>
+				</div>
+				<!--3-->
+				<div class="result2 matuo" v-if="showAdult(['18','19'])" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div>
+						<div v-for="(c,index) in datas" v-if="(c.classid==18&&c.items.length>0)||(c.classid==19&&c.items.length>0)" style="max-height: 510px;">
+							<div v-if="c.items.length>0">
+								<div class="blank20"></div>
+								<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+								<div class="card section scalel2">
+									<div class="adult_scale clear">
+										<div class="scale_div">
+											<div class="fl"><span class="legend-block l5"></span>低</div>
+											<div class="fl"><span class="legend-block l4"></span>稍低</div>
+											<div class="fl"><span class="legend-block l3"></span>正常</div>
+											<div class="fl"><span class="legend-block l2"></span>稍高</div>
+											<div class="fl"><span class="legend-block l1"></span>高</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="item_list" v-if="c.items.length>0">
+										<a onclick="javascript(0);">
+											<ul class="list-head">
+												<li class="col1">名称</li>
+												<li class="col2">风险指数</li>
+												<li class="col3">风险等级</li>
+											</ul>
+										</a>
+										<a v-for="item in c.items" :href="'adult_second.html?id='+item.id+'&classid='+item.classid">
+											<ul class="list">
+												<li class="col1">{{item.name}}</li>
+												<li class="col2">{{item.risk}}</li>
+												<li class="col3">
+													<div v-if='item.level==4' class="tag_level l1"><span>高</span></div>
+													<div v-if='item.level==3' class="tag_level l2"><span>稍高</span></div>
+													<div v-if='item.level==2' class="tag_level l3"><span>正常</span></div>
+													<div v-if='item.level==1' class="tag_level l4"><span>稍低</span></div>
+													<div v-if='item.level==0' class="tag_level l5"><span>低</span></div>
+												</li>
+											</ul>
+										</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber">002</div>
+				</div>
+				<!--4-->
+				<div class="result2 matuo" v-if="showAdult(['20','21'])" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div>
+						<div v-for="(c,index) in datas">
+							<div v-if="c.classid==20&&c.items.length>0">
+								<div class="blank20"></div>
+								<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+								<div class="card section scalel2">
+									<div class="adult_scale clear">
+										<div class="scale_div">
+											<div class="fl"><span class="legend-block l5"></span>低</div>
+											<div class="fl"><span class="legend-block l4"></span>稍低</div>
+											<div class="fl"><span class="legend-block l3"></span>正常</div>
+											<div class="fl"><span class="legend-block l2"></span>稍高</div>
+											<div class="fl"><span class="legend-block l1"></span>高</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="item_list" v-if="c.items.length>0">
+										<a onclick="javascript(0)">
+											<ul class="list-head">
+												<li class="col1">名称</li>
+												<li class="col2">风险指数</li>
+												<li class="col3">风险等级</li>
+											</ul>
+										</a>
+										<a v-for="item in c.items">
+											<ul class="list">
+												<li class="col1">{{item.name}}</li>
+												<li class="col2">{{item.risk}}</li>
+												<li class="col3">
+													<div v-if='item.level==4' class="tag_level l1"><span>高</span></div>
+													<div v-if='item.level==3' class="tag_level l2"><span>稍高</span></div>
+													<div v-if='item.level==2' class="tag_level l3"><span>正常</span></div>
+													<div v-if='item.level==1' class="tag_level l4"><span>稍低</span></div>
+													<div v-if='item.level==0' class="tag_level l5"><span>低</span></div>
+												</li>
+											</ul>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--成人遗传病-->
+					<div  v-for="c in datas" v-if='c.classid==21&&c.items.length>0'>
+						<div class="blank20"></div>
+						<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+						<div class="boxholder card scalel2" v-cloak>
+							<div class="slide genetic-disease">
+								<div v-for="item in c.items">
+									<a>
+										<div class="list">
+											<div class="name" v-cloak>{{item.name}}</div>
+											<div class="result3" style="width: 54px;">
+												<span class="hasgene" v-if="item.level==3">携带</span>
+												<span class="yesgene" v-if="item.level==4">检出</span>
+												<span class="nogene" v-if="item.level==0||item.level==1||item.level==2">未检出</span>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="fs10 inher_intro" style="line-height: 20px;">
+									<p>检&nbsp;&nbsp;&nbsp;出：检出致病突变且为致病基因型；</p>
+									<p>携&nbsp;&nbsp;&nbsp;带：携带致病突变但为非致病基因型；</p>
+									<p>未检出：未检出致病突变。</p>
+									<div class="blank10"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber">002</div>
+				</div>
+				<!--5-->
+				<div class="result2 matuo" v-if="showAdult(['22','23'])" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div>
+						<!--成人个性特质-->
+						<div v-if='c.classid==22&&c.items.length>0' v-for="c in datas">
+							<div class="blank20"></div>
+							<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+							<div class="card section scalel2">
+								<div class="item_list">
+									<a v-for="item in c.items">
+										<!--能力类type:1倾向类type:2-->
+										<ul class="list">
+											<li class="chara_col1">{{item.name}}</li>
+											<li class="chara_col2">弱</li>
+											<li class="chara_col3 pr" v-if='item.type==1'>
+												<div class="pr" style="width:240px;margin-left: 12px;height:14px;margin-top: -2px;">
+													<div class="pa pointarrow" :style="{left:+(4-item.level)*25+'%'}"></div>
+												</div>
+											</li>
+											<li class="chara_col3 pr" v-if='item.type==2'>
+												<div class="pr" style="width:240px;margin-left: 12px;height:14px;margin-top: -2px;">
+													<div class="pa pointarrow" :style="{left:+(item.level)*25+'%'}"></div>
+												</div>
+											</li>
+											<li class="chara_col4">强</li>
+										</ul>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div v-for="(c,index) in datas">
+								<!--成人营养-->
+								<div v-if="c.classid==23&&c.items.length>0">
+									<div class="blank20"></div>
+									<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+									<div class="boxholder card scalel2" v-cloak>
+										<div class="slide complex-disease">
+											<a v-for="item in c.items">
+												<div class="list-with-segmented">
+													<div class="name">{{item.name}}</div>
+													<div class="tag-group_vita l2">
+														<div> {{item.label}} </div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber">002</div>
+				</div>
+				<!--6-->
+				<div class="result2 matuo" v-if="showAdult(['24'])" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div class="blank20"></div>
+					<div>
+						<!--成人天赋类5项，0/1优秀，2/3/4普通-->
+						<div v-if='c.classid==24&&c.items.length>0' v-for="c in datas">
+							<p class="lh30 fs14 tc"><span class="col1_t">{{c.classname}}</span> 共{{c.items.length}}项</p>
+							<div class="boxholder card scalel2" v-cloak>
+								<div class="slide genetic-disease">
+									<div class="talent scale clear"><span style="margin-right: 3px;" class="fl">等级说明</span>
+										<div class="fl"><span class="legend-block l3"></span>普通</div>
+										<div style="padding-right:0px;" class="fl"><span class="legend-block l5"></span>优秀</div>
+										<div class="clear"></div>
+									</div>
+									<!--天赋类5项，0/1优秀，2/3/4普通-->
+									<div v-for="item in c.items">
+										<a>
+											<div class="list">
+												<div class="name" v-cloak>{{item.name}}</div>
+												<div class="result3" style="width: 54px;">
+													<span class="low" v-if='item.level==0||item.level==1'>优秀</span>
+													<span class="middle" v-else>普通</span>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber">002</div>
+				</div>
+				<!--结果概览end-->
+				<div class="result2 matuo" v-cloak>
+					<div :class="{'tlt_border':package_id==1||package_id==4,'tlt_border_t':package_id==2||package_id==3}"></div>
+					<div class="tlt_txt">检测结果概况</div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+				<div class="page cover1_a2 detail" v-if="package_id==3">
+					<div class="result matuo">
+						<div class="cover_txt fs50">详细检测结果</div>
+					</div>
+				</div>
+				<div class="page cover1" v-else>
+					<div class="result matuo">
+						<div class="cover_txt fs50">详细检测结果</div>
+					</div>
+				</div>
+				<!--间隔页-->
+				<div class="page cover2_a" v-if="package_id==3">
+					<div class="spacepage"></div>
+				</div>
+				<div class="page cover2" v-else>
+					<div class="spacepage"></div>
+				</div>
+			</div>
+			<!--成人详情内容页start-->
+			<!--成人疾病15/16/17/18/19/20-->
+			<div v-for="c in datas" v-if="c.classid==15||c.classid==16||c.classid==17||c.classid==18||c.classid==19||c.classid==20" class="loop" v-cloak>
+				<div class="result_tag_adult" v-if="c.items.length>0">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result">
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt result_txt">检测结果概况--{{c.classname}}</div>
+					<div class="blank20"></div>
+					<h1 class="col1_t item_name">{{item.name}}</h1>
+					<div class="blank30"></div>
+					<p class="col1_t fs14">检测结果</p>
+					<div class="blank20"></div>
+					<div class="card section">
+						<!--评估组件五档 -->
+						<div class="type_commom">
+							<div class="mark-box tc">
+								<div class="mark-container" :class="item.level==0?'l5':''">
+									<div class="mark-text">低</div>
+								</div>
+								<div class="mark-container" :class="item.level==1?'l4':''">
+									<div class="mark-text">稍低</div>
+								</div>
+								<div class="mark-container " :class="item.level==2?'l3':''">
+									<div class="mark-text">正常</div>
+								</div>
+								<div class="mark-container " :class="item.level==3?'l2':''">
+									<div class="mark-text">稍高</div>
+								</div>
+								<div class="mark-container " :class="item.level==4?'l1':''">
+									<div class="mark-text">高</div>
+								</div>
+							</div>
+						</div>
+						<div class="scale_container pr">
+							<div class="grey_scale pa"></div>
+							<div class="my_scale pa" :style="{width: +item.risk/3*100+'%'}"></div>
+							<div class="detail_scale pa"></div>
+							<div class="text_box pa" :style="{left: +item.risk/3*100+'%'}"><span :class="{'pl20':item.risk<0.1,'pr20':item.risk>0.6}">您的位置</span> <br> <span class="arrow_down"></span></div>
+							<div class="scale_text pa"></div>
+						</div>
+					</div>
+					<div class="blank30"></div>
+					<p class="col1_t fs14">基因位点信息</p>
+					<div class="blank20"></div>
+					<div class="result_fl_adult">
+						<div class="card normal">
+							<div class="tc bgcolor1 lh28 page_color1">正常位点</div>
+							<div>
+								<div class="normal_genes fs10">
+									<div v-if="item.genes.normal!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.normal">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">暂无</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="result_fr_adult">
+						<div class="card risk">
+							<div class="tc bgcolor1 lh28 page_color1">风险位点</div>
+							<div>
+								<div class="risk_gene fs10">
+									<div v-if="item.genes.risk!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.risk" v-if="item.genes.risk!=''">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">不存在风险位点</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="pagenumber"></div>
+				</div>
+			</div>
+			<!--成人遗传病类21-->
+			<div v-for="c in datas" v-if="c.classid==21&package_id==3" class="loop" v-cloak>
+				<div class="result_tag_adult" v-if="c.items.length>0">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="col1_t lh30 item_name">{{item.name}}</h1>
+					<p class="col1_t  lh34 fs14">检测结果</p>
+					<div class="card section section-assessment-h1">
+						<div class="section-content">
+							<div class="assess-three-child">
+								<div class="mark-box">
+									<div class="mark-container" :class="item.level==0||item.level==1||item.level==2?'nogene':''">
+										<div class="mark-text">未检出</div>
+									</div>
+									<div class="mark-container " :class="item.level==3?'hasgene':''">
+										<div class="mark-text">携带</div>
+									</div>
+									<div class="mark-container" :class="item.level==4?'yesgene':''">
+										<div class="mark-text">检出</div>
+									</div>
+								</div>
+								<div class="fs13 colaaa jieshi">
+									<p>检&nbsp;&nbsp;&nbsp;出：检出致病突变且为致病基因型；</p>
+									<p>携&nbsp;&nbsp;&nbsp;带：携带致病突变但为非致病基因型；</p>
+									<p>未检出：未检出致病突变。</p>
+									<div class="blank10"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="col1_t  lh34 fs14">检测位点信息</p>
+					<div class="result_fl_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">正常位点</div>
+							<div>
+								<div class="normal_genes fs10">
+									<div v-if="item.genes.normal!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.normal">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">暂无</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="result_fr_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">风险位点</div>
+							<div>
+								<div class="risk_gene fs10">
+									<div v-if="item.genes.risk!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.risk" v-if="item.genes.risk!=''">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">不存在风险位点</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="pagenumber">005</div>
+				</div>
+			</div>
+			<!--成人个性特质22-->
+			<div v-for="c in datas" v-if="c.classid==22&package_id==3" class="loop" v-cloak>
+				<div class="result_tag_adult" v-if="c.items.length>0">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="col1_t lh30 item_name">{{item.name}}</h1>
+					<p class="col1_t  lh34 fs14">检测结果</p>
+					<div class="card section">
+						<!--能力类type:1倾向类type:2-->
+						<div class="type_commom" v-if='item.type==1'>
+							<div class="mark-box tc">
+								<div class="mark-container" :class="item.level==4?'l1':''">
+									<div class="mark-text">弱</div>
+								</div>
+								<div class="mark-container" :class="item.level==3?'l2':''">
+									<div class="mark-text">稍弱</div>
+								</div>
+								<div class="mark-container " :class="item.level==2?'l3':''">
+									<div class="mark-text">正常</div>
+								</div>
+								<div class="mark-container " :class="item.level==1?'l4':''">
+									<div class="mark-text">稍强</div>
+								</div>
+								<div class="mark-container " :class="item.level==0?'l5':''">
+									<div class="mark-text">强</div>
+								</div>
+							</div>
+						</div>
+						<div class="type_commom" v-if='item.type==2'>
+							<div class="mark-box tc">
+								<div class="mark-container" :class="item.level==0?'l5':''">
+									<div class="mark-text">弱</div>
+								</div>
+								<div class="mark-container" :class="item.level==1?'l4':''">
+									<div class="mark-text">稍弱</div>
+								</div>
+								<div class="mark-container " :class="item.level==2?'l3':''">
+									<div class="mark-text">正常</div>
+								</div>
+								<div class="mark-container " :class="item.level==3?'l2':''">
+									<div class="mark-text">稍强</div>
+								</div>
+								<div class="mark-container " :class="item.level==4?'l1':''">
+									<div class="mark-text">强</div>
+								</div>
+							</div>
+						</div>
+						<div class="blank20"></div>
+					</div>
+					<div class="blank20"></div>
+					<p class="col1_t  lh34 fs14">检测位点信息</p>
+					<div class="result_fl_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">正常位点</div>
+							<div>
+								<div class="normal_genes fs10">
+									<div v-if="item.genes.normal!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.normal">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">暂无</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="result_fr_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">风险位点</div>
+							<div>
+								<div class="risk_gene fs10">
+									<div v-if="item.genes.risk!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.risk" v-if="item.genes.risk!=''">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">不存在风险位点</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="pagenumber">005</div>
+				</div>
+			</div>
+			<!--成人营养吸收23-->
+			<div v-for="c in datas" v-if="c.classid==23&package_id==3" class="loop" v-cloak>
+				<div class="result_tag_adult" v-if="c.items.length>0">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="col1_t lh30 item_name">{{item.name}}</h1>
+					<p class="col1_t  lh34 fs14">检测结果</p>
+					<div class="card section section-assessment-h1">
+						<div class="section-content">
+							<div class="assess-three-child">
+								<div class="mark-box" v-if="item.tag.length==2">
+									<div class="mark-container_nutri tag_two" :class="item.tag[0].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[0].tagname}}</div>
+									</div>
+									<div class="mark-container_nutri tag_two" :class="item.tag[1].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[1].tagname}} </div>
+									</div>
+								</div>
+								<div class="mark-box" v-if="item.tag.length==3">
+									<div class="mark-container_nutri" :class="item.tag[0].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[0].tagname}}</div>
+									</div>
+									<div class="mark-container_nutri" :class="item.tag[1].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[1].tagname}} </div>
+									</div>
+									<div class="mark-container_nutri" :class="item.tag[2].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[2].tagname}} </div>
+									</div>
+								</div>
+							</div>
+							<div class="chart-container">
+								<div class="score-mine">
+									<div class="text-box" :style="{left:+(1-item.myrisk)*100+'%'}">
+										<span>您的位置</span>
+										<br>
+										<span class="bg-sprite arrow-down"></span>
+									</div>
+									<div class="bar-container">
+										<div class="bar-wrap">
+											<div class="bar-inner" :style="{width:+(1-item.myrisk)*100+'%'}"></div>
+										</div>
+										<div class="clear" style="width: 290px;margin-top: 6px;" v-if="item.tag.length==2">
+											<table class="nutri_tag">
+												<tr>
+													<td align="left">{{item.tag[0].tagname}}</td>
+													<td class="tc" style="vertical-align: middle;"><img src="images/pointo.png" width="100%" style="max-width: 160px;" /></td>
+													<td align="right">{{item.tag[1].tagname}}</td>
+												</tr>
+											</table>
+										</div>
+										<div class="clear" style="width: 290px;margin-top: 6px;" v-if="item.tag.length==3">
+											<table class="nutri_tag">
+												<tr>
+													<td align="left">{{item.tag[0].tagname}}</td>
+													<td class="tc" style="vertical-align: middle;"><img src="images/pointo.png" width="100%" style="max-width: 160px;" /></td>
+													<td align="right">{{item.tag[2].tagname}}</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="col1_t  lh34 fs14">检测位点信息</p>
+					<div class="result_fl_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">正常位点</div>
+							<div>
+								<div class="normal_genes fs10">
+									<div v-if="item.genes.normal!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.normal">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">暂无</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="result_fr_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">风险位点</div>
+							<div>
+								<div class="risk_gene fs10">
+									<div v-if="item.genes.risk!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.risk" v-if="item.genes.risk!=''">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">不存在风险位点</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="pagenumber">005</div>
+				</div>
+			</div>
+			<!--成人天赋潜能24,全是正态图-->
+			<div v-for="c in datas" v-if="c.classid==24&package_id==3" class="loop" v-cloak>
+				<div class="result_tag_adult" v-if="c.items.length>0">{{c.classname}}</div>
+				<div v-for="(item,index) in c.items" class="result matuo" v-cloak>
+					<div class="tlt_border_t"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="col1_t lh30 item_name">{{item.name}}</h1>
+					<p class="col1_t  lh34 fs14">检测结果</p>
+					<div class="card section section-assessment">
+						<div class="assess-three-child">
+							<div class="mark-box" v-cloak>
+								<div style="width: 108px;" class="mark-container" :class="{'low':item.level==0||item.level==1,'middle':item.level==2,'high':item.level==3||item.level==4}">
+									<div class="mark-text" style="width: 100px;">{{item.name}}{{item.label}}</div>
+								</div>
+							</div>
+							<div class="seeme">看看您在人群中的位置</div>
+							<div class="zhengtaifengbu" id="zhengtaifengbu">
+								<div class="fs10 colaaa tc average">
+									平均水平
+									<div class="fr" style="width:30px;overflow: hidden;height: 14px;">优秀</div>
+								</div>
+								<canvas :id="'myChart'+c.classid+index" width="1000" height="440"></canvas>
+								<div class="zuobiao pr">
+									<div class="pa ztarrow" :style="{left:+((item.myrisk-0.08)*230)+14+'px'}">
+										<div class="fs9 tc">您的位置</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="col1_t  lh34 fs14">检测位点信息</p>
+					<div class="result_fl_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">正常位点</div>
+							<div>
+								<div class="normal_genes fs10">
+									<div v-if="item.genes.normal!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.normal">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">暂无</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="result_fr_adult">
+						<div class="card">
+							<div class="tc bgcolor1 lh28 page_color1">风险位点</div>
+							<div>
+								<div class="risk_gene fs10">
+									<div v-if="item.genes.risk!=''" class="paddingbox">
+										<ul class="list-head">
+											<li class="col1">基因位点</li>
+											<li class="col2">基因型</li>
+											<li class="col3">基因型解释</li>
+										</ul>
+										<ul class="list" v-for="gene in item.genes.risk" v-if="item.genes.risk!=''">
+											<li class="col1">
+												<div>{{gene.name}}</div>
+											</li>
+											<li class="col2">{{gene.gene_type}}</li>
+											<li class="col3">
+												<div>{{gene.label}}</div>
+											</li>
+										</ul>
+									</div>
+									<div v-else class="tc norisk">不存在风险位点</div>
+								</div>
+								<div class="blank10"></div>
+							</div>
+						</div>
+					</div>
+					<div class="pagenumber">005</div>
+				</div>
+			</div>
+			<!--成人详情内容页end-->
+
+			<!--H　内容页start-->
+			<!--儿童疾病类详情-->
+			<div v-for="c in datas" v-if="c.classid==1" class="loop" v-cloak>
+				<div class="result_tag">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div :class="{'tlt_border':package_id==1||package_id==4,'tlt_border_t':package_id==2}"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="color1 lh30 item_name">{{item.name}}</h1>
+					<p class="color1 lh34 fs14">检测结果</p>
+					<div class="card section section-assessment-h1">
+						<div>
+							<!--评估组件，三个的时候. "level3"表示结果级别为 “强” -->
+							<div class="type_commom">
+								<div class="mark-box tc">
+									<div class="mark-container" :class="item.level==0?'level1':''">
+										<div class="mark-text">低</div>
+									</div>
+									<div class="mark-container" :class="item.level==1?'level2':''">
+										<div class="mark-text">稍低</div>
+									</div>
+									<div class="mark-container " :class="item.level==2?'level3':''">
+										<div class="mark-text">正常</div>
+									</div>
+									<div class="mark-container " :class="item.level==3?'level4':''">
+										<div class="mark-text">稍高</div>
+									</div>
+									<div class="mark-container " :class="item.level==4?'level5':''">
+										<div class="mark-text">高</div>
+									</div>
+								</div>
+							</div>
+							<div class="chart-container">
+								<div class="score-mine">
+									<div class="bar-container" v-cloak>
+										<p class="lh30 fs12">您孩子的患病风险</p>
+										<div class="bar-wrap">
+											<div class="commom-inner" :style="{width:+item.myrisk*100+'%'}"></div>
+										</div>
+										<p class="lh30 fs12">中国孩子的平均患病风险</p>
+										<div class="bar-wrap">
+											<div class="commom-inner" :style="{width:+item.allrisk*100+'%'}"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tc  commom-text fs12">患病风险倍数：<span v-text="item.multiple.toFixed(2)+'x'" v-cloak></span></div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="color1 lh34 fs14">检测位点信息</p>
+					<div class="clear">
+						<table class="gene_site tc gene_risk fl">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.risk">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="gene_site tc gene_normal fr">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.normal">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+			</div>
+			<!--儿童遗传病详情-->
+			<div v-for="c in datas" v-if="c.classid==2&(package_id==1||package_id==4)" class="loop" v-cloak>
+				<div class="result_tag">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div :class="{'tlt_border':package_id==1||package_id==4,'tlt_border_t':package_id==2}"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="color1 lh30 item_name">{{item.name}}</h1>
+					<p class="color1 lh34 fs14">检测结果</p>
+					<div class="card section section-assessment-h1">
+						<div class="section-content">
+							<div class="assess-three-child">
+								<div class="mark-box">
+									<div class="mark-container" :class="item.level==0||item.level==1||item.level==2?'nogene':''">
+										<div class="mark-text">未检出</div>
+									</div>
+									<div class="mark-container " :class="item.level==3?'hasgene':''">
+										<div class="mark-text">携带</div>
+									</div>
+									<div class="mark-container" :class="item.level==4?'yesgene':''">
+										<div class="mark-text">检出</div>
+									</div>
+								</div>
+								<div class="fs13 colaaa jieshi">
+									<p>检&nbsp;&nbsp;&nbsp;出：检出致病突变且为致病基因型；</p>
+									<p>携&nbsp;&nbsp;&nbsp;带：携带致病突变但为非致病基因型；</p>
+									<p>未检出：未检出致病突变。</p>
+									<div class="blank10"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="color1 lh34 fs14">检测位点信息</p>
+					<div class="clear">
+						<table class="gene_site tc gene_risk fl">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.risk">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="gene_site tc gene_normal fr">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.normal">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+			</div>
+			<!--儿童常见不良倾向详情-->
+			<div v-for="c in datas" v-if="c.classid==3" class="loop" v-cloak>
+				<div class="result_tag">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div :class="{'tlt_border':package_id==1||package_id==4,'tlt_border_t':package_id==2}"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="color1 lh30 item_name">{{item.name}}</h1>
+					<p class="color1 lh34 fs14">检测结果</p>
+					<div class="card section section-assessment-h1" v-cloak>
+						<div class="section-content">
+							<div class="assess-three-child" v-if="item.tag.length==2">
+								<div class="mark-box">
+									<div class="mark-container" style="width:70px" :class="item.tag[2].tvalues.indexOf(parseInt(item.level))>=0?'l1':''">
+										<div class="mark-text" style="width:62px" v-cloak>{{item.tag[2].tagname}}</div>
+									</div>
+									<div class="mark-container" style="width:70px" :class="item.tag[0].tvalues.indexOf(parseInt(item.level))>=0?'l5':''">
+										<div class="mark-text" style="width:62px" v-cloak>{{item.tag[0].tagname}}</div>
+									</div>
+								</div>
+							</div>
+							<div class="assess-three-child" v-if="item.tag.length==3">
+								<div class="mark-box">
+									<div class="mark-container" style="width:70px" :class="item.tag[2].tvalues.indexOf(parseInt(item.level))>=0?'l1':''">
+										<div class="mark-text" style="width:62px" v-cloak>{{item.tag[2].tagname}}</div>
+									</div>
+									<div class="mark-container" style="width:70px" :class="item.tag[1].tvalues.indexOf(parseInt(item.level))>=0?'l3':''">
+										<div class="mark-text" style="width:62px" v-cloak>{{item.tag[1].tagname}}</div>
+									</div>
+									<div class="mark-container" style="width:70px" :class="item.tag[0].tvalues.indexOf(parseInt(item.level))>=0?'l5':''">
+										<div class="mark-text" style="width:62px" v-cloak>{{item.tag[0].tagname}}</div>
+									</div>
+								</div>
+							</div>
+							<div class="chart-container" v-cloak>
+								<div class="score-mine">
+									<div class="text-box" :style="{left:+(item.myrisk)*100+'%'}">
+										<span>您孩子的位置</span>
+										<br>
+										<span class="bg-sprite arrow-down"></span>
+									</div>
+									<div class="bar-container">
+										<div class="bar-wrap">
+											<div class="bar-inner" :style="{width:+(item.myrisk)*100+'%'}"></div>
+										</div>
+										<table class="pa scale_table">
+											<tr>
+												<td class="vita_text">{{item.tag[2].tagname}}</td>
+												<td valign="middle" class="tc" style="max-width: 150px;vertical-align: middle;"><img src="images/pointo.png" width="100%" style="margin: 0;display:table-cell;vertical-align: middle;" /></td>
+												<td align="right" class="vita_text">{{item.tag[0].tagname}}</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="color1 lh34 fs14">检测位点信息</p>
+					<div class="clear">
+						<table class="gene_site tc gene_risk fl">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.risk">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="gene_site tc gene_normal fr">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.normal">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+			</div>
+			<!--儿童维生素详情-->
+			<div v-for="c in datas" v-if="(c.classid==4||c.classid==5||c.classid==6)&&(package_id==1||package_id==4)" class="loop" v-cloak>
+				<div class="result_tag">{{c.classname}}</div>
+				<div v-for="item in c.items" class="result matuo" v-cloak>
+					<div :class="{'tlt_border':package_id==1||package_id==4,'tlt_border_t':package_id==2}"></div>
+					<div class="tlt_txt result_txt">检测结果概况-{{c.classname}}</div>
+					<div class="blank10"></div>
+					<div class="clear"></div>
+					<h1 class="color1 lh30 item_name">{{item.name}}</h1>
+					<p class="color1 lh34 fs14">检测结果</p>
+					<div class="card section section-assessment-h1">
+						<div class="section-content">
+							<div class="assess-three-child">
+								<div class="mark-box" v-if="item.tag.length==2">
+									<div class="mark-container_nutri tag_two" :class="item.tag[1].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[1].tagname}}</div>
+									</div>
+									<div class="mark-container_nutri tag_two" :class="item.tag[0].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[0].tagname}} </div>
+									</div>
+								</div>
+								<div class="mark-box" v-if="item.tag.length==3">
+									<div class="mark-container_nutri" :class="item.tag[2].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[2].tagname}}</div>
+									</div>
+									<div class="mark-container_nutri" :class="item.tag[1].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[1].tagname}} </div>
+									</div>
+									<div class="mark-container_nutri" :class="item.tag[0].tvalues.indexOf(parseInt(item.level))>=0?'l2':''">
+										<div class="mark-text">{{item.tag[0].tagname}} </div>
+									</div>
+								</div>
+							</div>
+							<div class="chart-container">
+								<div class="score-mine">
+									<div class="text-box" :style="{left:+item.myrisk*100+'%'}">
+										<span>您孩子的位置</span>
+										<br>
+										<span class="bg-sprite arrow-down"></span>
+									</div>
+									<div class="bar-container">
+										<div class="bar-wrap">
+											<div class="bar-inner" :style="{width:+item.myrisk*100+'%'}"></div>
+										</div>
+										<div class="clear" style="width: 290px;margin-top: 6px;" v-if="item.tag.length==2">
+											<table class="nutri_tag">
+												<tr>
+													<td align="left">{{item.tag[1].tagname}}</td>
+													<td class="tc" style="vertical-align: middle;"><img src="images/pointo.png" width="100%" style="max-width: 126px;" /></td>
+													<td align="right">{{item.tag[0].tagname}}</td>
+												</tr>
+											</table>
+										</div>
+										<div class="clear" style="width: 290px;margin-top: 6px;" v-if="item.tag.length==3">
+											<table class="nutri_tag">
+												<tr>
+													<td align="left">{{item.tag[2].tagname}}</td>
+													<td class="tc" style="vertical-align: middle;"><img src="images/pointo.png" width="100%" style="max-width: 126px;" /></td>
+													<td align="right">{{item.tag[0].tagname}}</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="blank20"></div>
+					<p class="color1 lh34 fs14">检测位点信息</p>
+					<div class="clear">
+						<table class="gene_site tc gene_risk fl">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.risk">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="gene_site tc gene_normal fr">
+							<thead>
+								<tr>
+									<th>位点</th>
+									<th>基因型</th>
+									<th>基因型解释</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr v-for="gene in item.genes.normal">
+									<td>{{gene.rs_id}}</td>
+									<td>{{gene.gene_type}}</td>
+									<td>{{gene.label}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pagenumber_th" v-if="package_id==4">001</div>
+					<div class="pagenumber" v-else>001</div>
+				</div>
+			</div>
+			<!--H　内容页end-->
+			<div class="spacepage back_blank"></div>
+			<!--结尾页-->
+			<div :class="{'back_page1':package_id==1||package_id==4,'back_page1_t':package_id==2||package_id==3}">
+				<div class="matuo page_back">
+					<p class="lh6" v-if="package_id==3"></p>
+					<p class="lh6" v-if="package_id==3"></p>
+					<p class="lh6" v-if="package_id==3"></p>
+					<h1 :class="{'color1':package_id==1||package_id==4,'col1_t':package_id==2||package_id==3}">结束语</h1>
+					<p class="lh6"></p>
+					<div>
+						<p>再次感谢您选用壹基因提供的基因检测服务。</p>
+						<p class="lh6"></p>
+						<p v-if='package_id==1||package_id==4'>爱因斯坦曾说过 :“孩子生来就是天才 , 但往往在他们求知的岁月中 , 错误的教育方式扼杀了他们的天才。”</p>
+						<p v-if='package_id==2'>法国基因学家安德烈•拉莫斯有句名言：基因指出了一个方向，但并不是不可改变的终点。基因与环境的共同作用才造就出一个结果。因此一个人的成功是由先天因素加上后天环境和教育共同塑造的。通过宝贝密码 T+ 儿童天赋基因检测套餐，明确孩子的天赋优势所在，可以帮助我们因势利导对孩子进行兴趣引导和特长培养，做到事半功倍；对于天赋不是特别优秀的项目，通过后天的努力和针对性的锻炼，同样可以弥补不足，做出成绩。</p>
+						<p v-if='package_id==3'>疾病的发生受到先天和后天两个因素的共同影响，某疾病先天遗传风险低并不代表患病概率是零，如果后天生活习惯很差，生存环境不好，都会提升疾病的发生风险，促进疾病的最终发生；做基因检测的目的，不是去忽视低风险的疾病，而是要找出高风险的疾病进行重点预防，采取措施进行针对性干预，以便阻断或者延缓疾病的发生。</p>
+						<p class="lh6"></p>
+						<p v-if='package_id==1||package_id==4'>孩子的培养分为教和育两个方面，宝贝密码 H+ 健康套餐专为科学健康“育”儿成长而设计。那么如何“教”呢？壹基因竭力打造宝贝密码T+ 天赋套餐，通过检测孩子天赋、情商、智商和性格四个方面的先天遗传信息，从源头上解开宝贝天生所携带的基因密码，可以帮助我们更早更科学的了解孩子先天的优势及不足，进而帮助我们在培养和教育孩子的道路上做到有的放矢，因材施“教”，帮助孩子早日成才。</p>
+						<p v-if='package_id==2'>孩子的培养分为教和育两个方面，宝贝密码 T+ 儿童天赋套餐专注孩子的“教”，此外，壹基因也为科学“育”儿专门设计了宝贝密码 H+ 健康套餐，从先天遗传的角度评估儿童常见健康风险，检测孩子对常见营养物质的吸收能力，进而科学指导疾病预防营养补充，为孩子健康成长保驾护航。</p>
+						<p v-if='package_id==3'>您可以通过我们提供的健康建议开展健康管理，对风险较高的项目积极预防，如改变饮食习惯、定期进行针对性的临床体检等。若您携带某种疾病易感基因型，该基因型很可能也存在于您亲属的基因中并遗传给他们的后代。因此，壹基因建议您的亲属也针对这些高风险项目进行检测，以了解自身健康风险，及时采取干预措施，拥有健康的品质生活。</p>
+						<p class="lh6"></p>
+						<p>如果您对我们的检测服务和体验有任何意见或建议，敬请拨打我们的健康热线400-163-5588，或者登陆壹基因公众号进行在线咨询。欢迎通过壹基因公众号参加"基因故事有奖征稿"活动，分享您的基因检测体验，更多惊喜等着您。</p>
+					</div>
+				</div>
+			</div>
+			<!--间隔页-->
+			<div class="spacepage"></div>
+			<div class="spacepage"></div>
+			<div class="matuo page_back2 clear spacepage">
+				<img src="img/logo.png" width="150" />
+				<div class="contact">
+					<img src="img/qr.jpg" class="fl" width="120" />
+					<div class="contact_p">
+						<p class="fs12 lh20 col4">杭州和壹健康管理有限公司</p>
+						<p>电话：400-163-5588</p>
+						<p>网址：www.1gene.com.cn</p>
+						<p>邮箱：health@1gene.com.cn</p>
+						<p>地址：杭州市滨江区聚才路 88 号远方科技中心 15 楼（310051）</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	var paiban = [];
+	var sampleNumber = $.getUrlParam('sampleNumber');
+	$.ajax({
+		type: 'get',
+		url: 'http://192.168.11.157:8080/1geneT/rest/child/childH',
+		dataType: "jsonp",
+		jsonp: "jsonpcallback", //服务端用于接收callback调用的function名的参数  
+		data: {
+			sampleNumber: sampleNumber
+		},
+		async: false,
+		success: function(data) {
+			if(data != null) {
+				var paiban = eval('(' + data + ')');
+				$.each(paiban.datas, function(datasindex, datas) { //标签正序去重
+					$.each(datas.items, function(itemindex, item) {
+						if(item.tag.length > 1) {
+							item.tag = $.removesame(item.tag);
+						}
+					})
+				});
+				$.each(paiban.datas, function(i, data) { //rs码转og码
+					$.each(data.items, function(j, item) {
+						$.each(item.genes.normal, function(k, normal) {
+							var og_id_normal = 'og_' + normal.rs_pos.slice(normal.rs_pos.length - 1) + normal.rs_pos.slice(normal.rs_pos.length - 4, normal.rs_pos.length - 1) + normal.rs_pos.slice(0, 1);
+							//console.log(og_id_normal)
+							normal.rs_id = og_id_normal;
+						});
+						$.each(item.genes.risk, function(k, risk) {
+							var og_id_risk = 'og_' + risk.rs_pos.slice(risk.rs_pos.length - 1) + risk.rs_pos.slice(risk.rs_pos.length - 4, risk.rs_pos.length - 1) + risk.rs_pos.slice(3, 4);
+							risk.rs_id = og_id_risk;
+						})
+					});
+				});
+				$.modify_name(paiban); //代理商名字去星号
+				console.log(paiban)
+				var vue = new Vue({
+					data: paiban,
+					el: '#vuemain',
+					computed: {
+						//目录
+						catalog_flItmes: function() {
+							if(this.package_type == 'develop_package') { //成才包目录左边3项，T/天赋包左边4项
+								return this.datas.slice(0, 3)
+							} else if(this.package_id == '3') { //成人目录左边5项
+								return this.datas.slice(0, 4)
+							} else if(this.package_id == '4' && this.package_type == 'child_th') { //T+H
+								return this.datas.slice(6, 11)
+							} else if(this.package_id == '2') { //T
+								return this.datas.slice(0, 5)
+							} else {
+								return this.datas.slice(0, 4)
+							}
+						},
+						catalog_frItmes: function() {
+							if(this.package_type == 'develop_package') {
+								return this.datas.slice(3)
+							} else if(this.package_id == '3') { //成人目录左边5项
+								return this.datas.slice(4)
+							} else if(this.package_id == '4' && this.package_type == 'child_th') { //T+H
+								return this.datas.slice(11)
+							} else if(this.package_id == '2') { //T
+								return this.datas.slice(5)
+							} else {
+								return this.datas.slice(4)
+							}
+						},
+						catalog_fl_h: function() {
+							return this.datas.slice(0, 4)
+						},
+						catalog_fr_h: function() {
+							return this.datas.slice(4, 6)
+						},
+						//统计检测类
+						typenum: function() {
+							var n = 0;
+							$.each(this.datas, function(i, data) {
+								if(data.items.length > 0) {
+									n++;
+								};
+							});
+							return n;
+						},
+						//当T+H时，统计T
+						typenum_t: function() {
+							return this.datas.length - 6;
+						}, //当T+H时，统计H
+						typenum_h: function() {
+							return this.datas.length - 8;
+						}
+
+					},
+					mounted: function() { //渲染完成
+						//H套餐
+						if(paiban.package_id == 1) {
+							$('.result.matuo').each(function() {
+								var gene_risk = $(this).find('.gene_risk');
+								var gene_normal = $(this).find('.gene_normal');
+								$.table_tr(gene_risk, gene_normal); //移动表格
+							});
+							var cata_array = $('.catalog .cata_fl');
+							$.cata_overflow(cata_array); //修复目录左边排版超出问题
+							$.type_tag(); //类别标签定位
+							$.merge_page(); //合并两页
+							var pagenumber = $('.pagenumber');
+							$.pagenumber(pagenumber); //页码
+							$.nutri_color(); //修复维生素标签颜色
+							$.catalog_page(1); //生成目录
+						} else if(paiban.package_id == 2) { //t套餐
+							//正太图和圈图
+							$.each(paiban.datas, function(i, c) {
+								var classid = c.classid;
+								if(classid != 3) { //排除成长包里的不良倾向
+									$.each(c.items, function(j, item) {
+										var jindex = classid + j.toString();
+										var l = item.genes.normal.length + item.genes.risk.length;
+										//console.log(jindex)
+										if(l > 1 && classid != 14) {
+											//正态图,排除性格类
+											var ctx2 = document.getElementById("myChart" + jindex).getContext("2d");
+											$.drawzt(ctx2, item.myrisk, 0);
+										} else {
+											//canvas圆
+											var ctx = document.getElementById("c" + jindex).getContext("2d");
+											ctx.canvas.width = 600;
+											ctx.canvas.height = 380;
+											var hnum = Number(item.ratio).toFixed(2);
+											color = '#60b7fc';
+											t_color = '#2694ef'
+											$.drawcircle(ctx, item.name, hnum, color, t_color); //天赋名称，百分比，颜色
+										}
+									});
+								}
+							});
+							paiban.good_items = $.t_model(paiban.good_items); //模型标签
+							//雷达图天赋总图 --t和天赋包
+							if(paiban.package_type == 'child_t' || paiban.package_type == 'telent_package') {
+								dataArr_all = {
+									indicator: [{
+										max: 100
+									}, {
+										max: 100
+									}, {
+										max: 100
+									}, {
+										max: 100
+									}, {
+										max: 100
+									}],
+									value: []
+								}
+								$.each(paiban.datas, function(i, item) {
+									if(item.classid >= 7 && item.classid <= 11) {
+										dataArr_all.value.push(item.radar);
+									}
+								});
+								//console.log(dataArr_all)
+								$.drawRadar("radarall", dataArr_all);
+							}
+
+							//按类别概况雷达图
+							var r = [];
+							var inv = [];
+							var dataArr = [];
+							var raderlength;
+							if(paiban.package_type == 'telent_package') {
+								raderlength = paiban.datas.length - 1 //天赋包
+							} else if(paiban.package_type == 'develop_package') {
+								raderlength = paiban.datas.length - 3 //－3成才包不取性格和不良倾向
+							} else if(paiban.package_type == 'child_t') {
+								raderlength = paiban.datas.length - 2 //-2因为性格不出雷达图
+							}
+							//console.log(raderlength)
+							for(var i = 0; i <= raderlength; i++) {
+								if(paiban.datas[i].classid !== 14) {
+									r[i] = [];
+									inv[i] = []
+										// 绘制雷达图
+									for(var j = 0; j <= paiban.datas[i].items.length - 1; j++) {
+										var obj = paiban.datas[i].items[j];
+										r[i].push(obj.myrisk * 100 + 7);
+										inv[i].push({
+											'name': obj.name,
+											'max': 100
+										})
+									}
+								}
+								dataArr[i] = {
+									indicator: inv[i],
+									value: r[i]
+								};
+								//console.log(dataArr[i])
+								//console.log("radar" + i)
+								$.radiustext(paiban.datas[i].items, dataArr[i]); //雷达图字换行
+								$.drawRadar("radar" + i, dataArr[i]);
+								$.removen(paiban.datas[i].items); //清除换行
+							}
+							var cata_array = $('.catalog .cata_fl');
+							$.cata_overflow(cata_array); //修复目录左边排版超出问题
+							$.table_color();
+							$.divide_page(); //T换页
+							var pagenumber = $('.pagenumber');
+							$.pagenumber(pagenumber);
+							$.catalog_page(2); //生成目录
+
+						} else if(paiban.package_id == 3) {
+							$('.result').find('.list .col1').each(function() { //基因位点
+								$.gene_repire($(this));
+							})
+							$('.result').find('.list .col3').each(function() { //基因型解释
+								$.gene_repire($(this));
+							})
+							$.each(paiban.datas, function(i, c) { //天赋详情页
+								var classid = c.classid;
+								if(classid == 24) { //
+									$.each(c.items, function(j, item) {
+										var jindex = classid + j.toString();
+										var ctx2 = document.getElementById("myChart" + jindex).getContext("2d");
+										//console.log(item.myrisk)
+										$.drawzt(ctx2, item.myrisk - 0.08, 0); //成人正态图-0.08
+									});
+								}
+							});
+							$.nutri_color(); //修复维生素标签颜色
+							$.type_tag(); //修复大类位置
+							var cata_array = $('.catalog .cata_fl');
+							$.catalog_adult(); //目录超出
+							$.cata_overflow(cata_array); //修复目录左边排版超出问题
+							$.gene_overflow(); //位点信息超出
+							$.modify_error(paiban);
+							$.punctuation();
+							var pagenumber = $('.pagenumber');
+							$.pagenumber(pagenumber);
+							$.catalog_page(3); //生成目录
+						} else if(paiban.package_id == 4) { //T+H特殊套餐
+							$.t_model(paiban.good_items_t); //T模型标签
+							//雷达图天赋总图 --t和天赋包
+							dataArr_all = {
+									indicator: [{
+										max: 100
+									}, {
+										max: 100
+									}, {
+										max: 100
+									}, {
+										max: 100
+									}, {
+										max: 100
+									}],
+									value: []
+								}
+								/*
+								 * 运动天赋:7
+								 * 交际天赋:8
+								 * 语言天赋:9
+								 * 绘画天赋：10
+								 * 音乐舞蹈天赋：11
+								 * */
+							$.each(paiban.datas, function(i, item) {
+								if(item.classid >= 7 && item.classid <= 11) {
+									dataArr_all.value.push(item.radar);
+								}
+							});
+							//console.log(dataArr_all)
+							$.drawRadar("radarall", dataArr_all);
+
+							//按类别概况雷达图
+							var r = [];
+							var inv = [];
+							var dataArr = [];
+							/* * 运动天赋:7
+							 * 交际天赋:8
+							 * 语言天赋:9
+							 * 绘画天赋：10
+							 * 音乐舞蹈天赋：11
+							 * 情商：12
+							 * 智商：13*/
+							for(var i = 0; i <= paiban.datas.length - 1; i++) {
+								if(paiban.datas[i].classid >= 7 && paiban.datas[i].classid <= 13) { //排除h和性格类
+									r[i] = [];
+									inv[i] = [];
+									dataArr[i] = [];
+									// 绘制雷达图
+									for(var j = 0; j <= paiban.datas[i].items.length - 1; j++) {
+										var obj = paiban.datas[i].items[j];
+										r[i].push(obj.myrisk * 100 + 7);
+										inv[i].push({
+											'name': obj.name,
+											'max': 100
+										})
+									}
+									dataArr[i] = {
+										indicator: inv[i],
+										value: r[i]
+									};
+									console.log(dataArr[i])
+									$.radiustext(paiban.datas[i].items, dataArr[i]); //雷达图字换行
+									$.drawRadar("radar" + i, dataArr[i]);
+									$.removen(paiban.datas[i].items); //清除换行
+								}
+							}
+							//正太图和圈图
+							$.each(paiban.datas, function(i, c) {
+								var classid = c.classid;
+								if(classid >= 7 && classid < 15) { //排除h
+									$.each(c.items, function(j, item) {
+										var jindex = classid + j.toString();
+										var l = item.genes.normal.length + item.genes.risk.length;
+										if(l > 1 && classid != 14) {
+											//正态图,排除性格类
+											//console.log(jindex);
+											var ctx2 = document.getElementById("myChart" + jindex).getContext("2d");
+											$.drawzt(ctx2, item.myrisk, 0);
+										} else {
+											//canvas圆
+											var ctx = document.getElementById("c" + jindex).getContext("2d");
+											ctx.canvas.width = 600;
+											ctx.canvas.height = 380;
+											var hnum = Number(item.ratio).toFixed(2);
+											color = '#60b7fc';
+											t_color = '#2694ef'
+											$.drawcircle(ctx, item.name, hnum, color, t_color); //天赋名称，百分比，颜色
+										}
+									});
+								}
+							});
+							$.type_tag(); //类别标签定位
+							$.table_color(); //表格隔行变色
+							$.nutri_color(); //修复维生素标签颜色
+							$.divide_page(); //详情换页
+							$('.result.matuo').each(function() {
+								var gene_risk = $(this).find('.gene_risk');
+								var gene_normal = $(this).find('.gene_normal');
+								$.table_tr(gene_risk, gene_normal); //移动表格
+							});
+							$.merge_page(); //合并两页
+							var cata_array_h = $('.catalog_h .cata_fl');
+							$.cata_overflow(cata_array_h); //修复h目录左边排版超出问题
+							var cata_array_t = $('.catalog_t .cata_fl');
+							$.cata_overflow(cata_array_t); //修复t目录左边排版超出问题
+							var pagenumber = $('.pagenumber');
+							var pagenumber_th = $('.pagenumber_th');
+							$.pagenumber(pagenumber);
+							$.pagenumber(pagenumber_th);
+							$.catalog_page(4);
+						}
+						if(paiban.package_type == 'develop_package') {
+							$('.result').each(function() {
+								var gene_risk = $(this).find('.gene_risk');
+								var gene_normal = $(this).find('.gene_normal');
+								$.table_tr(gene_risk, gene_normal); //移动表格
+							});
+							//标签正序去重
+							$.each(paiban.datas[3].items, function(itemindex, item) {
+								if(item.tag) {
+									item.tag = $.removesame(item.tag);
+								}
+							})
+							$.type_tag(); //类别标签定位
+							$.merge_page(); //合并两页
+						}
+						$.modify_title(paiban); //网页标题
+						$.detail();
+							$.remove_empty();
+						$.emptypage(); //清除增加空白页
+					
+
+					},
+					methods: {
+						showAdult: function(arr) { //成人报告的结果预览空白页删除
+							var self = this;
+							var cloneDatas = self.datas.clone();
+							if(self.package_type == 'adult') {
+								var itemList = cloneDatas.filter(function(item) {
+									if(arr.indexOf(item.classid) > -1 && item.items.length) {
+										return true;
+									} else {
+										return false;
+									}
+								});
+								//console.log(itemList);
+								if(itemList.length) {
+									return true;
+								} else {
+									return false;
+								}
+							} else {
+								return false;
+							}
+						}
+					}
+				});
+			}
+		},
+		error: function() {
+			alert('fail');
+		}
+	})
+
+	Array.prototype.clone = function() {
+		var a = [];
+		for(var i = 0, l = this.length; i < l; i++) a.push(this[i]);
+		return a;
+	};
+</script>

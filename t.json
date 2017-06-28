@@ -1,0 +1,1247 @@
+/*
+ * T:classid
+ * 运动天赋:7
+ * 交际天赋:8
+ * 语言天赋:9
+ * 绘画天赋：10
+ * 音乐舞蹈天赋：11
+ * 情商：12
+ * 智商：13
+ *个性特质类，性格：14
+ *<!-- level/0,2正向/2是正常/3,4是反向-->
+ */
+{
+		'package_name': '宝贝密码T+',
+		'package_id': 2,
+		'package_type':'child_t',
+		'name': '张三',
+		'sex': '女',
+		'age': 20,
+		'sample_type': '儿童套餐',
+		'sample_number': 5123355445552123,
+		'sample_date': '2017-01-02',
+		'report_date': '2017-03-09',
+		'gene_number': 300,
+		'item_number': 39,
+		'good_items': [
+		   			'绘画天赋',
+		   			'领导力',
+		   			'运动天赋',
+		   			'长时记忆能力',
+		   			'平和',
+		   			'自我激励能力'
+		   		],
+		'datas': [{
+			"classname": "运动天赋",
+			'classid': 7,
+			"typeof": "talent_T",
+			"radar": 59,
+			"items": [{
+				"name": "肌肉爆发力",
+				"radiusvalue": 49,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "FADS2",
+					"chrom": "11",
+					"rs_pos": "61602003",
+					"rs_id": "og_320036",
+					"location": "11",
+					"gene_type": "CC",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "母乳对IQ提高无影响",
+					"notice": "NA"
+				}, {
+					"name": "FADS2",
+					"chrom": "11",
+					"rs_pos": "61597972",
+					"rs_id": "og_279726",
+					"location": "11",
+					"gene_type": "AA",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "母乳对IQ提高有帮助",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "肌肉耐力",
+				"radiusvalue": 56,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "ADRB2",
+					"chrom": "5",
+					"rs_pos": "148206440",
+					"rs_id": "og_064401",
+					"location": "5",
+					"gene_type": "AA",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "肌肉耐力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "BDKRB2",
+					"chrom": "14",
+					"rs_pos": "96671139",
+					"rs_id": "og_911399",
+					"location": "14",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "肌肉耐力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "ADRB3",
+					"chrom": "8",
+					"rs_pos": "37823798",
+					"rs_id": "og_837983",
+					"location": "8",
+					"gene_type": "AA",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "肌肉耐力正常水平",
+					"notice": "NA"
+				}, {
+					"name": "HIF-1α",
+					"chrom": "14",
+					"rs_pos": "62207557",
+					"rs_id": "og_775576",
+					"location": "14",
+					"gene_type": "CC",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "肌肉耐力正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "肌肉力量",
+				"radiusvalue": 61,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "无氧运动能力",
+				"radiusvalue": 45,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "运动恢复能力",
+				"radiusvalue": 78,
+				"label": "优秀",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 0,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "软组织受伤保护",
+				"radiusvalue": 28,
+				"label": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "音乐舞蹈天赋",
+			"classid": 8,
+			"typeof": "talent_T",
+			"radar": 59,
+			"items": [{
+				"name": "音乐感知能力",
+				"radiusvalue": 28,
+				"label": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音乐情感反应",
+				"radiusvalue": 62,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音乐记忆能力",
+				"radiusvalue": 55,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音高辨别力",
+				"radiusvalue": 48,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音乐创造力",
+				"radiusvalue": 54,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "舞蹈创造力",
+				"radiusvalue": 48,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "绘画天赋",
+			"classid": 9,
+			"typeof": "talent_T",
+			"radar": 59,
+			"items": [{
+				"name": "辨色能力",
+				"radiusvalue": 55,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "WWC1",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "视觉记忆能力",
+				"radiusvalue": 71,
+				"label": "优秀",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 1,
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "WWC1",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "想象力",
+				"radiusvalue": 63,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "WWC1",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "语言天赋",
+			"classid": 10,
+			"typeof": "talent_T",
+			"radar": 80,
+			"items": [{
+				"name": "阅读记忆能力",
+				"radiusvalue": 57,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "阅读能力",
+				"radiusvalue": 54,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "语言发音能力",
+				"radiusvalue": 63,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "短时语言记忆能力",
+				"radiusvalue": 28,
+				"label": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "语言表达能力",
+				"radiusvalue": 62,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "拼写能力",
+				"radiusvalue": 46,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "交际天赋",
+			"typeof": "talent_T",
+			'classid': 11,
+			"radar": 60,
+			"items": [{
+				"name": "交流互动能力",
+				"radiusvalue": 28,
+				"label": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "外向性",
+				"radiusvalue": 54,
+				"label": "一般水平",
+				"ratio": "0.548",
+				"percent": "0.996",
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "交流才能",
+				"radiusvalue": 50,
+				"label": "一般水平",
+				"ratio": "0.507",
+				"percent": "0.922",
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "社会互动能力",
+				"radiusvalue": 48,
+				"label": "一般水平",
+				"ratio": "0.481",
+				"percent": "0.875",
+				"level": "2",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "社交能力",
+				"radiusvalue": 28,
+				"label": "偏弱",
+				"ratio": "0.282",
+				"percent": "0.167",
+				"level": "4",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "智商",
+			"typeof": "IQ",
+			'classid': 12,
+			"radar": 70,
+			"items": [{
+				"name": "数学计算能力",
+				"radiusvalue": 45,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+
+			}, {
+				"name": "认知能力",
+				"radiusvalue": 55,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10234257",
+					"rs_id": "og_742571",
+					"location": "20",
+					"gene_type": "GG",
+					"gene_probility": "四星半",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10220496",
+					"rs_id": "og_604961",
+					"location": "20",
+					"gene_type": "AA",
+					"gene_probility": "四星半",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10226146",
+					"rs_id": "og_661461",
+					"location": "20",
+					"gene_type": "CC",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10231174",
+					"rs_id": "og_411741",
+					"location": "20",
+					"gene_type": "CC",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "认知能力降低",
+					"notice": "NA"
+				}, {
+					"name": "NCAN",
+					"chrom": "19",
+					"rs_pos": "19361735",
+					"rs_id": "og_517351",
+					"location": "19",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "认知能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "长时记忆能力",
+				"radiusvalue": 60,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "短时记忆能力",
+				"radiusvalue": 29,
+				"label": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "专注力",
+				"radiusvalue": 55,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "创造力",
+				"radiusvalue": 46,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "避错能力",
+				"radiusvalue": 28,
+				"label": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "母乳喂养与智力",
+				"radiusvalue": 62,
+				"label": "无影响",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "情商",
+			"typeof": "EQ",
+			'classid': 13,
+			"radar": 59,
+			"items": [{
+				"name": "自我激励能力",
+				"radiusvalue": 47,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "自制力",
+				"radiusvalue": 49,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "情绪控制能力",
+				"radiusvalue": 51,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "善解人意能力",
+				"radiusvalue": 46,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "抗压能力",
+				"radiusvalue": 46,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "领导力",
+				"radiusvalue": 78,
+				"label": "优秀",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "0",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "人际交往能力",
+				"radiusvalue": 46,
+				"label": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "性格",
+			"typeof": "character",
+			'classid':14,
+			"radar": 59,
+			"items": [{
+				"name": "外向基因",
+				"radiusvalue": 75,
+				"label": "偏外向",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "1",
+				"opposite": [
+					"内向",
+					"外向"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}, {
+					"name": "DRD2",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "6",
+					"label": "偏外向",
+					"notice": "NA"
+				}, {
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "三星半",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "乐观基因",
+				"radiusvalue": 55,
+				"label": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"悲观",
+					"乐观"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "易怒基因",
+				"radiusvalue": 80,
+				"label": "不易怒",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "0",
+				"opposite": [
+					"易怒",
+					"平和"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "易焦虑基因",
+				"radiusvalue": 65,
+				"label": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"易焦虑",
+					"淡然"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "冒险精神基因",
+				"radiusvalue": 51,
+				"label": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"保守主义",
+					"冒险精神"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "好奇心基因",
+				"radiusvalue": 47,
+				"label": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"漠然",
+					"好奇心"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "责任心基因",
+				"radiusvalue": 28,
+				"label": "偏漫不经心",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"opposite": [
+					"漫不经心",
+					"责任心"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "坚毅基因",
+				"radiusvalue": 80,
+				"label": "较坚毅",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "0",
+				"opposite": [
+					"懦弱",
+					"坚毅"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "情绪化基因",
+				"radiusvalue": 28,
+				"label": "易情绪化",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"opposite": [
+					"情绪化",
+					"理智"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "同情心基因",
+				"radiusvalue": 46,
+				"label": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"冷漠",
+					"同情心"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}]
+		}]
+	}

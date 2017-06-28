@@ -1,0 +1,5018 @@
+/*
+ * 营养包：100410186244767 package_id=1  'package_type': 'nutrition_package',暂时包括乳糖不耐
+ * 疾病包：100150792021067 package_id=1	'package_type': 'health_package',
+ * 天赋包：100421108388921 package_id=2  'package_type': 'telent_package',
+ * 成才包：100217536816599 package_id=2  'package_type': 'develop_package',
+ * 规则与H/T一样
+ */
+/*疾病包*/
+{
+		'package_name': '宝贝密码-疾病包',
+		'package_id': 1,
+		'package_type': 'health_package',
+		'name': '张三',
+		'sex': '女',
+		'age': 20,
+		'sample_type': '儿童套餐自选包',
+		'sample_number': 100421108388921,
+		'sample_date': '2017-01-02',
+		'report_date': '2017-03-09',
+		'gene_number': 300,
+		'item_number': 39,
+		'datas': [{
+			'classid': 1,
+			'classname': '儿童常见疾病',
+			'typeof': 'h_disease',
+			'items': [{
+				"id": 60414,
+				"name": "哮喘",
+				"level": "2", //等级
+				"risk": 1.0295588022415,
+				"allrisk": 0.030,
+				"myrisk": 0.031,
+				'multiple': 0.94,
+				"genes": {
+					"normal": [{
+						"name": "RAD50-1",
+						"chrom": "5",
+						"rs_pos": "131970885",
+						"rs_id": "rs2237060",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "COMMD10-1",
+						"chrom": "5",
+						"rs_pos": "115597048",
+						"rs_id": "rs10043228",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "IL1R1-1",
+						"chrom": "2",
+						"rs_pos": "102765865",
+						"rs_id": "rs1558641",
+						"location": "2",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-2",
+						"chrom": "5",
+						"rs_pos": "132009710",
+						"rs_id": "rs2070874",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "五星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60415,
+				"name": "过敏性鼻炎",
+				"level": "3",
+				"risk": 0.96,
+				"allrisk": "0.060",
+				"myrisk": "0.131",
+				'multiple': 1.94,
+				"genes": {
+					"normal": [{
+						"name": "TMEM232/SLCA25A46-1",
+						"chrom": "5",
+						"rs_pos": "110146446",
+						"rs_id": "rs17513503",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "三星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "TSLP-1",
+						"chrom": "5",
+						"rs_pos": "110401872",
+						"rs_id": "rs1837253",
+						"location": "5",
+						"gene_type": "CT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "患病风险轻微降低",
+						"notice": "NA"
+					}, {
+						"name": "TSLP-2",
+						"chrom": "5",
+						"rs_pos": "110408002",
+						"rs_id": "rs1898671",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "IL33-1",
+						"chrom": "9",
+						"rs_pos": "6175855",
+						"rs_id": "rs72699186",
+						"location": "9",
+						"gene_type": "AA",
+						"gene_probility": "三星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "NearPPM1A/DHRS7-1",
+						"chrom": "14",
+						"rs_pos": "60683430",
+						"rs_id": "rs216518",
+						"location": "14",
+						"gene_type": "CC",
+						"gene_probility": "三星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "FOXJ1 -1",
+						"chrom": "17",
+						"rs_pos": "74134672",
+						"rs_id": "rs1868823",
+						"location": "17",
+						"gene_type": "AC",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "患病风险轻微降低",
+						"notice": "NA"
+					}, {
+						"name": "FOXJ1 -2",
+						"chrom": "17",
+						"rs_pos": "74133102",
+						"rs_id": "rs3192453",
+						"location": "17",
+						"gene_type": "CG",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "患病风险轻微降低",
+						"notice": "NA"
+					}, {
+						"name": "FOXJ1 -3",
+						"chrom": "17",
+						"rs_pos": "74136936",
+						"rs_id": "rs880213",
+						"location": "17",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "患病风险轻微降低",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR6-1",
+						"chrom": "4",
+						"rs_pos": "38862121",
+						"rs_id": "rs3860069",
+						"location": "4",
+						"gene_type": "AC",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "WDR36-1",
+						"chrom": "5",
+						"rs_pos": "110467499",
+						"rs_id": "rs1438673",
+						"location": "5",
+						"gene_type": "CT",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "HLAregion-1",
+						"chrom": "6",
+						"rs_pos": "32658079",
+						"rs_id": "rs7775228",
+						"location": "6",
+						"gene_type": "CT",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "ZBTB10-1",
+						"chrom": "8",
+						"rs_pos": "81291879",
+						"rs_id": "rs7009110",
+						"location": "8",
+						"gene_type": "CT",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "CLEC16A-1",
+						"chrom": "16",
+						"rs_pos": "11228712",
+						"rs_id": "rs62026376",
+						"location": "16",
+						"gene_type": "CC",
+						"gene_probility": "三星半",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "CLEC16A-2",
+						"chrom": "16",
+						"rs_pos": "11158885",
+						"rs_id": "rs887864",
+						"location": "16",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60416,
+				"name": "肥胖症",
+				"level": "2",
+				"risk": 0.96,
+				"allrisk": "0.030",
+				"myrisk": "0.031",
+				'multiple': 0.94,
+				"genes": {
+					"normal": [{
+						"name": "RAD50-1",
+						"chrom": "5",
+						"rs_pos": "131970885",
+						"rs_id": "rs2237060",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "COMMD10-1",
+						"chrom": "5",
+						"rs_pos": "115597048",
+						"rs_id": "rs10043228",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "IL1R1-1",
+						"chrom": "2",
+						"rs_pos": "102765865",
+						"rs_id": "rs1558641",
+						"location": "2",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-2",
+						"chrom": "5",
+						"rs_pos": "132009710",
+						"rs_id": "rs2070874",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "五星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60417,
+				"name": "抑郁症",
+				"risk": 1.0392207131533,
+				"level": "0",
+				"allrisk": "0.030",
+				"myrisk": "0.031",
+				"multiple": 1.0392207131533,
+				"genes": {
+					"normal": [{
+						"name": "RAD50-1",
+						"chrom": "5",
+						"rs_pos": "131970885",
+						"rs_id": "rs2237060",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "COMMD10-1",
+						"chrom": "5",
+						"rs_pos": "115597048",
+						"rs_id": "rs10043228",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "IL1R1-1",
+						"chrom": "2",
+						"rs_pos": "102765865",
+						"rs_id": "rs1558641",
+						"location": "2",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-2",
+						"chrom": "5",
+						"rs_pos": "132009710",
+						"rs_id": "rs2070874",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "五星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+
+			}, {
+				"id": 60418,
+				"name": "强迫症",
+				"level": "0",
+				"risk": 0.3,
+				"allrisk": "0.030",
+				"myrisk": "0.031",
+				"multiple": 1.0392207131533,
+				"genes": {
+					"normal": [{
+						"name": "RAD50-1",
+						"chrom": "5",
+						"rs_pos": "131970885",
+						"rs_id": "rs2237060",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "COMMD10-1",
+						"chrom": "5",
+						"rs_pos": "115597048",
+						"rs_id": "rs10043228",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "IL1R1-1",
+						"chrom": "2",
+						"rs_pos": "102765865",
+						"rs_id": "rs1558641",
+						"location": "2",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-2",
+						"chrom": "5",
+						"rs_pos": "132009710",
+						"rs_id": "rs2070874",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "五星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60419,
+				"name": "自闭症",
+				"level": "2",
+				"risk": 0.3,
+				"allrisk": "0.030",
+				"myrisk": "0.031",
+				"multiple": 1.0392207131533,
+				"genes": {
+					"normal": [{
+						"name": "RAD50-1",
+						"chrom": "5",
+						"rs_pos": "131970885",
+						"rs_id": "rs2237060",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "COMMD10-1",
+						"chrom": "5",
+						"rs_pos": "115597048",
+						"rs_id": "rs10043228",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "IL1R1-1",
+						"chrom": "2",
+						"rs_pos": "102765865",
+						"rs_id": "rs1558641",
+						"location": "2",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-2",
+						"chrom": "5",
+						"rs_pos": "132009710",
+						"rs_id": "rs2070874",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "五星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60420,
+				"name": "多动症",
+				"level": "0",
+				"risk": 0.38,
+				"allrisk": "0.030",
+				"myrisk": "0.031",
+				"multiple": 1.0392207131533,
+				"genes": {
+					"normal": [{
+						"name": "RAD50-1",
+						"chrom": "5",
+						"rs_pos": "131970885",
+						"rs_id": "rs2237060",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "SMAD3-1",
+						"chrom": "15",
+						"rs_pos": "67468285",
+						"rs_id": "rs17294280",
+						"location": "15",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}, {
+						"name": "COMMD10-1",
+						"chrom": "5",
+						"rs_pos": "115597048",
+						"rs_id": "rs10043228",
+						"location": "5",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "患病风险正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "IL1RL1-1",
+						"chrom": "2",
+						"rs_pos": "102966549",
+						"rs_id": "rs10197862",
+						"location": "2",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "IL1R1-1",
+						"chrom": "2",
+						"rs_pos": "102765865",
+						"rs_id": "rs1558641",
+						"location": "2",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-1",
+						"chrom": "5",
+						"rs_pos": "131995964",
+						"rs_id": "rs20541",
+						"location": "5",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "IL-13-2",
+						"chrom": "5",
+						"rs_pos": "132009710",
+						"rs_id": "rs2070874",
+						"location": "5",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "4",
+						"label": "患病风险增加",
+						"notice": "NA"
+					}, {
+						"name": "HLA-DQB1-1",
+						"chrom": "6",
+						"rs_pos": "32626601",
+						"rs_id": "rs9273373",
+						"location": "6",
+						"gene_type": "AG",
+						"gene_probility": "四星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}, {
+						"name": "TLR1-1",
+						"chrom": "4",
+						"rs_pos": "38799710",
+						"rs_id": "rs4833095",
+						"location": "4",
+						"gene_type": "CT",
+						"gene_probility": "五星",
+						"influence": "3",
+						"label": "患病风险轻微增加",
+						"notice": "NA"
+					}]
+				}
+			}]
+		}, {
+			'classid': 2,
+			'classname': '儿童遗传病',
+			'typeof': 'h_genetic',
+			'items': [{
+				"id": 60421,
+				"name": "药物性耳聋",
+				"level": 2,
+				"genes": {
+					"normal": [{
+						"name": "PAH-1",
+						"chrom": "12",
+						"rs_pos": "103246695",
+						"rs_id": "rs199475579",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-2",
+						"chrom": "12",
+						"rs_pos": "103237424",
+						"rs_id": "rs199475658",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-3",
+						"chrom": "12",
+						"rs_pos": "103234192",
+						"rs_id": "rs199475659",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-4",
+						"chrom": "12",
+						"rs_pos": "103260410",
+						"rs_id": "rs5030843",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-5",
+						"chrom": "12",
+						"rs_pos": "103246708",
+						"rs_id": "rs5030846",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-6",
+						"chrom": "12",
+						"rs_pos": "103246681",
+						"rs_id": "rs5030847",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-7",
+						"chrom": "12",
+						"rs_pos": "103246653",
+						"rs_id": "rs5030849",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-8",
+						"chrom": "12",
+						"rs_pos": "103246654",
+						"rs_id": "rs5030850",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-9",
+						"chrom": "12",
+						"rs_pos": "103234271",
+						"rs_id": "rs5030858",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-10",
+						"chrom": "12",
+						"rs_pos": "103234270",
+						"rs_id": "rs5030859",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-11",
+						"chrom": "12",
+						"rs_pos": "103234252",
+						"rs_id": "rs5030860",
+						"location": "12",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-12",
+						"chrom": "12",
+						"rs_pos": "103246707",
+						"rs_id": "rs62508588",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-13",
+						"chrom": "12",
+						"rs_pos": "103249009",
+						"rs_id": "rs62514927",
+						"location": "12",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-14",
+						"chrom": "12",
+						"rs_pos": "103238202",
+						"rs_id": "rs62514959",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-15",
+						"chrom": "12",
+						"rs_pos": "103237555",
+						"rs_id": "rs62516095",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-16",
+						"chrom": "12",
+						"rs_pos": "103288671",
+						"rs_id": "rs75193786",
+						"location": "12",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-17",
+						"chrom": "12",
+						"rs_pos": "103288534",
+						"rs_id": "rs76296470",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-18",
+						"chrom": "12",
+						"rs_pos": "103246714",
+						"rs_id": "rs76687508",
+						"location": "12",
+						"gene_type": "GG",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-19",
+						"chrom": "12",
+						"rs_pos": "103260401",
+						"rs_id": "rs79635844",
+						"location": "12",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "PAH-20",
+						"chrom": "12",
+						"rs_pos": "103234255",
+						"rs_id": "rs79931499",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "PAH-20",
+						"chrom": "12",
+						"rs_pos": "103234255",
+						"rs_id": "rs79931499",
+						"location": "12",
+						"gene_type": "CC",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "检出",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60422,
+				"name": "遗传性耳聋",
+				"level": 0,
+				"genes": {
+					"normal": [{
+						"name": "GJB3-1",
+						"chrom": "1",
+						"rs_pos": "35250910",
+						"rs_id": "rs74315318",
+						"location": "1",
+						"gene_type": "GG",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "GJB3-2",
+						"chrom": "1",
+						"rs_pos": "35250901",
+						"rs_id": "rs74315319",
+						"location": "1",
+						"gene_type": "CC",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "SLC26A4(PDS)-1",
+						"chrom": "7",
+						"rs_pos": "107330648",
+						"rs_id": "rs111033220",
+						"location": "7",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "SLC26A4(PDS)-2",
+						"chrom": "7",
+						"rs_pos": "107330645",
+						"rs_id": "rs111033305",
+						"location": "7",
+						"gene_type": "GG",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "SLC26A4(PDS)-3",
+						"chrom": "7",
+						"rs_pos": "107342495",
+						"rs_id": "rs111033318",
+						"location": "7",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "SLC26A4(PDS)-4",
+						"chrom": "7",
+						"rs_pos": "107314782",
+						"rs_id": "rs111033380",
+						"location": "7",
+						"gene_type": "GG",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "SLC26A4(PDS)-5",
+						"chrom": "7",
+						"rs_pos": "107350577",
+						"rs_id": "rs121908362",
+						"location": "7",
+						"gene_type": "AA",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "SLC26A4(PDS)-6",
+						"chrom": "7",
+						"rs_pos": "107350571",
+						"rs_id": "rs121908363",
+						"location": "7",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "GJB2-1",
+						"chrom": "13",
+						"rs_pos": "20763421",
+						"rs_id": "rs111033204",
+						"location": "13",
+						"gene_type": "AA",
+						"gene_probility": "三星半",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "GJB2-2",
+						"chrom": "13",
+						"rs_pos": "20763686",
+						"rs_id": "rs80338939",
+						"location": "13",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "GJB2-3",
+						"chrom": "13",
+						"rs_pos": "20763554",
+						"rs_id": "rs80338942",
+						"location": "13",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "GJB2-4",
+						"chrom": "13",
+						"rs_pos": "20763486",
+						"rs_id": "rs80338943",
+						"location": "13",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": []
+				}
+			}, {
+				"id": 60423,
+				"name": "地中海贫血症",
+				"level": 0,
+				"genes": {
+					"normal": [{
+						"name": "HBB-1",
+						"chrom": "11",
+						"rs_pos": "5247993",
+						"rs_id": "rs281864900",
+						"location": "11",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-2",
+						"chrom": "11",
+						"rs_pos": "5248329",
+						"rs_id": "rs33931746",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-3",
+						"chrom": "11",
+						"rs_pos": "5248173",
+						"rs_id": "rs33950507",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-4",
+						"chrom": "11",
+						"rs_pos": "5248159",
+						"rs_id": "rs33971440",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-5",
+						"chrom": "11",
+						"rs_pos": "5248200",
+						"rs_id": "rs33986703",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-6",
+						"chrom": "11",
+						"rs_pos": "5247153",
+						"rs_id": "rs34451549",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-1",
+						"chrom": "16",
+						"rs_pos": "223547",
+						"rs_id": "rs41397847",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-2",
+						"chrom": "16",
+						"rs_pos": "223597",
+						"rs_id": "rs41464951",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": []
+				}
+			}, {
+				"id": 60424,
+				"name": "镰刀型贫血症",
+				"level": 0,
+				"genes": {
+					"normal": [{
+						"name": "HBB-1",
+						"chrom": "11",
+						"rs_pos": "5247993",
+						"rs_id": "rs281864900",
+						"location": "11",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-2",
+						"chrom": "11",
+						"rs_pos": "5248329",
+						"rs_id": "rs33931746",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-3",
+						"chrom": "11",
+						"rs_pos": "5248173",
+						"rs_id": "rs33950507",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-4",
+						"chrom": "11",
+						"rs_pos": "5248159",
+						"rs_id": "rs33971440",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-5",
+						"chrom": "11",
+						"rs_pos": "5248200",
+						"rs_id": "rs33986703",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-6",
+						"chrom": "11",
+						"rs_pos": "5247153",
+						"rs_id": "rs34451549",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-1",
+						"chrom": "16",
+						"rs_pos": "223547",
+						"rs_id": "rs41397847",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-2",
+						"chrom": "16",
+						"rs_pos": "223597",
+						"rs_id": "rs41464951",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": []
+				}
+			}, {
+				"id": 60425,
+				"name": "G6PD缺乏症",
+				"level": 0,
+				"genes": {
+					"normal": [{
+						"name": "HBB-1",
+						"chrom": "11",
+						"rs_pos": "5247993",
+						"rs_id": "rs281864900",
+						"location": "11",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-2",
+						"chrom": "11",
+						"rs_pos": "5248329",
+						"rs_id": "rs33931746",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-3",
+						"chrom": "11",
+						"rs_pos": "5248173",
+						"rs_id": "rs33950507",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-4",
+						"chrom": "11",
+						"rs_pos": "5248159",
+						"rs_id": "rs33971440",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-5",
+						"chrom": "11",
+						"rs_pos": "5248200",
+						"rs_id": "rs33986703",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-6",
+						"chrom": "11",
+						"rs_pos": "5247153",
+						"rs_id": "rs34451549",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-1",
+						"chrom": "16",
+						"rs_pos": "223547",
+						"rs_id": "rs41397847",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-2",
+						"chrom": "16",
+						"rs_pos": "223597",
+						"rs_id": "rs41464951",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": []
+				}
+			}, {
+				"id": 60426,
+				"name": "白化病",
+				"level": 0,
+				"genes": {
+					"normal": [{
+						"name": "HBB-1",
+						"chrom": "11",
+						"rs_pos": "5247993",
+						"rs_id": "rs281864900",
+						"location": "11",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-2",
+						"chrom": "11",
+						"rs_pos": "5248329",
+						"rs_id": "rs33931746",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-3",
+						"chrom": "11",
+						"rs_pos": "5248173",
+						"rs_id": "rs33950507",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-4",
+						"chrom": "11",
+						"rs_pos": "5248159",
+						"rs_id": "rs33971440",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-5",
+						"chrom": "11",
+						"rs_pos": "5248200",
+						"rs_id": "rs33986703",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-6",
+						"chrom": "11",
+						"rs_pos": "5247153",
+						"rs_id": "rs34451549",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-1",
+						"chrom": "16",
+						"rs_pos": "223547",
+						"rs_id": "rs41397847",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-2",
+						"chrom": "16",
+						"rs_pos": "223597",
+						"rs_id": "rs41464951",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": []
+				}
+			}, {
+				"id": 60427,
+				"name": "苯丙酮尿症",
+				"level": 0,
+				"genes": {
+					"normal": [{
+						"name": "HBB-1",
+						"chrom": "11",
+						"rs_pos": "5247993",
+						"rs_id": "rs281864900",
+						"location": "11",
+						"gene_type": "AA",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-3",
+						"chrom": "11",
+						"rs_pos": "5248173",
+						"rs_id": "rs33950507",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-4",
+						"chrom": "11",
+						"rs_pos": "5248159",
+						"rs_id": "rs33971440",
+						"location": "11",
+						"gene_type": "CC",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-5",
+						"chrom": "11",
+						"rs_pos": "5248200",
+						"rs_id": "rs33986703",
+						"location": "11",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBB-6",
+						"chrom": "11",
+						"rs_pos": "5247153",
+						"rs_id": "rs34451549",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-1",
+						"chrom": "16",
+						"rs_pos": "223547",
+						"rs_id": "rs41397847",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}, {
+						"name": "HBA2-2",
+						"chrom": "16",
+						"rs_pos": "223597",
+						"rs_id": "rs41464951",
+						"location": "16",
+						"gene_type": "TT",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "未检出",
+						"notice": "NA"
+					}],
+					"risk": []
+				}
+			}]
+		}, {
+			'classid': 3,
+			'classname': '儿童常见不良倾向',
+			'typeof': 'h_inclination',
+			'items': [{
+				"id": 60449,
+				"name": "过敏倾向",
+				"level": "2",
+				"risk": "0.600",
+				'label': '易过敏',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"genes": {
+					"normal": [{
+						"name": "TNF-1",
+						"chrom": "6",
+						"rs_pos": "31543031",
+						"rs_id": "rs1800629",
+						"location": "6",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "IL10-1",
+						"chrom": "1",
+						"rs_pos": "206946897",
+						"rs_id": "rs1800896",
+						"location": "1",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}],
+					'risk': []
+				}
+			}, {
+				"id": 60450,
+				"name": "烟成瘾倾向",
+				"level": "2",
+				'label': '易上瘾',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"risk": "0.600",
+				"genes": {
+					"normal": [{
+						"name": "TNF-1",
+						"chrom": "6",
+						"rs_pos": "31543031",
+						"rs_id": "rs1800629",
+						"location": "6",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "IL10-1",
+						"chrom": "1",
+						"rs_pos": "206946897",
+						"rs_id": "rs1800896",
+						"location": "1",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}],
+					'risk': []
+				}
+			}, {
+				"id": 60451,
+				"name": "网络成瘾倾向",
+				"level": "2",
+				"risk": "0.600",
+				'label': '易上瘾',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"genes": {
+					"normal": [{
+						"name": "LOC728637-1",
+						"chrom": "5",
+						"rs_pos": "131275509",
+						"rs_id": "rs667437",
+						"location": "5",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "DRD2-1",
+						"chrom": "11",
+						"rs_pos": "113331532",
+						"rs_id": "rs4648317",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA3-1",
+						"chrom": "15",
+						"rs_pos": "78894339",
+						"rs_id": "rs1051730",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA5-1",
+						"chrom": "15",
+						"rs_pos": "78882925",
+						"rs_id": "rs16969968",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "ANKK1-1",
+						"chrom": "11",
+						"rs_pos": "113270828",
+						"rs_id": "rs1800497",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "烟成瘾倾向轻微增强",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60452,
+				"name": "高度近视倾向",
+				"level": "2",
+				"risk": "0.600",
+				'label': '易近视',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"genes": {
+					"normal": [{
+						"name": "LOC728637-1",
+						"chrom": "5",
+						"rs_pos": "131275509",
+						"rs_id": "rs667437",
+						"location": "5",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "DRD2-1",
+						"chrom": "11",
+						"rs_pos": "113331532",
+						"rs_id": "rs4648317",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA3-1",
+						"chrom": "15",
+						"rs_pos": "78894339",
+						"rs_id": "rs1051730",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA5-1",
+						"chrom": "15",
+						"rs_pos": "78882925",
+						"rs_id": "rs16969968",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "ANKK1-1",
+						"chrom": "11",
+						"rs_pos": "113270828",
+						"rs_id": "rs1800497",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "烟成瘾倾向轻微增强",
+						"notice": "NA"
+					}]
+				}
+			}]
+		}]
+	}
+
+/*营养包*/
+{
+		'package_name': '宝贝密码-疾病包',
+		'package_id': 1,
+		'package_type': 'nutrition_package',
+		'name': '张三',
+		'sex': '女',
+		'age': 20,
+		'sample_type': '儿童套餐自选包',
+		'sample_number': 100421108388921,
+		'sample_date': '2017-01-02',
+		'report_date': '2017-03-09',
+		'gene_number': 300,
+		'item_number': 39,
+		'datas': [{
+			'classid': 4,
+			'classname': '儿童维生素',
+			'typeof': 'h_vita',
+			'items': [{
+				"id": 60428,
+				"name": "维生素A",
+				"level": 4,
+				'label': '需求量稍高',
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高",
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60429,
+				"name": "维生素B2",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量正常',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60430,
+				"name": "维生素B3",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60431,
+				"name": "维生素B6",
+				"level": 4,
+				'label': '需求量稍高',
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60432,
+				"name": "维生素B9",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60433,
+				"name": "维生素B12",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60434,
+				"name": "维生素C",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60435,
+				"name": "维生素D",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60436,
+				"name": "维生素E",
+				"level": 4,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60437,
+				"name": "维生素K",
+				"level": 2,
+				'risk': 0.5,
+				'label': '需求量稍高',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}]
+		}, {
+			'classid': 5,
+			'classname': '儿童矿物元素',
+			'typeof': 'h_mineral',
+			'items': [{
+				"id": 60438,
+				"name": "钙元素",
+				"level": 2,
+				'risk': 0.5,
+				'label': '需求量正常',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60439,
+				"name": "锌元素",
+				"level": 2,
+				'risk': 0.5,
+				'label': '需求量正常',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60440,
+				"name": "钠元素",
+				"level": 2,
+				'risk': 0.5,
+				'label': '需求量正常',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60441,
+				"name": "钾元素",
+				'label': '需求量正常',
+				"level": 2,
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60442,
+				"name": "硒元素",
+				"level": 2,
+				'risk': 0.5,
+				'label': '需求量正常',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}]
+		}, {
+			'classid': 6,
+			'classname': '儿童其他营养素',
+			'typeof': 'h_other_vita',
+			'items': [{
+				"id": 60443,
+				"name": "碳水化合物",
+				"level": 1,
+				'risk': 0.5,
+				'label': '需求量正常',
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60444,
+				"name": "膳食纤维",
+				"level": 2,
+				'label': '需求量正常',
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60445,
+				"name": "蛋白质",
+				"level": 2,
+				'label': '需求量正常',
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+
+			}, {
+				"id": 60446,
+				"name": "胆固醇",
+				"level": 1,
+				'label': '需求量正常',
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60447,
+				"name": "脂肪",
+				"level": 1,
+				'label': '需求量正常',
+				'risk': 0.5,
+				"tag": [
+					"需求量正常",
+					"需求量正常",
+					"需求量正常",
+					"需求量稍高",
+					"需求量高"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60448,
+				"name": "乳糖",
+				"level": 2,
+				'label': '耐受性正常',
+				'risk': 0.5,
+				"tag": [
+					"耐受性正常",
+					"耐受性正常",
+					"耐受性正常",
+					"耐受性降低",
+					"耐受性降低"
+				],
+				"genes": {
+					"normal": [{
+						"name": "GC-1",
+						"chrom": "4",
+						"rs_pos": "72608383",
+						"rs_id": "rs2282679",
+						"location": "4",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "CYP2R1-1",
+						"chrom": "11",
+						"rs_pos": "14914878",
+						"rs_id": "rs10741657",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}, {
+						"name": "DHCR7/NADSYN1-1",
+						"chrom": "11",
+						"rs_pos": "71167449",
+						"rs_id": "rs12785878",
+						"location": "11",
+						"gene_type": "GT",
+						"gene_probility": "四星",
+						"influence": "1",
+						"label": "维生素D需求量低",
+						"notice": "NA"
+					}, {
+						"name": "CYP24A1-1",
+						"chrom": "20",
+						"rs_pos": "52742479",
+						"rs_id": "rs6013897",
+						"location": "20",
+						"gene_type": "TT",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "维生素D需求量正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "DHCR7-1",
+						"chrom": "11",
+						"rs_pos": "71165625",
+						"rs_id": "rs7944926",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "维生素D需求量高",
+						"notice": "NA"
+					}]
+				}
+			}]
+
+		}]
+	}
+
+
+
+/*成才包*/
+{
+		'package_name': '宝贝密码-成才包',
+		'package_id': 2,
+		'package_type': 'develop_package',
+		'name': '张三',
+		'sex': '女',
+		'age': 20,
+		'sample_type': '儿童套餐自选包',
+		'sample_number': 100421108388921,
+		'sample_date': '2017-01-02',
+		'report_date': '2017-03-09',
+		'gene_number': 300,
+		'item_number': 39,
+		'datas': [{
+			"classname": "智商",
+			"typeof": "IQ",
+			'classid': 12,
+			"radar": 70,
+			"items": [{
+				"name": "数学计算能力",
+				"radiusvalue": 45,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+
+			}, {
+				"name": "认知能力",
+				"radiusvalue": 55,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10234257",
+					"rs_id": "og_742571",
+					"location": "20",
+					"gene_type": "GG",
+					"gene_probility": "四星半",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10220496",
+					"rs_id": "og_604961",
+					"location": "20",
+					"gene_type": "AA",
+					"gene_probility": "四星半",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10226146",
+					"rs_id": "og_661461",
+					"location": "20",
+					"gene_type": "CC",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "SNAP25",
+					"chrom": "20",
+					"rs_pos": "10231174",
+					"rs_id": "og_411741",
+					"location": "20",
+					"gene_type": "CC",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}, {
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "认知能力降低",
+					"notice": "NA"
+				}, {
+					"name": "NCAN",
+					"chrom": "19",
+					"rs_pos": "19361735",
+					"rs_id": "og_517351",
+					"location": "19",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "认知能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "长时记忆能力",
+				"radiusvalue": 60,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "短时记忆能力",
+				"radiusvalue": 29,
+				"tag": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "专注力",
+				"radiusvalue": 55,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "创造力",
+				"radiusvalue": 46,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "避错能力",
+				"radiusvalue": 28,
+				"tag": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "母乳喂养与智力",
+				"radiusvalue": 62,
+				"tag": "无影响",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "GUCY1A2",
+					"chrom": "11",
+					"rs_pos": "106619892",
+					"rs_id": "og_298921",
+					"location": "11",
+					"gene_type": "GG",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "情商",
+			"typeof": "EQ",
+			'classid': 13,
+			"radar": 59,
+			"items": [{
+				"name": "自我激励能力",
+				"radiusvalue": 47,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "自制力",
+				"radiusvalue": 49,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "情绪控制能力",
+				"radiusvalue": 51,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "善解人意能力",
+				"radiusvalue": 46,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "抗压能力",
+				"radiusvalue": 46,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "领导力",
+				"radiusvalue": 78,
+				"tag": "优秀",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "0",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "人际交往能力",
+				"radiusvalue": 46,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "ANKK1",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "3",
+					"label": "自我控制力轻微减弱",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "性格",
+			"typeof": "character",
+			'classid': 14,
+			"radar": 59,
+			"items": [{
+				"name": "外向基因",
+				"radiusvalue": 75,
+				"tag": "偏外向",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "1",
+				"opposite": [
+					"内向",
+					"外向"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}, {
+					"name": "DRD2",
+					"chrom": "11",
+					"rs_pos": "113270828",
+					"rs_id": "og_808281",
+					"location": "11",
+					"gene_type": "AG",
+					"gene_probility": "五星",
+					"influence": "6",
+					"label": "偏外向",
+					"notice": "NA"
+				}, {
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "三星半",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "乐观基因",
+				"radiusvalue": 55,
+				"tag": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"悲观",
+					"乐观"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "易怒基因",
+				"radiusvalue": 80,
+				"tag": "不易怒",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "0",
+				"opposite": [
+					"易怒",
+					"平和"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "易焦虑基因",
+				"radiusvalue": 65,
+				"tag": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"易焦虑",
+					"淡然"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "冒险精神基因",
+				"radiusvalue": 51,
+				"tag": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"保守主义",
+					"冒险精神"
+				],
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星半",
+					"influence": "8",
+					"label": "偏内向",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "好奇心基因",
+				"radiusvalue": 47,
+				"tag": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"漠然",
+					"好奇心"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "责任心基因",
+				"radiusvalue": 28,
+				"tag": "偏漫不经心",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"opposite": [
+					"漫不经心",
+					"责任心"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "坚毅基因",
+				"radiusvalue": 80,
+				"tag": "较坚毅",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "0",
+				"opposite": [
+					"懦弱",
+					"坚毅"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "情绪化基因",
+				"radiusvalue": 28,
+				"tag": "易情绪化",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "4",
+				"opposite": [
+					"情绪化",
+					"理智"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "同情心基因",
+				"radiusvalue": 46,
+				"tag": "一般",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"opposite": [
+					"冷漠",
+					"同情心"
+				],
+				"genes": [{
+					"name": "DRD4",
+					"chrom": "11",
+					"rs_pos": "636784",
+					"rs_id": "og_467846",
+					"location": "11",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "正常水平",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			'classid': 3,
+			'classname': '儿童常见不良倾向',
+			'typeof': 'child_h',
+			'items': [{
+				"id": 60449,
+				"name": "过敏倾向",
+				"level": "1",
+				"risk": "0.600",
+				'label': '易过敏',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"genes": {
+					"normal": [{
+						"name": "TNF-1",
+						"chrom": "6",
+						"rs_pos": "31543031",
+						"rs_id": "rs1800629",
+						"location": "6",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "IL10-1",
+						"chrom": "1",
+						"rs_pos": "206946897",
+						"rs_id": "rs1800896",
+						"location": "1",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}],
+					'risk': []
+				}
+			}, {
+				"id": 60450,
+				"name": "烟成瘾倾向",
+				"level": "2",
+				'label': '正常',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"risk": "0.600",
+				"genes": {
+					"normal": [{
+						"name": "TNF-1",
+						"chrom": "6",
+						"rs_pos": "31543031",
+						"rs_id": "rs1800629",
+						"location": "6",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "IL10-1",
+						"chrom": "1",
+						"rs_pos": "206946897",
+						"rs_id": "rs1800896",
+						"location": "1",
+						"gene_type": "TT",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "过敏倾向正常",
+						"notice": "NA"
+					}],
+					'risk': []
+				}
+			}, {
+				"id": 60451,
+				"name": "网络成瘾倾向",
+				"level": "2",
+				"risk": "0.600",
+				'label': '正常',
+				"tag": [
+					"易过敏",
+					"易过敏",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"genes": {
+					"normal": [{
+						"name": "LOC728637-1",
+						"chrom": "5",
+						"rs_pos": "131275509",
+						"rs_id": "rs667437",
+						"location": "5",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "DRD2-1",
+						"chrom": "11",
+						"rs_pos": "113331532",
+						"rs_id": "rs4648317",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA3-1",
+						"chrom": "15",
+						"rs_pos": "78894339",
+						"rs_id": "rs1051730",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA5-1",
+						"chrom": "15",
+						"rs_pos": "78882925",
+						"rs_id": "rs16969968",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "ANKK1-1",
+						"chrom": "11",
+						"rs_pos": "113270828",
+						"rs_id": "rs1800497",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "烟成瘾倾向轻微增强",
+						"notice": "NA"
+					}]
+				}
+			}, {
+				"id": 60452,
+				"name": "高度近视倾向",
+				"level": "2",
+				"risk": "0.600",
+				'label': '正常',
+				"tag": [
+					"易近视",
+					"易近视",
+					"正常",
+					"正常",
+					"不易过敏"
+				],
+				"genes": {
+					"normal": [{
+						"name": "LOC728637-1",
+						"chrom": "5",
+						"rs_pos": "131275509",
+						"rs_id": "rs667437",
+						"location": "5",
+						"gene_type": "AA",
+						"gene_probility": "四星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "DRD2-1",
+						"chrom": "11",
+						"rs_pos": "113331532",
+						"rs_id": "rs4648317",
+						"location": "11",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA3-1",
+						"chrom": "15",
+						"rs_pos": "78894339",
+						"rs_id": "rs1051730",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "五星",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}, {
+						"name": "CHRNA5-1",
+						"chrom": "15",
+						"rs_pos": "78882925",
+						"rs_id": "rs16969968",
+						"location": "15",
+						"gene_type": "GG",
+						"gene_probility": "四星半",
+						"influence": "7",
+						"label": "烟成瘾倾向正常",
+						"notice": "NA"
+					}],
+					"risk": [{
+						"name": "ANKK1-1",
+						"chrom": "11",
+						"rs_pos": "113270828",
+						"rs_id": "rs1800497",
+						"location": "11",
+						"gene_type": "AG",
+						"gene_probility": "三星",
+						"influence": "3",
+						"label": "烟成瘾倾向轻微增强",
+						"notice": "NA"
+					}]
+				}
+			}]
+		}]
+	}
+
+/*天赋包*/
+	{
+		'package_name': '宝贝密码-天赋包',
+		'package_id': 2,
+		'package_type':'telent_package',
+		'name': '张三',
+		'sex': '女',
+		'age': 20,
+		'sample_type': '儿童套餐自选包',
+		'sample_number': 100421108388921,
+		'sample_date': '2017-01-02',
+		'report_date': '2017-03-09',
+		'gene_number': 300,
+		'item_number': 39,
+		'datas': [{
+			"classname": "运动天赋",
+			'classid': 1,
+			"typeof": "talent_T",
+			"radar": 59,
+			"items": [{
+				"name": "肌肉爆发力",
+				"radiusvalue": 49,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "FADS2",
+					"chrom": "11",
+					"rs_pos": "61602003",
+					"rs_id": "og_320036",
+					"location": "11",
+					"gene_type": "CC",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "母乳对IQ提高无影响",
+					"notice": "NA"
+				}, {
+					"name": "FADS2",
+					"chrom": "11",
+					"rs_pos": "61597972",
+					"rs_id": "og_279726",
+					"location": "11",
+					"gene_type": "AA",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "母乳对IQ提高有帮助",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "肌肉耐力",
+				"radiusvalue": 56,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "ADRB2",
+					"chrom": "5",
+					"rs_pos": "148206440",
+					"rs_id": "og_064401",
+					"location": "5",
+					"gene_type": "AA",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "肌肉耐力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "BDKRB2",
+					"chrom": "14",
+					"rs_pos": "96671139",
+					"rs_id": "og_911399",
+					"location": "14",
+					"gene_type": "TT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "肌肉耐力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "ADRB3",
+					"chrom": "8",
+					"rs_pos": "37823798",
+					"rs_id": "og_837983",
+					"location": "8",
+					"gene_type": "AA",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "肌肉耐力正常水平",
+					"notice": "NA"
+				}, {
+					"name": "HIF-1α",
+					"chrom": "14",
+					"rs_pos": "62207557",
+					"rs_id": "og_775576",
+					"location": "14",
+					"gene_type": "CC",
+					"gene_probility": "四星",
+					"influence": "7",
+					"label": "肌肉耐力正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "肌肉力量",
+				"radiusvalue": 61,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "无氧运动能力",
+				"radiusvalue": 45,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "运动恢复能力",
+				"radiusvalue": 78,
+				"tag": "优秀",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 0,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "软组织受伤保护",
+				"radiusvalue": 28,
+				"tag": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "AGT",
+					"chrom": "1",
+					"rs_pos": "230845794",
+					"rs_id": "og_457942",
+					"location": "1",
+					"gene_type": "AG",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "力量型运动能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "音乐舞蹈天赋",
+			"classid": 2,
+			"typeof": "talent_T",
+			"radar": 59,
+			"items": [{
+				"name": "音乐感知能力",
+				"radiusvalue": 28,
+				"tag": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音乐情感反应",
+				"radiusvalue": 62,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音乐记忆能力",
+				"radiusvalue": 55,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音高辨别力",
+				"radiusvalue": 48,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "音乐创造力",
+				"radiusvalue": 54,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "舞蹈创造力",
+				"radiusvalue": 48,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "PCDH7",
+					"chrom": "4",
+					"rs_pos": "30668535",
+					"rs_id": "og_585353",
+					"location": "4",
+					"gene_type": "GG",
+					"gene_probility": "五星",
+					"influence": "7",
+					"label": "音乐情感反应正常水平",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "绘画天赋",
+			"classid": 3,
+			"typeof": "talent_T",
+			"radar": 59,
+			"items": [{
+				"name": "辨色能力",
+				"radiusvalue": 55,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "WWC1",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "视觉记忆能力",
+				"radiusvalue": 71,
+				"tag": "优秀",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 1,
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "WWC1",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "想象力",
+				"radiusvalue": 63,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "BDNF",
+					"chrom": "11",
+					"rs_pos": "27679916",
+					"rs_id": "og_699162",
+					"location": "11",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}, {
+					"name": "WWC1",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "五星",
+					"influence": "1",
+					"label": "视觉记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "语言天赋",
+			"classid": 4,
+			"typeof": "talent_T",
+			"radar": 80,
+			"items": [{
+				"name": "阅读记忆能力",
+				"radiusvalue": 57,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "阅读能力",
+				"radiusvalue": 54,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "语言发音能力",
+				"radiusvalue": 63,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "短时语言记忆能力",
+				"radiusvalue": 28,
+				"tag": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "语言表达能力",
+				"radiusvalue": 62,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": "2",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "拼写能力",
+				"radiusvalue": 46,
+				"tag": "一般水平",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}, {
+			"classname": "交际天赋",
+			"typeof": "talent_T",
+			'classid': 5,
+			"radar": 60,
+			"items": [{
+				"name": "交流互动能力",
+				"radiusvalue": 28,
+				"tag": "偏弱",
+				"ratio": "0.8205", //圈图
+				"percent": "0.623", //正太图
+				"level": 4,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "外向性",
+				"radiusvalue": 54,
+				"tag": "一般水平",
+				"ratio": "0.548",
+				"percent": "0.996",
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "交流才能",
+				"radiusvalue": 50,
+				"tag": "一般水平",
+				"ratio": "0.507",
+				"percent": "0.922",
+				"level": 2,
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "社会互动能力",
+				"radiusvalue": 48,
+				"tag": "一般水平",
+				"ratio": "0.481",
+				"percent": "0.875",
+				"level": "2",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}, {
+				"name": "社交能力",
+				"radiusvalue": 28,
+				"tag": "偏弱",
+				"ratio": "0.282",
+				"percent": "0.167",
+				"level": "4",
+				"genes": [{
+					"name": "KIBRA",
+					"chrom": "5",
+					"rs_pos": "167845791",
+					"rs_id": "og_157911",
+					"location": "5",
+					"gene_type": "CT",
+					"gene_probility": "四星",
+					"influence": "1",
+					"label": "阅读记忆能力轻微增强",
+					"notice": "NA"
+				}]
+			}]
+		}]
+	}
+ 
