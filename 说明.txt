@@ -1,0 +1,6 @@
+﻿1.使用前请安装思源字体
+2.最好使用最新版谷歌浏览器
+3.index-print.html为打印装订版
+4.index-pdf.html为客户端pdf
+5.88-print.html为88项生成
+6.package.html为各种小包的生成
